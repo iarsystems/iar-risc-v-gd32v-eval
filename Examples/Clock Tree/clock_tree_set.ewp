@@ -9,9 +9,9 @@
         <debug>1</debug>
         <settings>
             <name>General</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -145,11 +145,15 @@
                     <name>GDeviceSelectSlave</name>
                     <state>GD32VF103V-EVAL	GigaDevice GD32VF103V-EVAL</state>
                 </option>
+                <option>
+                    <name>GGeneralAutoVectorSetup</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCRISCV</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>6</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -362,7 +366,7 @@
         </settings>
         <settings>
             <name>IASMRISCV</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -500,7 +504,7 @@
         </settings>
         <settings>
             <name>OBJCOPY</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -552,9 +556,9 @@
         </settings>
         <settings>
             <name>ILINK</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
-                <version>1</version>
+                <version>2</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -862,11 +866,15 @@
                     <name>IlinkRawBinaryAlign2</name>
                     <state></state>
                 </option>
+                <option>
+                    <name>IlinkAutoVectorSetupSlave</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -899,9 +907,9 @@
         <debug>0</debug>
         <settings>
             <name>General</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1035,11 +1043,15 @@
                     <name>GDeviceSelectSlave</name>
                     <state>RV32IM	RV32IM</state>
                 </option>
+                <option>
+                    <name>GGeneralAutoVectorSetup</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCRISCV</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>6</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -1248,7 +1260,7 @@
         </settings>
         <settings>
             <name>IASMRISCV</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -1386,7 +1398,7 @@
         </settings>
         <settings>
             <name>OBJCOPY</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -1438,9 +1450,9 @@
         </settings>
         <settings>
             <name>ILINK</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
-                <version>1</version>
+                <version>2</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1748,11 +1760,15 @@
                     <name>IlinkRawBinaryAlign2</name>
                     <state></state>
                 </option>
+                <option>
+                    <name>IlinkAutoVectorSetupSlave</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
-            <archiveVersion>2</archiveVersion>
+            <archiveVersion>3</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
