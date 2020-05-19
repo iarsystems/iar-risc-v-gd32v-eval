@@ -47,7 +47,7 @@ OF SUCH DAMAGE.
 void eclic_global_interrupt_enable(void)
 {
     /* set machine interrupt enable bit */
-    //set_csr(mstatus, MSTATUS_MIE);
+    set_csr(mstatus, MSTATUS_MIE);
 }
 
 /*!
@@ -59,7 +59,7 @@ void eclic_global_interrupt_enable(void)
 void eclic_global_interrupt_disable(void)
 {
     /* clear machine interrupt enable bit */
-    //clear_csr(mstatus, MSTATUS_MIE);
+    clear_csr(mstatus, MSTATUS_MIE);
 }
 
 /*!
