@@ -31,4 +31,4 @@ For the __USART__ example, configure the Serial Port in the Virtual Terminal wit
 For questions please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question%20from%20GitHub). 
 We are happy to assist you with any additional questions or guidance. 
 
-* More examples will be uploaded shortly.*
+*More examples will be uploaded shortly.*
