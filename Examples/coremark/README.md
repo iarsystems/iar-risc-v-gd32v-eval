@@ -1,5 +1,14 @@
+# Coremark 1.0 for IAR RISC-V GD32V Eval board 
 
-# Introduction
+In order to view the Coremark results, you need to open the Terminal I/O in the IAR Embedded Workbench.
+* When debugging the project, select View → Terminal I/O)
+
+__Note__
+If you want to rate the Coremark/MHz for your board, you take the Coremark score and divide by 108 MHz.
+
+---
+
+## Introduction
 
 CoreMark's primary goals are simplicity and providing a method for testing only a processor's core features. For more information about EEMBC's comprehensive embedded benchmark suites, please see www.eembc.org.
 
