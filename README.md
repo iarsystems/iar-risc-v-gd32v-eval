@@ -1,24 +1,34 @@
-# iar-risc-v-gd32v-eval
-Example projects for IAR RISC-V GD32V Evaluation board
+# Getting started with IAR RISC-V GD32V Evaluation board
 
-Schematics and extra documentation for the IAR RISC-V GD32V Evaluation board can be found on the IAR Academy On Demand - https://training.iar.com/ . 
+This guide briefly describes how to get started using the IAR Embedded Workbench for RISC-V with the I-jet Lite debug interface. The project examples in this repository are designed to be run on the IAR RISC-V GD32 Eval board.
+
+
+For documentation and schematics, follow this [link](docs).
+
 
 Make sure that the following jumpers are correctly configured on the evaluation board:
 
-Jumpers:
-J6 Power -> 1-2 USB/Debug
-J5 -> 2-3 Green
-J8 -> 2-3 Red
-J9 -> 2-3 Blue
+| __Jumper__     | __Description__ |   __Position__  |
+| :------------- | :-------------- |  -------------- |
+| J6             | Power USB/Debug |  1-2            |
+| J5             | Green LED       |  2-3            |
+| J8             | Red LED         |  2-3            |
+| J9             | Blue LED        |  2-3            |
 
-For the USART Transmitter receiver interrupt example following settings are required on the terminal tool side:
- 
-Baud Rate: 115200
-Data: 8 
-BitParity: None
-Stop: 1 
-BitFlow Control: None
+For the __USART__ example, configure the Serial Port in the Virtual Terminal with the following settings:
 
-For questions please reach out to fae@iar.com. We are happy to assist you with any additional questions or guidance. 
+| __Setting__    |  __Selection__  |
+| :------------- | :-------------- |
+| Baud rate      | 115200          |
+| Data           | 8               |
+| Bit Parity     | None            |
+| Stop bit       | 1               | 
+| Flow Control   | None            | 
 
-More examples will be uploaded shortly. Please feel free to contribute to the GitHub Repository.
+
+** You also need to activate the Terminal I/O built into the IAR Embedded Workbench IDE (View → Terminal I/O) **
+
+For questions please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question from iar-riscv-gd32v-eval). 
+We are happy to assist you with any additional questions or guidance. 
+
+* More examples will be uploaded shortly.*
