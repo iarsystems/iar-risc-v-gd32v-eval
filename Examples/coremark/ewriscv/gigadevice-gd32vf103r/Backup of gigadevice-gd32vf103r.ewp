@@ -16,7 +16,7 @@
                 <debug>1</debug>
                 <option>
                     <name>GDeviceSelect</name>
-                    <state>GD32VF103RBT6	GigaDevice GD32VF103RBT6</state>
+                    <state>GD32VF103V-EVAL	GigaDevice GD32VF103V-EVAL</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -143,7 +143,7 @@
                 </option>
                 <option>
                     <name>GDeviceSelectSlave</name>
-                    <state>GD32VF103RBT6	GigaDevice GD32VF103RBT6</state>
+                    <state>E21Arty100T	SiFive E21 Arty 100T</state>
                 </option>
                 <option>
                     <name>GGeneralAutoVectorSetup</name>
@@ -208,20 +208,20 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>0</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>2</state>
                 </option>
                 <option>
                     <name>CCNoSizeConst</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>0</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CCAllowList</name>
@@ -260,7 +260,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state>GD32VF103R_START</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -328,10 +328,8 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$/../../firmware/GD32VF103_standard_peripheral</state>
-                    <state>$PROJ_DIR$/../../firmware/GD32VF103_standard_peripheral/include</state>
-                    <state>$PROJ_DIR$/../../firmware/RISCV/drivers</state>
-                    <state>$PROJ_DIR$</state>
+                    <state>$PROJ_DIR$/../..</state>
+                    <state>$PROJ_DIR$/port</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -519,7 +517,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>Toggle_IO.srec</state>
+                    <state>sifive-e21-arty-100t.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -590,7 +588,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>Private Timer.out</state>
+                    <state>sifive-e21-arty-100t.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -654,7 +652,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\GigaDevice\GD32VF103RBT6.icf</state>
+                    <state>$TOOLKIT_DIR$\config\linker\GigaDevice\GD32VF103VBT6.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1793,33 +1791,30 @@
         </settings>
     </configuration>
     <group>
-        <name>DW</name>
+        <name>Coremark</name>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\RISCV\drivers\n200_func.c</name>
+            <name>$PROJ_DIR$\..\..\core_list_join.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\core_main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\core_matrix.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\core_state.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\core_util.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\coremark.h</name>
         </file>
     </group>
     <group>
-        <name>FW</name>
+        <name>Port</name>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_gpio.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_rcu.c</name>
+            <name>$PROJ_DIR$\port\core_portme.c</name>
         </file>
     </group>
-    <file>
-        <name>$PROJ_DIR$\low_level_init.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\main.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\readme.txt</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\systick.c</name>
-    </file>
 </project>

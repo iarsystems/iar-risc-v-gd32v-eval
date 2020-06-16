@@ -173,6 +173,43 @@
             </data>
         </settings>
         <settings>
+            <name>RISCVGDBSERV</name>
+            <archiveVersion>1</archiveVersion>
+            <data>
+                <version>0</version>
+                <wantNonLocal>1</wantNonLocal>
+                <debug>1</debug>
+                <option>
+                    <name>CGDBMandatory</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>TCPIP</name>
+                    <state>aaa.bbb.ccc.ddd</state>
+                </option>
+                <option>
+                    <name>DoLogfile</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>LogFile</name>
+                    <state>$PROJ_DIR$\cspycomm.log</state>
+                </option>
+                <option>
+                    <name>CCJTagBreakpointRadio</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCJTagDoUpdateBreakpoints</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCJTagUpdateBreakpoints</name>
+                    <state>_call_main</state>
+                </option>
+            </data>
+        </settings>
+        <settings>
             <name>IJETRISCV</name>
             <archiveVersion>2</archiveVersion>
             <data>
@@ -591,6 +628,43 @@
                 <option>
                     <name>OCMulticoreSessionFile</name>
                     <state></state>
+                </option>
+            </data>
+        </settings>
+        <settings>
+            <name>RISCVGDBSERV</name>
+            <archiveVersion>1</archiveVersion>
+            <data>
+                <version>0</version>
+                <wantNonLocal>1</wantNonLocal>
+                <debug>0</debug>
+                <option>
+                    <name>CGDBMandatory</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>TCPIP</name>
+                    <state>aaa.bbb.ccc.ddd</state>
+                </option>
+                <option>
+                    <name>DoLogfile</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>LogFile</name>
+                    <state>$PROJ_DIR$\cspycomm.log</state>
+                </option>
+                <option>
+                    <name>CCJTagBreakpointRadio</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCJTagDoUpdateBreakpoints</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCJTagUpdateBreakpoints</name>
+                    <state>_call_main</state>
                 </option>
             </data>
         </settings>
