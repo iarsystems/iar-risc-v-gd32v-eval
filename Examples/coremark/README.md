@@ -2,9 +2,10 @@
 
 In order to view the Coremark results, you need to open the Terminal I/O in the IAR Embedded Workbench.
 * When debugging the project, select View → Terminal I/O)
+* Then run the project for about 15 seconds
 
 __Note__
-If you want to rate the Coremark/MHz for your board, you take the Coremark score and divide by 108 MHz.
+If you want to rate the Coremark/MHz for your board, do the math! Take the Coremark score and divide it by 32.5 MHz.
 
 ---
 
