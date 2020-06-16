@@ -1,11 +1,11 @@
 # Coremark 1.0 for IAR RISC-V GD32V Eval board 
 
 In order to view the Coremark results, you need to open the Terminal I/O in the IAR Embedded Workbench.
-* When debugging the project, select View → Terminal I/O)
-* Then run the project for about 15 seconds
+* When debugging the project, select View → Terminal I/O
+* Then wait for the program to execute for about 15 seconds
 
 __Note__
-If you want to rate the Coremark/MHz for your board, do the math! Take the Coremark score and divide it by 32.5 MHz.
+If you want to rate the __Coremark/MHz__ for your board, do the math! It is as easy as taking the *Coremark score* and dividing it by 32.5 MHz.
 
 ---
 
