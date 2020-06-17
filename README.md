@@ -13,7 +13,7 @@ Make sure that the following jumpers are correctly configured on the evaluation 
 | J6             | Power USB/Debug |  1-2            |
 | J5             | Green LED       |  2-3            |
 | J8             | Red LED         |  2-3            |
-| J9             | Blue LED        |  2-3            |
+| J9             | Blue LED        |  3-4            |
 
 For questions please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question%20from%20GitHub). 
 We are happy to assist you with any additional questions or guidance. 
