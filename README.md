@@ -6,16 +6,30 @@ This guide briefly describes how to get started using the IAR [Embedded Workbenc
 For documentation and schematics, follow this [link](docs).
 
 
-Make sure that the following jumpers are correctly configured on the evaluation board:
+Make sure that the jumper positions on the evaluation board (*revision 3b*) are set as the __highlighted__ options on the following jumper tables: 
 
-| __Jumper__     | __Description__ |   __Position__  |
-| :------------- | :-------------- |  -------------- |
-| J6             | Power USB/Debug |  1-2            |
-| J5             | Green LED       |  2-3            |
-| J8             | Red LED         |  2-3            |
-| J9             | Blue LED        |  3-4            |
+| __J5__         | __Position__    |  __Options__   |
+| :------------- | :-------------- | :------------- |
+|                | 1-2             | LED3           |
+|                | __2-3__         | Green LED      |
+
+| __J6__         | __Position__    |  __Options__   |
+| :------------- | :-------------- | :------------- |
+|                | __1-2__         | USB/Debug      |
+|                | 2-3             | Green LED      |
+
+| __J8__         | __Position__    |  __Options__   |
+| :------------- | :-------------- | :------------- |
+|                | 1-2             | SW4            |
+|                | __2-3__         | Red LED        |
+
+| __J9__         | __Position__    |  __Options__   |
+| :------------- | :-------------- | :------------- |
+|                | 1-2             | SW5            |
+|                | __3-4__         | Blue LED       |
+|                | 5-6             | LED4           |
+
+---
 
 For questions please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question%20from%20GitHub). 
-We are happy to assist you with any additional questions or guidance. 
-
-*More examples will be uploaded shortly.*
+We are happy to assist you with any additional questions or guidance.
