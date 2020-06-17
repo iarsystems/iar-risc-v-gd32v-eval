@@ -1,6 +1,6 @@
 # Getting started with IAR RISC-V GD32V Evaluation board
 
-This guide briefly describes how to get started using the IAR [Embedded Workbench for RISC-V](https://iar.com/riscv) with the __I-jet Lite__ debug interface. The project examples in this repository are designed to be run on the IAR RISC-V GD32 Eval board.
+This guide briefly describes how to get started using the IAR [Embedded Workbench for RISC-V](https://iar.com/riscv) with the __I-jet Lite__ debug interface. The project examples in this repository are designed to be run on the IAR RISC-V GD32V Eval board.
 
 
 For documentation and schematics, follow this [link](docs).

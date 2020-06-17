@@ -12,6 +12,7 @@
 */
 
 #include "iar-risc-v-gd32v-eval.h"
+#include "systick.h"
 
 /* private variables */
 static uint32_t GPIO_PORT[LEDn] = {LED1_GPIO_PORT, LED2_GPIO_PORT,
@@ -70,6 +71,7 @@ static uint8_t KEY_IRQn[KEYn] = {KEY_A_EXTI_IRQn,
       \arg        LED2
       \arg        LED3
       \arg        LED4
+      \arg        LED5
     \param[out] none
     \retval     none
 */
@@ -90,6 +92,7 @@ void gd_eval_led_init(led_typedef_enum lednum)
       \arg        LED2
       \arg        LED3
       \arg        LED4
+      \arg        LED5
     \param[out] none
     \retval     none
 */
@@ -105,6 +108,7 @@ void gd_eval_led_on(led_typedef_enum lednum)
       \arg        LED2
       \arg        LED3
       \arg        LED4
+      \arg        LED5
     \param[out] none
     \retval     none
 */
@@ -120,6 +124,7 @@ void gd_eval_led_off(led_typedef_enum lednum)
       \arg        LED2
       \arg        LED3
       \arg        LED4
+      \arg        LED5
     \param[out] none
     \retval     none
 */
@@ -132,11 +137,11 @@ void gd_eval_led_toggle(led_typedef_enum lednum)
 /*!
     \brief      configure key
     \param[in]  key_num: specify the key to be configured
-      \arg        KEY_A: wakeup key
-      \arg        KEY_B: tamper key
-      \arg        KEY_C: user key
-      \arg        KEY_D: user key
-      \arg        KEY_CET: user key
+      \arg        KEY_A: S1 key
+      \arg        KEY_B: S2 key
+      \arg        KEY_C: S3 key
+      \arg        KEY_D: S4 key
+      \arg        KEY_E: S5 key
     \param[in]  key_mode: specify button mode
       \arg        KEY_MODE_GPIO: key will be used as simple IO
       \arg        KEY_MODE_EXTI: key will be connected to EXTI line with interrupt
@@ -151,7 +156,7 @@ void gd_eval_key_init(key_typedef_enum key_num, keymode_typedef_enum key_mode)
     rcu_periph_clock_enable(RCU_AF);
 
     /* configure button pin as input */
-    gpio_init(KEY_PORT[key_num], GPIO_MODE_IN_FLOATING, GPIO_OSPEED_50MHZ, KEY_PIN[key_num]);
+    gpio_init(KEY_PORT[key_num], GPIO_MODE_IN_FLOATING, GPIO_OSPEED_2MHZ, KEY_PIN[key_num]);
 
     if (key_mode == KEY_MODE_EXTI) {
         /* enable and set key EXTI interrupt to the lowest priority */
@@ -170,10 +175,11 @@ void gd_eval_key_init(key_typedef_enum key_num, keymode_typedef_enum key_mode)
 /*!
     \brief      return the selected key state
     \param[in]  key: specify the key to be checked
-      \arg        KEY_A: wakeup key
-      \arg        KEY_B: tamper key
-      \arg        KEY_C: user key
-      \arg        KEY_D: user key
+      \arg        KEY_A: S1 key
+      \arg        KEY_B: S2 key
+      \arg        KEY_C: S3 key
+      \arg        KEY_D: S4 key
+      \arg        KEY_E: S5 key
       \arg        KEY_CET: user key
     \param[out] none
     \retval     the key's GPIO pin value

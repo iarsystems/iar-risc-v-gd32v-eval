@@ -36,7 +36,8 @@ typedef enum
     KEY_B = 1,
     KEY_C = 2,
     KEY_D = 3,
-    KEY_CET = 4
+    KEY_E = 4,
+    KEY_CET = 5
 } key_typedef_enum;
 
 typedef enum 
@@ -45,7 +46,7 @@ typedef enum
     KEY_MODE_EXTI = 1
 } keymode_typedef_enum;
 
-/* IAR eval board low layer LED */
+/* IAR eval board LEDs */
 #define LEDn                             5U
 
 #define LED1_PIN                         GPIO_PIN_9
@@ -68,6 +69,7 @@ typedef enum
 #define LED5_GPIO_PORT                   GPIOB
 #define LED5_GPIO_CLK                    RCU_GPIOB
 
+/* IAR eval board RGB LED */
 #define LEDR_PIN                         GPIO_PIN_11
 #define LEDR_GPIO_PORT                   GPIOA
 #define LEDR_GPIO_CLK                    RCU_GPIOA
@@ -80,6 +82,7 @@ typedef enum
 #define LEDB_GPIO_PORT                   GPIOB
 #define LEDB_GPIO_CLK                    RCU_GPIOB
 
+/* IAR eval board USART */
 #define COMn                             2U
 
 #define EVAL_COM0                        USART0
@@ -96,50 +99,61 @@ typedef enum
 #define EVAL_COM1_GPIO_PORT              GPIOA
 #define EVAL_COM1_GPIO_CLK               RCU_GPIOA
 
+/* IAR eval board KEYs */
 #define KEYn                             5U
 
-/* wakeup push-button */
-#define KEY_A_PIN                        GPIO_PIN_0
+/* S1 */
+#define KEY_A_PIN                        GPIO_PIN_10
 #define KEY_A_GPIO_PORT                  GPIOA
 #define KEY_A_GPIO_CLK                   RCU_GPIOA
-#define KEY_A_EXTI_LINE                  EXTI_0
+#define KEY_A_EXTI_LINE                  EXTI_11
 #define KEY_A_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOA
-#define KEY_A_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_0
-#define KEY_A_EXTI_IRQn                  EXTI0_IRQn
+#define KEY_A_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_10
+#define KEY_A_EXTI_IRQn                  EXTI10_15_IRQn
 
-/* tamper push-button */
-#define KEY_B_PIN                        GPIO_PIN_13
-#define KEY_B_GPIO_PORT                  GPIOC
-#define KEY_B_GPIO_CLK                   RCU_GPIOC
-#define KEY_B_EXTI_LINE                  EXTI_13
-#define KEY_B_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOC
-#define KEY_B_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_13
+/* S2 */
+#define KEY_B_PIN                        GPIO_PIN_5
+#define KEY_B_GPIO_PORT                  GPIOB
+#define KEY_B_GPIO_CLK                   RCU_GPIOB
+#define KEY_B_EXTI_LINE                  EXTI_12
+#define KEY_B_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOB
+#define KEY_B_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_5
 #define KEY_B_EXTI_IRQn                  EXTI10_15_IRQn
 
-/* user push-button */
-#define KEY_C_PIN                        GPIO_PIN_14
-#define KEY_C_GPIO_PORT                  GPIOB
-#define KEY_C_GPIO_CLK                   RCU_GPIOB
-#define KEY_C_EXTI_LINE                  EXTI_14
-#define KEY_C_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOB
-#define KEY_C_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_14
+/* S3 */
+#define KEY_C_PIN                        GPIO_PIN_8
+#define KEY_C_GPIO_PORT                  GPIOA
+#define KEY_C_GPIO_CLK                   RCU_GPIOA
+#define KEY_C_EXTI_LINE                  EXTI_13
+#define KEY_C_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOA
+#define KEY_C_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_8
 #define KEY_C_EXTI_IRQn                  EXTI10_15_IRQn
 
-#define KEY_D_PIN                        GPIO_PIN_5
-#define KEY_D_GPIO_PORT                  GPIOC
-#define KEY_D_GPIO_CLK                   RCU_GPIOC
-#define KEY_D_EXTI_LINE                  EXTI_5
-#define KEY_D_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOC
-#define KEY_D_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_5
-#define KEY_D_EXTI_IRQn                  EXTI5_9_IRQn
+/* S4 */
+#define KEY_D_PIN                        GPIO_PIN_11
+#define KEY_D_GPIO_PORT                  GPIOA
+#define KEY_D_GPIO_CLK                   RCU_GPIOA
+#define KEY_D_EXTI_LINE                  EXTI_14
+#define KEY_D_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOA
+#define KEY_D_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_11
+#define KEY_D_EXTI_IRQn                  EXTI10_15_IRQn
+
+/* S5 */
+#define KEY_E_PIN                        GPIO_PIN_11
+#define KEY_E_GPIO_PORT                  GPIOB
+#define KEY_E_GPIO_CLK                   RCU_GPIOB
+#define KEY_E_EXTI_LINE                  EXTI_15
+#define KEY_E_EXTI_PORT_SOURCE           GPIO_PORT_SOURCE_GPIOB
+#define KEY_E_EXTI_PIN_SOURCE            GPIO_PIN_SOURCE_11
+#define KEY_E_EXTI_IRQn                  EXTI10_15_IRQn
 
 #define KEY_CET_PIN                      GPIO_PIN_4
 #define KEY_CET_GPIO_PORT                GPIOC
 #define KEY_CET_GPIO_CLK                 RCU_GPIOC
-#define KEY_CET_EXTI_LINE                EXTI_4
+#define KEY_CET_EXTI_LINE                EXTI_15
 #define KEY_CET_EXTI_PORT_SOURCE         GPIO_PORT_SOURCE_GPIOC
 #define KEY_CET_EXTI_PIN_SOURCE          GPIO_PIN_SOURCE_4
-#define KEY_CET_EXTI_IRQn                EXTI4_IRQn
+#define KEY_CET_EXTI_IRQn                EXTI10_15_IRQn
 
 /* function declarations */
 /* configure led GPIO */

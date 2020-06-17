@@ -1,6 +1,6 @@
 # LED project example
 
-* Target: IAR RISC-V GD32 Eval board
+* Target: IAR RISC-V GD32V Eval board
 
 To run this example, make sure that the jumper positions on the evaluation board are set for the LEDs to blink. 
 The settings are __highlighted__ on the following jumper tables: 

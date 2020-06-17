@@ -16,6 +16,9 @@
         <path>$WS_DIR$\private-timer\private-timer.ewp</path>
     </project>
 	<project>
+        <path>$WS_DIR$\switches\switches.ewp</path>
+    </project>
+	<project>
         <path>$WS_DIR$\toggle-io\toggle-io.ewp</path>
     </project>
 	<project>
