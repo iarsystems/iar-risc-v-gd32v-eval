@@ -6,27 +6,28 @@ This guide briefly describes how to get started using the IAR [Embedded Workbenc
 For documentation and schematics, follow this [link](docs).
 
 
-Make sure that the jumper positions on the evaluation board (*revision 3b*) are set as the __highlighted__ options on the following jumper tables: 
+Make sure that the jumper positions on the evaluation board (*revision 3b*) are set as described on the chosen project example README.md file.
+
 
 | __J5__         | __Position__    |  __Options__   |
 | :------------- | :-------------- | :------------- |
 |                | 1-2             | LED3           |
-|                | __2-3__         | Green LED      |
+|                | 2-3             | Green LED      |
 
 | __J6__         | __Position__    |  __Options__   |
 | :------------- | :-------------- | :------------- |
-|                | __1-2__         | USB/Debug      |
-|                | 2-3             | Green LED      |
+|                | 1-2             | USB/Debug      |
+|                | 2-3             | J4             |
 
 | __J8__         | __Position__    |  __Options__   |
 | :------------- | :-------------- | :------------- |
 |                | 1-2             | SW4            |
-|                | __2-3__         | Red LED        |
+|                | 2-3             | Red LED        |
 
 | __J9__         | __Position__    |  __Options__   |
 | :------------- | :-------------- | :------------- |
 |                | 1-2             | SW5            |
-|                | __3-4__         | Blue LED       |
+|                | 3-4             | Blue LED       |
 |                | 5-6             | LED4           |
 
 ---

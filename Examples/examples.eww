@@ -4,6 +4,9 @@
         <path>$WS_DIR$\clock-tree\clock-tree.ewp</path>
     </project>
 	<project>
+        <path>$WS_DIR$\rgb-led\rgb-led.ewp</path>
+    </project>
+	<project>
         <path>$WS_DIR$\coremark\ewriscv\gigadevice-gd32vf103r\coremark.ewp</path>
     </project>
 	<project>
