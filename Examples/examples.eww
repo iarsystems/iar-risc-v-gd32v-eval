@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\clock-tree.ewp</path>
+    </project>
+	<project>
+        <path>$WS_DIR$\ewriscv\gigadevice-gd32vf103r\coremark.ewp</path>
+    </project>
+	<project>
+        <path>$WS_DIR$\private-timer.ewp</path>
+    </project>
+	<project>
+        <path>$WS_DIR$\toggle-io.ewp</path>
+    </project>
+	<project>
+        <path>$WS_DIR$\usart.ewp</path>
+    </project>
+	
+    <batchBuild />
+</workspace>
