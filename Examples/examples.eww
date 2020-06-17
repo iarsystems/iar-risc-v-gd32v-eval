@@ -7,6 +7,9 @@
         <path>$WS_DIR$\coremark\ewriscv\gigadevice-gd32vf103r\coremark.ewp</path>
     </project>
 	<project>
+        <path>$WS_DIR$\leds\leds.ewp</path>
+    </project>
+	<project>
         <path>$WS_DIR$\private-timer\private-timer.ewp</path>
     </project>
 	<project>
