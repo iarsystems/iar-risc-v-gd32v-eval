@@ -1825,4 +1825,7 @@
     <file>
         <name>$PROJ_DIR$\..\..\firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
     </file>
+	<file>
+        <name>$PROJ_DIR$\README.md</name>
+    </file>
 </project>

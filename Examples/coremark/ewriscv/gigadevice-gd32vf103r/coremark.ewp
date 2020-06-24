@@ -1817,4 +1817,7 @@
             <name>$PROJ_DIR$\port\core_portme.c</name>
         </file>
     </group>
+	<file>
+        <name>$PROJ_DIR$\..\..\README.md</name>
+    </file>
 </project>

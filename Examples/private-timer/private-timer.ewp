@@ -1822,4 +1822,7 @@
     <file>
         <name>$PROJ_DIR$\systick.c</name>
     </file>
+	<file>
+        <name>$PROJ_DIR$\README.md</name>
+    </file>
 </project>
