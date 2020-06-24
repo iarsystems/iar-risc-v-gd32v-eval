@@ -588,7 +588,7 @@
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>sifive-e21-arty-100t.out</state>
+                    <state>$PROJ_FNAME$.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
