@@ -16,7 +16,7 @@
                 <debug>1</debug>
                 <option>
                     <name>GDeviceSelect</name>
-                    <state>GD32VF103V-EVAL	GigaDevice GD32VF103V-EVAL</state>
+                    <state>GD32VF103RBT6	GigaDevice GD32VF103RBT6</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -143,7 +143,7 @@
                 </option>
                 <option>
                     <name>GDeviceSelectSlave</name>
-                    <state>E21Arty100T	SiFive E21 Arty 100T</state>
+                    <state>GD32VF103RBT6	GigaDevice GD32VF103RBT6</state>
                 </option>
                 <option>
                     <name>GGeneralAutoVectorSetup</name>
@@ -652,7 +652,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\GigaDevice\GD32VF103VBT6.icf</state>
+                    <state>$TOOLKIT_DIR$\config\linker\GigaDevice\GD32VF103RBT6.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -896,7 +896,6 @@
             <data />
         </settings>
     </configuration>
-    
     <group>
         <name>Coremark</name>
         <file>
@@ -924,7 +923,7 @@
             <name>$PROJ_DIR$\port\core_portme.c</name>
         </file>
     </group>
-	<file>
+    <file>
         <name>$PROJ_DIR$\..\..\README.md</name>
     </file>
 </project>
