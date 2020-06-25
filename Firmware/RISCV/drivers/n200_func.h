@@ -1,8 +1,7 @@
-// See LICENSE file for licence details
+// See LICENSE.md file for license details
 
 #ifndef N200_FUNC_H
 #define N200_FUNC_H
-
 
 #include <stddef.h>
 #include "n200_timer.h"
@@ -106,4 +105,4 @@ __attribute__( ( always_inline ) ) static inline  void __WFE(void) {
 }
 
 
-#endif
+#endif // N200_FUNC_H
