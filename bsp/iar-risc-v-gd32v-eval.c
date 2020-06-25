@@ -2,7 +2,7 @@
     \file    iar-risc-v-gd32v-eval.c
     \brief   definitions for IAR RISC-V GD32V Eval board hardware resources
 
-    \version 2020-06-16, V1.0.0
+    \version 20200625
 */
 
 /*
@@ -12,7 +12,6 @@
 */
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "systick.h"
 
 /* private variables */
 static uint32_t GPIO_PORT[LEDn] = {LED1_GPIO_PORT, LED2_GPIO_PORT,
@@ -200,9 +199,13 @@ uint8_t gd_eval_key_state_get(key_typedef_enum key)
 void gd_eval_com_init(uint32_t com)
 {
     uint32_t com_id = 0U;
-    if(EVAL_COM0 == com){
+    
+    if (EVAL_COM0 == com)
+    {
         com_id = 0U;
-    }else if(EVAL_COM1 == com){
+    }
+    else if (EVAL_COM1 == com)
+    {
         com_id = 1U;
     }
     

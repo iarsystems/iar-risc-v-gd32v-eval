@@ -2,7 +2,7 @@
     \file    iar-risc-v-gd32v-eval.h
     \brief   definitions for IAR RISC-V GD32V Eval board hardware resources
 
-    \version 2020-06-16, V1.0.0
+    \version 20200625
 */
 
 /*
@@ -82,7 +82,7 @@ typedef enum
 #define LEDB_GPIO_PORT                   GPIOB
 #define LEDB_GPIO_CLK                    RCU_GPIOB
 
-/* IAR eval board USART */
+/* IAR eval board USARTs */
 #define COMn                             2U
 
 #define EVAL_COM0                        USART0
