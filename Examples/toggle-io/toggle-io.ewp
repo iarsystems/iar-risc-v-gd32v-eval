@@ -331,6 +331,7 @@
                     <state>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral</state>
                     <state>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Include</state>
                     <state>$PROJ_DIR$\..\..\Firmware\RISCV\drivers</state>
+                    <state>$PROJ_DIR$/../../bsp</state>
                     <state>$PROJ_DIR$</state>
                 </option>
                 <option>
@@ -898,7 +899,12 @@
             <data />
         </settings>
     </configuration>
-    
+    <group>
+        <name>BSP</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\iar-risc-v-gd32v-eval.c</name>
+        </file>
+    </group>
     <group>
         <name>DW</name>
         <file>
@@ -908,10 +914,13 @@
     <group>
         <name>FW</name>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_gpio.c</name>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_gpio.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_rcu.c</name>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_rcu.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
         </file>
     </group>
     <file>
@@ -921,12 +930,9 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
+        <name>$PROJ_DIR$\README.md</name>
     </file>
     <file>
         <name>$PROJ_DIR$\systick.c</name>
-    </file>
-	<file>
-        <name>$PROJ_DIR$\README.md</name>
     </file>
 </project>

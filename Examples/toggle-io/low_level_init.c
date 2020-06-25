@@ -1,8 +1,22 @@
-#include "GD32VF103.h"
-#include "intrinsics.h"
-#include "csr.h"
-#include "stdlib.h"
-#include "stdint.h"
+/*!
+    \file  low_level_init.c
+    \brief Low-level initialization
+    
+    \version 20200625
+*/
+
+/*
+    Copyright (c) 2020, IAR Systems AB.
+
+    See LICENSE.md for detailed license information.
+*/
+
+#include <intrinsics.h>
+#include <csr.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+#include "gd32vf103.h"
 
 #pragma language=extended
 
