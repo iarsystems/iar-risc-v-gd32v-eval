@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspace>
+	<project>
+        <path>$WS_DIR$\adc\adc.ewp</path>
+    </project>
     <project>
-        <path>$WS_DIR$\clock-tree\clock-tree.ewp</path>
+        <path>$WS_DIR$\template\template.ewp</path>
     </project>
 	<project>
         <path>$WS_DIR$\rgb-led\rgb-led.ewp</path>
@@ -13,10 +16,10 @@
         <path>$WS_DIR$\leds\leds.ewp</path>
     </project>
 	<project>
-        <path>$WS_DIR$\private-timer\private-timer.ewp</path>
+        <path>$WS_DIR$\switches\switches.ewp</path>
     </project>
 	<project>
-        <path>$WS_DIR$\switches\switches.ewp</path>
+        <path>$WS_DIR$\timer0\timer0.ewp</path>
     </project>
 	<project>
         <path>$WS_DIR$\toggle-io\toggle-io.ewp</path>
