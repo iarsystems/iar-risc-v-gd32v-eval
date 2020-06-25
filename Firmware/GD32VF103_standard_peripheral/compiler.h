@@ -1,8 +1,22 @@
+/*!
+    \file  compiler.h
+    \brief ICCRISCV wrapper 
+
+    \version 20200625 
+*/
+
+/*
+    Copyright (c) 2020, IAR Systems AB.
+
+    See LICENSE.md for detailed license information.
+*/
+
 #ifndef __COMPILER_H__
 #define __COMPILER_H__
 
 #ifdef __ICCRISCV__
 #include <intrinsics.h>
+#include <stdlib.h>
 
 #define read_csr __read_csr
 #define set_csr __write_csr
