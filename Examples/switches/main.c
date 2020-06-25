@@ -58,17 +58,22 @@ int main(void)
 
 /*!
     \brief      Performs keypressing evaluation
-    \param[in]  none
+    \param[in]  key_num: specify the key to be configured
+      \arg        KEY_A: S1 key
+      \arg        KEY_B: S2 key
+      \arg        KEY_C: S3 key
+      \arg        KEY_D: S4 key
+      \arg        KEY_E: S5 key
     \param[out] none
     \retval     none
 */
-static void sw_processing(key_typedef_enum num)
+static void sw_processing(key_typedef_enum key_num)
 {
-    sw_current_state[num] = gd_eval_key_state_get(num);
-    if (sw_current_state[num] != sw_previous_state[num]) 
+    sw_current_state[key_num] = gd_eval_key_state_get(key_num);
+    if (sw_current_state[key_num] != sw_previous_state[key_num]) 
     {
-        gd_eval_led_toggle((led_typedef_enum)num);
+        gd_eval_led_toggle((led_typedef_enum)key_num);
         delay_1ms(DELAY);
     }
-    sw_previous_state[num] = sw_current_state[num];
+    sw_previous_state[key_num] = sw_current_state[key_num];
 }
