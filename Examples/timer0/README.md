@@ -1,4 +1,4 @@
-# TIMER1 example for the IAR RISC-V GD32V Eval board
+# TIMER example for the IAR RISC-V GD32V Eval board
 
 This example provides straightforward configuration for the TIMER peripheral in the GD32VF103 MCU.
 
