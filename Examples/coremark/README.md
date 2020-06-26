@@ -17,17 +17,17 @@ Once the build is complete, connect your evaluation board debugger 20-pin header
 The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
 This project uses the integrated IAR Embedded Workbench virtual terminal to output the benchmark results.
 
-In oder to see the results, select
+In order to see the results, select
 `View → Terminal I/O`
 
 A new window named __Terminal I/O__ will show up without any output so far.
 Next, execute the program by selecting
 `Debug → Go (F5)`
 
-The program will execute for about 10 seconds and once it finishes, it will printout the __Coremark score__ for your evaluation board.
+The program will execute for about 10 seconds and once it finishes, it will print out the __Coremark score__ for your evaluation board.
 
 __Notes__
-According to the Coremark [#run-rules](rules), the core* files cannot be touched.
+According to the Coremark [rules](#run-rules), the sources named core* cannot be touched.
 The only exception to that rule are the __core_portme__ files.
 A typical way to compare the score among different cores is to rate it by __Coremark/MHz__.
 If you wish to know how many Coremark/MHz your board got, do the math!
