@@ -23,9 +23,11 @@ Original Author: Shay Gal-on
 #include <intrinsics.h>
 
 #ifndef ITERATIONS
-    #define ITERATIONS      1500
+    #define ITERATIONS       4096
 #endif
-#define CLOCKS_PER_SEC  32500000
+#define CLOCKS_PER_SEC  108000000
+#define MEM_LOCATION    "Code in flash, data in on chip RAM"
+#define COMPILER_FLAGS "-Ohs --no_size_constraints --no_cross_call --core=RV32IMAC"  
           
 /* Topic : Description
 	This file contains configuration constants required to execute on different platforms
@@ -72,7 +74,8 @@ Original Author: Shay Gal-on
    #define COMPILER_VERSION __VERSION__
 #endif
 #ifndef COMPILER_FLAGS 
-    #define COMPILER_FLAGS "-Ohs --no_size_constraints --no_cross_call --core=RV32IMAC"  
+    #define COMPILER_FLAGS \
+    FLAGS_STR /* "Please put compiler flags here (e.g. -o3)" */
 #endif
 #ifndef MEM_LOCATION 
     #define MEM_LOCATION "STACK"

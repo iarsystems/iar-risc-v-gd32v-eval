@@ -1,124 +1,39 @@
-# Coremark 1.0 for IAR RISC-V GD32V Eval board 
-
-In order to view the Coremark results, you need to open the Terminal I/O in the IAR Embedded Workbench.
-* When debugging the project, select View → Terminal I/O
-* Then wait for the program to execute for about 15 seconds
-
-__Note__
-If you want to rate the __Coremark/MHz__ for your board, do the math! It is as easy as taking the *Coremark score* and dividing it by 32.5 MHz.
-
----
+# Coremark 1.0 for the IAR RISC-V GD32V Eval board 
 
 ## Introduction
 
-CoreMark's primary goals are simplicity and providing a method for testing only a processor's core features. For more information about EEMBC's comprehensive embedded benchmark suites, please see www.eembc.org.
-
-For a more compute-intensive version of CoreMark that uses larger datasets and execution loops taken from common applications, please check out EEMBC's [CoreMark-PRO](https://www.github.com/eembc/coremark-pro) benchmark, also on GitHub.
+CoreMark's primary goals are simplicity and providing a standardized method for testing a processor's core features. For more information about this EEMBC's embedded benchmark, please visit www.eembc.org.
 
 # Building and Running
 	
-To build and run the benchmark, type 
+To build and run the benchmark, select 
 
-`> make`
+`Project → Make (F7)`
 
-Full results are available in the files `run1.log` and `run2.log`. CoreMark result can be found in `run1.log`.
-	
-## Cross Compiling
+Once the build is complete, connect your evaluation board debugger 20-pin header to the I-jet debugging probe and then select
 
-For cross compile platforms please adjust `core_portme.mak`, `core_portme.h` (and possibly `core_portme.c`) according to the specific platform used. When porting to a new platform, it is recommended to copy one of the default port folders  (e.g. `mkdir <platform> && cp linux/* <platform>`), adjust the porting files, and run:
-~~~
-% make PORT_DIR=<platform>
-~~~
+`Project → Download and Debug (CTRL + D)`
 
-## Make Targets
-`run` - Default target, creates `run1.log` and `run2.log`.
-`run1.log` - Run the benchmark with performance parameters, and output to `run1.log`
-`run2.log` - Run the benchmark with validation parameters, and output to `run2.log`
-`run3.log` - Run the benchmark with profile generation parameters, and output to `run3.log`
-`compile` - compile the benchmark executable 
-`link` - link the benchmark executable
-`check` - test MD5 of sources that may not be modified
-`clean` - clean temporary files
+The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
+This project uses the integrated IAR Embedded Workbench virtual terminal to output the benchmark results.
 
-### Make flag: `ITERATIONS` 
-By default, the benchmark will run between 10-100 seconds. To override, use `ITERATIONS=N`
-~~~
-% make ITERATIONS=10
-~~~
-Will run the benchmark for 10 iterations. It is recommended to set a specific number of iterations in certain situations e.g.:
+In oder to see the results, select
+`View → Terminal I/O`
 
-* Running with a simulator
-* Measuring power/energy
-* Timing cannot be restarted
+A new window named __Terminal I/O__ will show up without any output so far.
+Next, execute the program by selecting
+`Debug → Go (F5)`
 
-Minimum required run time: **Results are only valid for reporting if the benchmark ran for at least 10 secs!**
+The program will execute for about 10 seconds and once it finishes, it will printout the __Coremark score__ for your evaluation board.
 
-### Make flag: `XCFLAGS`
-To add compiler flags from the command line, use `XCFLAGS` e.g.:
+__Notes__
+According to the Coremark [#run-rules](rules), the core* files cannot be touched.
+The only exception to that rule are the __core_portme__ files.
+A typical way to compare the score among different cores is to rate it by __Coremark/MHz__.
+If you wish to know how many Coremark/MHz your board got, do the math!
+It is as easy as taking the *Coremark score* and dividing it by 108 MHz.
 
-~~~
-% make XCFLAGS="-g -DMULTITHREAD=4 -DUSE_FORK=1"
-~~~
-
-### Make flag: `CORE_DEBUG`
-
-Define to compile for a debug run if you get incorrect CRC.
-
-~~~
-% make XCFLAGS="-DCORE_DEBUG=1"
-~~~
-
-### Make flag: `REBUILD`
-
-Force a rebuild of the executable.
-
-## Systems Without `make`
-The following files need to be compiled:
-* `core_list_join.c`
-* `core_main.c`
-* `core_matrix.c`
-* `core_state.c`
-* `core_util.c`
-* `PORT_DIR/core_portme.c`
-
-For example:
-~~~
-% gcc -O2 -o coremark.exe core_list_join.c core_main.c core_matrix.c core_state.c core_util.c simple/core_portme.c -DPERFORMANCE_RUN=1 -DITERATIONS=1000
-% ./coremark.exe > run1.log
-~~~
-The above will compile the benchmark for a performance run and 1000 iterations. Output is redirected to `run1.log`.
-
-# Parallel Execution
-Use `XCFLAGS=-DMULTITHREAD=N` where N is number of threads to run in parallel. Several implementations are available to execute in multiple contexts, or you can implement your own in `core_portme.c`.
-
-~~~
-% make XCFLAGS="-DMULTITHREAD=4 -DUSE_PTHREAD"
-~~~
-
-Above will compile the benchmark for execution on 4 cores, using POSIX Threads API.
-
-# Run Parameters for the Benchmark Executable
-CoreMark's executable takes several parameters as follows (but only if `main()` accepts arguments):
-1st - A seed value used for initialization of data.
-2nd - A seed value used for initialization of data.
-3rd - A seed value used for initialization of data.
-4th - Number of iterations (0 for auto : default value)
-5th - Reserved for internal use. 
-6th - Reserved for internal use. 
-7th - For malloc users only, ovreride the size of the input data buffer.
-
-The run target from make will run coremark with 2 different data initialization seeds.
-
-## Alternative parameters: 
-If not using `malloc` or command line arguments are not supported, the buffer size
-for the algorithms must be defined via the compiler define `TOTAL_DATA_SIZE`.
-`TOTAL_DATA_SIZE` must be set to 2000 bytes (default) for standard runs.
-The default for such a target when testing different configurations could be:
-
-~~~
-% make XCFLAGS="-DTOTAL_DATA_SIZE=6000 -DMAIN_HAS_NOARGC=1"
-~~~
-
+---
 # Submitting Results
 
 CoreMark results can be submitted on the web. Open a web browser and go to the [submission page](https://www.eembc.org/coremark/submit.php). After registering an account you may enter a score.
@@ -129,15 +44,7 @@ What is and is not allowed.
 ## Required
 1. The benchmark needs to run for at least 10 seconds.
 2. All validation must succeed for seeds `0,0,0x66` and `0x3415,0x3415,0x66`, buffer size of 2000 bytes total.
-    * If not using command line arguments to main:
-~~~
-	% make XCFLAGS="-DPERFORMANCE_RUN=1" REBUILD=1 run1.log
-	% make XCFLAGS="-DVALIDATION_RUN=1" REBUILD=1 run2.log
-~~~
 3. If using profile guided optimization, profile must be generated using seeds of `8,8,8`, and buffer size of 1200 bytes total.
-~~~
-    % make XCFLAGS="-DTOTAL_DATA_SIZE=1200 -DPROFILE_RUN=1" REBUILD=1 run3.log
-~~~
 4. All source files must be compiled with the same flags.
 5. All data type sizes must match size in bits such that:
 	* `ee_u8` is an unsigned 8-bit datatype.
@@ -179,46 +86,29 @@ M - Type of parallel execution (if used) and number of contexts
 e.g.:
 
 ~~~
-CoreMark 1.0 : 128 / GCC 4.1.2 -O2 -fprofile-use / Heap in TCRAM / FORK:2 
-~~~
-or
-~~~
-CoreMark 1.0 : 1400 / GCC 3.4 -O4 
-~~~
-
-If reporting scaling results, the results must be reported as follows:
-
-CoreMark/MHz 1.0 : N / C / P [/ M]
-
-P - When reporting scaling results, memory parameter must also indicate memory frequency:core frequency ratio.
-1. If the core has cache and cache frequency to core frequency ratio is configurable, that must also be included.
-
-e.g.:
-
-~~~
-CoreMark/MHz 1.0 : 1.47 / GCC 4.1.2 -O2 / DDR3(Heap) 30:1 Memory 1:1 Cache
+CoreMark 1.0 : 364.690133 / IAR C/C++ Compiler V1.30.1.0 for RISC-V -Ohs --no_size_constraints --no_cross_call --core=RV32IMAC / STACK
 ~~~
 
 # Log File Format
 The log files have the following format
 
 ~~~
-2K performance run parameters for coremark.	(Run type)
-CoreMark Size    	: 666					(Buffer size)
-Total ticks			: 25875					(platform dependent value)
-Total time (secs) 	: 25.875000				(actual time in seconds)
-Iterations/Sec 		: 3864.734300			(Performance value to report)
-Iterations			: 100000				(number of iterations used)
-Compiler version	: GCC3.4.4				(Compiler and version)	
-Compiler flags		: -O2					(Compiler and linker flags)
-Memory location		: Code in flash, data in on chip RAM
-seedcrc				: 0xe9f5				(identifier for the input seeds)
-[0]crclist			: 0xe714				(validation for list part)
-[0]crcmatrix		: 0x1fd7				(validation for matrix part)
-[0]crcstate			: 0x8e3a				(validation for state part)
-[0]crcfinal			: 0x33ff				(iteration dependent output)
-Correct operation validated. See README.md for run and reporting rules.  (*Only when run is successful*)
-CoreMark 1.0 : 6508.490622 / GCC3.4.4 -O2 / Heap 						  (*Only on a successful performance run*)
+2K performance run parameters for coremark.                                      (Run type)
+CoreMark Size    : 666                                                           (Buffer size)
+Total ticks      : 1213210270                                                    (platform dependent value)
+Total time (secs): 11.233428                                                     (actual time in seconds)
+Iterations/Sec   : 364.625993                                                    (Performance value to report)
+Iterations       : 4096                                                          (number of iterations used)
+Compiler version : IAR C/C++ Compiler V1.30.1.0 for RISC-V                       (Compiler and version)	
+Compiler flags   : -Ohs --no_size_constraints --no_cross_call --core=RV32IMAC    (Compiler and linker flags)
+Memory location  : Code in flash, data in on chip RAM                           
+seedcrc          : 0xe9f5                                                        (identifier for the input seeds)
+[0]crclist       : 0xe714                                                        (validation for list part)
+[0]crcmatrix     : 0x1fd7                                                        (validation for matrix part)
+[0]crcstate      : 0x8e3a                                                        (validation for state part)
+[0]crcfinal      : 0x7b65                                                        (iteration dependent output)
+Correct operation validated. See README.md for run and reporting rules.          (*Only when run is successful*)
+CoreMark 1.0 : 364.625993 / IAR C/C++ Compiler V1.30.1.0 for RISC-V ...          (*Only on a successful performance run*)
 ~~~
 
 # Theory of Operation

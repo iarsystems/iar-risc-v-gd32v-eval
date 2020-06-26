@@ -18,6 +18,8 @@ Original Author: Shay Gal-on
 #include "coremark.h"
 #include "core_portme.h"
 
+#define BIT(x)                       ((uint32_t)((uint32_t)0x01U<<(x)))
+
 #pragma inline=forced
 ee_u32 __get_clk_lo(void) { return __read_csr(_CSR_CYCLE); }
 #pragma inline=forced
@@ -106,29 +108,8 @@ secs_ret time_in_secs(CORE_TICKS ticks) {
 	secs_ret retval=((secs_ret)ticks) / (secs_ret)EE_TICKS_PER_SEC;
     return retval;
 }
-/* Function : cpu_clock_init
-	Target specific clock initialization code 
-*/
-void cpu_clock_init(void)
-{
-#ifdef __IOSiFiveEHIFIVE_H
-    ee_u8 PLLR_2 = 1;
-    ee_u8 PLLQ_2 = 1;
-    /* There is a 16 MHz crystal oscillator HFXOSC on the board */
-    PLLCFG_bit.PASS = 1;         // PLL registers configured while bypassed
-    PLLCFG_bit.REFSEL = 1;       // Drive PLL from 16 MHz HFXOSC
-    PLLCFG_bit.SEL = 0;          // PLL is not driving hfclk
-    PLLCFG_bit.DIV = PLLR_2;     // Divide ratio. R=2 for 8 MHz out
-    PLLCFG_bit.F   = 80/2 - 1U;  // Multiply ratio. 8 MHz x 40 is 640 MHz out
-    PLLCFG_bit.Q   = PLLQ_2;     // Divide 640MHz with 2 to get 320 MHz
-    PLLCFG_bit.PASS = 0;         // Enable PLL
-    
-    while (PLLCFG_bit.LOCK == 0) {} // Wait until PLL locks
-    PLLCFG_bit.SEL = 1;          // Let PLL drive hfclk
-#endif
-}
 
-ee_u32 default_num_contexts=1;
+ee_u32 default_num_contexts=MULTITHREAD;
 
 /* Function : portable_init
 	Target specific initialization code 
@@ -136,8 +117,6 @@ ee_u32 default_num_contexts=1;
 */
 void portable_init(core_portable *p, int *argc, char *argv[])
 {  
-    cpu_clock_init();
-  
 	if (sizeof(ee_ptr_int) != sizeof(ee_u8 *)) {
 		ee_printf("ERROR! Please define ee_ptr_int to a type that holds a pointer!\n");
 	}
@@ -147,7 +126,8 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 	p->portable_id=1;
     
     /* Print header */
-    ee_printf("*** Starting Coremark ***\n");
+    ee_printf("*** Starting Coremark 1.0 ***\n");
+    ee_printf("CPU Model        : GD32VF103\n");
     ee_printf("CPU Clock        : %.1f MHz\n",CLOCKS_PER_SEC/1000000.0f);
     ee_printf("...\n");
 }
@@ -157,6 +137,8 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 void portable_fini(core_portable *p)
 {
 	p->portable_id=0;
+    ee_printf("...\n");
+    ee_printf("*** Finished Coremark ***\n");
 }
 
 

@@ -260,7 +260,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state></state>
+                    <state>GD32VF103R_START</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -328,6 +328,9 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
+                    <state>$PROJ_DIR$/../../../../firmware/GD32VF103_standard_peripheral</state>
+                    <state>$PROJ_DIR$/../../../../firmware/GD32VF103_standard_peripheral/Include</state>
+                    <state>$PROJ_DIR$/../../../../firmware/RISCV/drivers</state>
                     <state>$PROJ_DIR$/../..</state>
                     <state>$PROJ_DIR$/port</state>
                 </option>
@@ -517,7 +520,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>sifive-e21-arty-100t.srec</state>
+                    <state>coremark.srec</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -759,7 +762,7 @@
                 </option>
                 <option>
                     <name>IlinkCspyBufferedWrite</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkLogAutoLibSelect</name>
@@ -921,6 +924,9 @@
         <name>Port</name>
         <file>
             <name>$PROJ_DIR$\port\core_portme.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\port\system_gd32vf103.c</name>
         </file>
     </group>
     <file>
