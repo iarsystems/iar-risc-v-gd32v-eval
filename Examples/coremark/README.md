@@ -101,7 +101,7 @@ Iterations/Sec   : 364.625993                                                   
 Iterations       : 4096                                                          (number of iterations used)
 Compiler version : IAR C/C++ Compiler V1.30.1.0 for RISC-V                       (Compiler and version)	
 Compiler flags   : -Ohs --no_size_constraints --no_cross_call --core=RV32IMAC    (Compiler and linker flags)
-Memory location  : Code in flash, data in on chip RAM                           
+Memory location  : Code in flash, data on chip RAM                           
 seedcrc          : 0xe9f5                                                        (identifier for the input seeds)
 [0]crclist       : 0xe714                                                        (validation for list part)
 [0]crcmatrix     : 0x1fd7                                                        (validation for matrix part)
