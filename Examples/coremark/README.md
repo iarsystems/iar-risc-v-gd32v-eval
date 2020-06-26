@@ -89,8 +89,8 @@ e.g.:
 CoreMark 1.0 : 364.690133 / IAR C/C++ Compiler V1.30.1.0 for RISC-V -Ohs --no_size_constraints --no_cross_call --core=RV32IMAC / STACK
 ~~~
 
-# Log File Format
-The log files have the following format
+# Output Format
+The output has the following format
 
 ~~~
 2K performance run parameters for coremark.                                      (Run type)
@@ -127,7 +127,7 @@ A thin abstraction layer will be provided for I/O and timing in a separate file.
 
 ### Code / data size
 
-* Compile with gcc on x86 and make sure all sizes are according to requirements. 
+* Compile and make sure all sizes are according to requirements. 
 * If dynamic memory allocation is used, take total memory allocated into account as well. 
 * Avoid recursive functions and keep track of stack usage.
 * Use the same memory block as data site for all algorithms, and initialize the data before each algorithm – while this means that initialization with data happens during the timed portion, it will only happen once during the timed portion and so have negligible effect on the results.
