@@ -1,8 +1,12 @@
-# Coremark 1.0 for the IAR RISC-V GD32V Eval board 
+# CoreMark 1.0 for the IAR RISC-V GD32V Eval board 
 
 ## Introduction
 
-CoreMark's primary goals are simplicity and providing a standardized method for testing a processor's core features. For more information about this EEMBC's embedded benchmark, please visit www.eembc.org.
+CoreMark is a benchmark that measures the performance of central processing units (CPU) used in embedded systems. It was developed in 2009 by Shay Gal-On at [EEMBC](https://www.eembc.org) and it quickly became an industry standard. 
+
+The code is written in C and contains implementations of the following algorithms: list processing (find and sort), matrix manipulation (common matrix operations), state machine (determine if an input stream contains valid numbers), and CRC.
+
+By running the code on a target, a __CoremMark score__ is obtained. The better a compiler is in generating optimized code for the target CPU, the higher the __CoreMark score__ it gets. 
 
 # Building and Running
 	
@@ -26,17 +30,15 @@ Next, execute the program by selecting
 
 The program will execute for about 10 seconds and once it finishes, it will print out the __Coremark score__ for your evaluation board.
 
-__Notes__
-According to the Coremark [rules](#run-rules), the sources named core* cannot be touched.
-The only exception to that rule are the __core_portme__ files.
-A typical way to compare the score among different cores is to rate it by __Coremark/MHz__.
-If you wish to know how many Coremark/MHz your board got, do the math!
-It is as easy as taking the *Coremark score* and dividing it by 108 MHz.
+### Notes
+* According to the CoreMark [rules](#run-rules), the source files named core* cannot be touched. The only exception to that rule are the __core_portme__ files.
+* A typical way to compare the scores from different cores/compilers combinations is to rate them by __CoreMark/MHz__.
+* If you wish to know how many CoreMark/MHz your board got, do the math! It is as easy as taking the *CoreMark score* and dividing it by 108 MHz.
 
 ---
 # Submitting Results
 
-CoreMark results can be submitted on the web. Open a web browser and go to the [submission page](https://www.eembc.org/coremark/submit.php). After registering an account you may enter a score.
+CoreMark results can be submitted on the web. Open a web browser and go to the [submission page](https://www.eembc.org/coremark/submit.php). After registering an account you may enter a score. The scores are published [here](https://www.eembc.org/coremark/scores.php).
 
 # Run Rules
 What is and is not allowed.
