@@ -127,7 +127,7 @@ void portable_init(core_portable *p, int *argc, char *argv[])
     
     /* Print header */
     ee_printf("*** Starting Coremark 1.0 ***\n");
-    ee_printf("CPU Model        : GD32VF103\n");
+    ee_printf("MCU Model        : GD32VF103\n");
     ee_printf("CPU Clock        : %.1f MHz\n",CLOCKS_PER_SEC/1000000.0f);
     ee_printf("...\n");
 }
