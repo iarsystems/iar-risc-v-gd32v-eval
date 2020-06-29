@@ -14,8 +14,7 @@ See LICENSE.md for detailed license information.
 #include <stdio.h> 
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "gd32vf103_it.h"
-#include "gd32vf103_adc.h"
+#include "gd32vf103_libopt.h"
 #include "systick.h"
 
 #define ARRAYNUM(arr_name)      (uint32_t)(sizeof(arr_name) / sizeof(*(arr_name)))
