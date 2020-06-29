@@ -1,13 +1,13 @@
-# Getting started with IAR RISC-V GD32V Evaluation board
+# Project examples for the IAR RISC-V GD32V Evaluation board
 
-This guide briefly describes how to get started using the IAR [Embedded Workbench for RISC-V](https://iar.com/riscv) with the __I-jet Lite__ debug interface. The project examples in this repository are designed to be run on the IAR RISC-V GD32V Eval board.
-
+The project examples in this repository are designed to be run on the __IAR RISC-V GD32V Eval board__ with the [IAR Embedded Workbench for RISC-V](https://iar.com/riscv)
 
 For documentation and schematics, follow this [link](docs).
 
+---
 
-Make sure that the jumper positions on the evaluation board (*revision 3b*) are set as described on the chosen project example README.md file.
-
+The board comes with jumpers for user-selectable functionality as can be seen on the table below.
+All the project example brings its own README.md file. If specific jumper settings are needed for the chosen project, its respective README.md will provide such settings. 
 
 | __J5__         | __Position__    |  __Options__   |
 | :------------- | :-------------- | :------------- |
@@ -32,5 +32,5 @@ Make sure that the jumper positions on the evaluation board (*revision 3b*) are 
 
 ---
 
-For questions please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question%20from%20GitHub). 
-We are happy to assist you with any additional questions or guidance.
+Questions? Please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question%20from%20iar-risc-v-gd32v-eval%20repository). 
+We are happy to assist you with any related questions.
