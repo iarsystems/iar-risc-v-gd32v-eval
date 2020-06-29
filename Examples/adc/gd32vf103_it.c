@@ -18,7 +18,7 @@ extern uint8_t tx_size;
 extern __IO uint8_t txcount;
 
 /*!
-    \brief      ISR for the USART1 peripheral with TX/RX handling
+    \brief      ISR for the USART1 peripheral with TX handling
     \param[in]  none
     \param[out] none
     \retval     none
