@@ -6,9 +6,9 @@ CoreMark is a benchmark that measures the performance of central processing unit
 
 The code is written in C and contains implementations of the following algorithms: list processing (find and sort), matrix manipulation (common matrix operations), state machine (determine if an input stream contains valid numbers), and CRC.
 
-By running the code on a target, a __CoremMark score__ is obtained. The better a compiler is in generating optimized code for the target CPU, the higher the __CoreMark score__ it gets. 
+By running the code on a target, a __CoreMark score__ is obtained. The better a compiler is in generating optimized code for the target CPU, the higher the __CoreMark score__ it gets. 
 
-# Building and Running
+## Building and Running
 	
 To build and run the benchmark, select 
 
@@ -66,7 +66,7 @@ What is and is not allowed.
 8. Changing `core_portme.mak`
 
 ## NOT ALLOWED
-1. Changing of source file other then `core_portme*` (use `make check` to validate)
+1. Changing of source file other then `core_portme*` (use `md5sum -c coremark.md5` to validate)
 
 # Reporting rules
 Use the following syntax to report results on a data sheet:
