@@ -1,4 +1,4 @@
-MIT License
+# MIT License
 
 Copyright (c) 2020 IAR Systems AB
 
@@ -19,3 +19,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Component specific licenses
+
+| Component                       | License              | Copyright                     |
+|:---------                       |:-------              |:---------                     |
+| BSP for the IAR RISC-V GD32V    | MIT                  | IAR Systems AB                |
+| Coremark example                | Apache 2.0           | EEMBC                         |
+| Example projects                | MIT                  | IAR Systems AB                |
+| GD32VF103 Firmware              | BSD-3-Clause         | GigaDevice Semiconductor Inc. |
