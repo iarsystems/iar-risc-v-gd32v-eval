@@ -12,6 +12,7 @@
 */
 
 #include "iar-risc-v-gd32v-eval.h"
+#include "gd32vf103_libopt.h"
 
 /*!
     \brief      main function
