@@ -1,6 +1,6 @@
 # Project examples for the IAR RISC-V GD32V Evaluation board
 
-The project examples in this repository are designed to be run on the __IAR RISC-V GD32V Eval board__ with the [IAR Embedded Workbench for RISC-V](https://iar.com/riscv)
+The project examples in this repository are designed to be run on the [__IAR RISC-V GD32V Eval board__](https://www.iar.com/evalkit) with the [IAR Embedded Workbench for RISC-V](https://iar.com/riscv)
 
 For documentation and schematics, follow this [link](docs).
 
