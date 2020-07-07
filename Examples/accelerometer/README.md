@@ -40,4 +40,4 @@ In order to see the results, select `View → Terminal I/O`. A new window named 
 
 Next, execute the program by selecting `Debug → Go (F5)`
 
-Lastly, tilt the board and see the LEDs 1 to 5 to scroll in accordance to the gravitational data.
+Lastly, tilt the board and see the LEDs 1 to 5 scrolling in accordance to the gravitational data.
