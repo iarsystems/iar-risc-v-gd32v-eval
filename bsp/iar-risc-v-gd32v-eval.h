@@ -2,7 +2,7 @@
     \file    iar-risc-v-gd32v-eval.h
     \brief   definitions for IAR RISC-V GD32V Eval board hardware resources
 
-    \version 20200625
+    \version 20200707
 */
 
 /*

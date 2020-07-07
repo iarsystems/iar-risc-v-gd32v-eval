@@ -15,8 +15,8 @@
 
 /* private variables */
 static uint32_t GPIO_PORT[LEDn] = {LED1_GPIO_PORT, LED2_GPIO_PORT,
-                                   LED3_GPIO_PORT, LED4_GPIO_PORT};
-static uint32_t GPIO_PIN[LEDn] = {LED1_PIN, LED2_PIN, LED3_PIN, LED4_PIN};
+                                   LED3_GPIO_PORT, LED4_GPIO_PORT, LED4_GPIO_PORT};
+static uint32_t GPIO_PIN[LEDn] = {LED1_PIN, LED2_PIN, LED3_PIN, LED4_PIN, LED5_PIN};
 
 static rcu_periph_enum COM_CLK[COMn] = {EVAL_COM0_CLK, EVAL_COM1_CLK};
 static uint32_t COM_TX_PIN[COMn] = {EVAL_COM0_TX_PIN, EVAL_COM1_TX_PIN};
@@ -24,8 +24,11 @@ static uint32_t COM_RX_PIN[COMn] = {EVAL_COM0_RX_PIN, EVAL_COM1_RX_PIN};
 static uint32_t COM_GPIO_PORT[COMn] = {EVAL_COM0_GPIO_PORT, EVAL_COM1_GPIO_PORT};
 static rcu_periph_enum COM_GPIO_CLK[COMn] = {EVAL_COM0_GPIO_CLK, EVAL_COM1_GPIO_CLK};
 
-static rcu_periph_enum GPIO_CLK[LEDn] = {LED1_GPIO_CLK, LED2_GPIO_CLK,
-                                         LED3_GPIO_CLK, LED4_GPIO_CLK};
+static rcu_periph_enum GPIO_CLK[LEDn] = {LED1_GPIO_CLK, 
+                                         LED2_GPIO_CLK,
+                                         LED3_GPIO_CLK,
+                                         LED4_GPIO_CLK,
+                                         LED5_GPIO_CLK};
 
 static uint32_t KEY_PORT[KEYn] = {KEY_A_GPIO_PORT,
                                   KEY_B_GPIO_PORT,
