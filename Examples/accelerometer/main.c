@@ -54,7 +54,7 @@ void main(void)
     delay_1ms(250);
     
     float x, y, z;
-    direction_t current_tilt, previous_tilt;
+    direction_t current_tilt;
     
     /* print the example title to the (View -> Terminal I/O) */
     printf("%s\r\n", txbuffer);
