@@ -2,7 +2,7 @@
 \file    MMA8652.c
 \brief   MMA8652 3-axis accelerometer basic functions 
 
-\version 20200707
+\version 20200708
 */
 
 /*
@@ -14,6 +14,12 @@ See LICENSE.md for detailed license information.
 #include "MMA8652.h"
 #include "i2c.h"
 
+/*!
+    \brief      performs the calibration routine on the MMA8652
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
 static void mma8652_calibration(void)
 {
     int16_t  x_out,    y_out,    z_out;
@@ -25,9 +31,10 @@ static void mma8652_calibration(void)
     
     i2c0_read((uint8_t)MMA8652_I2C_ADDR, (uint8_t *) mma8652_rxbuffer, sizeof(mma8652_rxbuffer));
     
-    x_out = ((int16_t)(mma8652_rxbuffer[1] << 8 | mma8652_rxbuffer[2])) >> 4; // 12-bit X-axis acceleration output value
-    y_out = ((int16_t)(mma8652_rxbuffer[3] << 8 | mma8652_rxbuffer[4])) >> 4; // 12-bit Y-axis acceleration output value
-    z_out = ((int16_t)(mma8652_rxbuffer[5] << 8 | mma8652_rxbuffer[6])) >> 4; // 12-bit Z-axis acceleration output value
+    /* 12-bit X-,Y-,Z-axis acceleration output value */
+    x_out = ((int16_t)(mma8652_rxbuffer[1] << 8 | mma8652_rxbuffer[2])) >> 4;  
+    y_out = ((int16_t)(mma8652_rxbuffer[3] << 8 | mma8652_rxbuffer[4])) >> 4;  
+    z_out = ((int16_t)(mma8652_rxbuffer[5] << 8 | mma8652_rxbuffer[6])) >> 4;  
     
     /* compute the offset corrections */
   	x_offset = x_out / 2 * (-1);		
@@ -40,9 +47,15 @@ static void mma8652_calibration(void)
     i2c_reg8_write(MMA8652_I2C_ADDR, MMA8652_OFF_Z_REG, z_offset);
     
     /* 0x11 to MMA8652_CTRL_REG1 activate */
-    i2c_reg8_write(MMA8652_I2C_ADDR, MMA8652_CTRL_REG1, 0x39);
+    i2c_reg8_write(MMA8652_I2C_ADDR, MMA8652_CTRL_REG1, 0x11);
 }
 
+/*!
+    \brief      configure the MMA8652 I2C accelerometer
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
 void mma8652_init(void)
 {
     /* 0x00 to MMA8652_CTRL_REG1 to place MMA8652 into standby */
@@ -79,12 +92,20 @@ void mma8652_init(void)
     * [1]: f_read=0 for normal 16 bit reads
     * [0]: active=1 to take the part out of standby and enable sampling
     */
-    i2c_reg8_write(MMA8652_I2C_ADDR, MMA8652_CTRL_REG1, 0x39);
+    i2c_reg8_write(MMA8652_I2C_ADDR, MMA8652_CTRL_REG1, 0x11);
     
     /* performs the MMA8652 calibration */
     mma8652_calibration();
 }
 
+/*!
+    \brief      provides the current X-,Y-,Z-axis acceleration
+    \param[in]  x: pointer to float which will hold the X-axis acceleration
+    \param[in]  y: pointer to float which will hold the Y-axis acceleration
+    \param[in]  z: pointer to float which will hold the Z-axis acceleration
+    \param[out] none
+    \retval     none
+*/
 void mma8652_getxyz(float *x, float *y, float *z)
 {
     uint8_t mma8652_rxbuffer[7];
@@ -92,11 +113,13 @@ void mma8652_getxyz(float *x, float *y, float *z)
     
     i2c0_read((uint8_t)MMA8652_I2C_ADDR, (uint8_t *) mma8652_rxbuffer, sizeof(mma8652_rxbuffer));
     
-    x_out = ((int16_t)(mma8652_rxbuffer[1] << 8 | mma8652_rxbuffer[2])) >> 4; // 12-bit X-axis acceleration output value
-    y_out = ((int16_t)(mma8652_rxbuffer[3] << 8 | mma8652_rxbuffer[4])) >> 4; // 12-bit Y-axis acceleration output value
-    z_out = ((int16_t)(mma8652_rxbuffer[5] << 8 | mma8652_rxbuffer[6])) >> 4; // 12-bit Z-axis acceleration output value
+    /* 12-bit (X-,Y-,Z-axis acceleration output value */
+    x_out = ((int16_t)(mma8652_rxbuffer[1] << 8 | mma8652_rxbuffer[2])) >> 4;
+    y_out = ((int16_t)(mma8652_rxbuffer[3] << 8 | mma8652_rxbuffer[4])) >> 4;
+    z_out = ((int16_t)(mma8652_rxbuffer[5] << 8 | mma8652_rxbuffer[6])) >> 4;
     
-    *x = ((float) x_out) / MMA8652_SENSITIVITY_2G; // X-axis output value in g's
-    *y = ((float) y_out) / MMA8652_SENSITIVITY_2G; // X-axis output value in g's
-    *z = ((float) z_out) / MMA8652_SENSITIVITY_2G; // X-axis output value in g's
+    /* X-,Y-,Z-axis output value (in g's) */
+    *x = ((float) x_out) / MMA8652_SENSITIVITY; 
+    *y = ((float) y_out) / MMA8652_SENSITIVITY; 
+    *z = ((float) z_out) / MMA8652_SENSITIVITY; 
 }

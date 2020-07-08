@@ -2,7 +2,7 @@
 \file  main.c
 \brief Accelerometer example for the IAR RISC-V GD32V Eval board
 
-\version 20200707
+\version 20200708
 */
 
 /*
@@ -30,7 +30,7 @@ typedef enum {
 
 uint8_t txbuffer[] = "\n\n\r---\n\r3-axis accelerometer example\n\r    X     Y     Z\n";
 
-/* Function prototypes */
+/* function prototypes */
 void rcu_config(void);
 void gpio_config(void);
 void i2c_config(void);
@@ -64,10 +64,10 @@ void main(void)
     
     while(1)
     {
-        /* get the current (x,y,z)-axis from the accelerometer in g's */
+        /* get the current X-,Y-,Z-axis acceleration */
         mma8652_getxyz(&x, &y, &z);
         
-        /* print (x,y,z)-axis in g's to the (View -> Terminal I/O) */
+        /* print the X-,Y-,Z-axis acceleration (in g's) to the (View -> Terminal I/O) */
         printf ("%2.3f  %2.3f  %2.3f\n", x, y, z);
         
         /* check the tilt threshold */
@@ -125,12 +125,13 @@ void tilt(direction_t LorRorC)
         break;
     }
     
-    gd_eval_led_off(LED1);
-    gd_eval_led_off(LED2);
-    gd_eval_led_off(LED3);
-    gd_eval_led_off(LED4);
-    gd_eval_led_off(LED5);
+    /* turn off LEDs */
+    for (led_typedef_enum i = LED1; i <= LED5; i++)
+    {
+        gd_eval_led_off(i);
+    }
     
+    /* translate LEDs to the board sequence */
     switch(current_led)
     {
     case 1:
@@ -152,26 +153,31 @@ void tilt(direction_t LorRorC)
         break;
     }
 }
-
-void gpio_config()
-{     
-    /* configure LED GPIO port */
-    gpio_init(LED1_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED1_PIN);
-    gpio_init(LED2_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED2_PIN);
-    gpio_init(LED3_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED3_PIN);
-    gpio_init(LED4_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED4_PIN);
-    gpio_init(LED5_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED5_PIN);
-    
-    /* set LEDs initial state */
-    gpio_bit_reset(LED1_GPIO_PORT, LED1_PIN);
-    gpio_bit_reset(LED2_GPIO_PORT, LED2_PIN);
-    gpio_bit_reset(LED3_GPIO_PORT, LED3_PIN);
-    gpio_bit_reset(LED4_GPIO_PORT, LED4_PIN);
-    gpio_bit_reset(LED5_GPIO_PORT, LED5_PIN);
+/*!
+\brief      setup GPIO
+\param[in]  none
+\param[out] none
+\retval     none
+*/
+void gpio_config(void)
+{
+    /* initialize and turn off LEDs */
+    for (led_typedef_enum i = LED1; i <= LED5; i++)
+    {
+        gd_eval_led_init(i);
+        gd_eval_led_off(i);
+    }
 }
 
+/*!
+\brief      setup I2C0
+\param[in]  none
+\param[out] none
+\retval     none
+*/
 void i2c_config(void)
 {  
+    /* MCU device address for mastering the I2C bus */
     const uint8_t I2C0_OWN_ADDRESS7 = 0x72;
     
     /* connect PB8 to I2C0_SCL */
@@ -189,12 +195,19 @@ void i2c_config(void)
     i2c_ack_config(I2C0, I2C_ACK_ENABLE);
 }
 
+/*!
+\brief      enable the clock line to the peripherals
+\param[in]  none
+\param[out] none
+\retval     none
+*/
 void rcu_config(void)
 {
-    /* enable GPIOB clock */
+    /* enable GPIO clock */
     rcu_periph_clock_enable(RCU_GPIOA);
     rcu_periph_clock_enable(RCU_GPIOB);
     rcu_periph_clock_enable(RCU_GPIOC);
+    
     /* enable I2C0 clock */
     rcu_periph_clock_enable(RCU_I2C0);
     rcu_periph_clock_enable(RCU_AF);

@@ -2,7 +2,7 @@
     \file    MMA8652.h
     \brief   MMA8652 3-axis accelerometer header
 
-    \version 20200707
+    \version 20200708
 */
 
 /*
@@ -16,7 +16,7 @@
 
 #include <stdint.h>
 
-#define MMA8652_I2C_ADDR        ((0x1D << 1))
+#define MMA8652_I2C_ADDR               (0x1D)
 
 #define MMA8652_STATUS                  0x00
 #define MMA8652_OUT_X_MSB               0x01
@@ -34,6 +34,7 @@
 #define MMA8652_SENSITIVITY_2G		    1024
 #define MMA8652_SENSITIVITY_4G		    512
 #define MMA8652_SENSITIVITY_8G		    256
+#define MMA8652_SENSITIVITY             MMA8652_SENSITIVITY_2G
 
 /* function prototypes */
 void mma8652_init(void);

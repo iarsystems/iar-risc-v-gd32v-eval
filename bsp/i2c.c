@@ -2,7 +2,7 @@
 \file    i2c.c
 \brief   BSP I2C functions
 
-\version 20200707
+\version 20200708
 */
 
 /*
@@ -13,7 +13,15 @@ See LICENSE.md for detailed license information.
 
 #include "i2c.h"
 
-uint8_t i2c0_write(uint8_t i2c_dev_addr, uint8_t *data, uint8_t count)
+/*!
+    \brief      write to a i2c slave 
+    \param[in]  i2c_dev_7bit_addr: the slave's 7-bit address
+    \param[in]  data: pointer to the 8-bit variable containing the value
+    \param[in]  count: number of bytes to write
+    \param[out] none
+    \retval     status
+*/
+uint8_t i2c0_write(uint8_t i2c_dev_7bit_addr, uint8_t *data, uint8_t count)
 {
     if (count < 1) return -1; // reserved for status handling
     
@@ -27,7 +35,7 @@ uint8_t i2c0_write(uint8_t i2c_dev_addr, uint8_t *data, uint8_t count)
     while (!i2c_flag_get(I2C0, I2C_FLAG_SBSEND));
     
     /* send slave address to I2C bus */
-    i2c_master_addressing(I2C0, i2c_dev_addr, I2C_TRANSMITTER);
+    i2c_master_addressing(I2C0, (i2c_dev_7bit_addr << 1), I2C_TRANSMITTER);
     /* wait until ADDSEND bit is set */
     while (!i2c_flag_get(I2C0, I2C_FLAG_ADDSEND));
     /* clear ADDSEND bit */
@@ -61,16 +69,24 @@ uint8_t i2c0_write(uint8_t i2c_dev_addr, uint8_t *data, uint8_t count)
 \param[out] none
 \retval     status
 */
-uint8_t i2c_reg8_write(uint8_t i2c_dev_addr, uint8_t reg, uint8_t value)
+uint8_t i2c_reg8_write(uint8_t i2c_dev_7bit_addr, uint8_t reg, uint8_t value)
 {
     uint8_t txbuffer[2] = {reg, value};
     
-    i2c0_write(i2c_dev_addr, (uint8_t*) txbuffer, sizeof(txbuffer));
+    i2c0_write(i2c_dev_7bit_addr, (uint8_t*) txbuffer, sizeof(txbuffer));
     
     return 0; // reserved for status handling
 }
 
-uint8_t i2c0_read(uint8_t i2c_dev_addr, uint8_t * data, uint8_t count)
+/*!
+    \brief      read from a i2c slave 8-bit register
+    \param[in]  i2c_dev_7bit_addr: the slave's 7-bit address
+    \param[in]  data: pointer to the 8-bit variable which will hold the read value 
+    \param[in]  count: number of bytes to read
+    \param[out] none
+    \retval     status
+*/
+uint8_t i2c0_read(uint8_t i2c_dev_7bit_addr, uint8_t * data, uint8_t count)
 {
     if (count < 1) return -1; // reserved for status handling
     
@@ -83,8 +99,9 @@ uint8_t i2c0_read(uint8_t i2c_dev_addr, uint8_t * data, uint8_t count)
     i2c_start_on_bus(I2C0);
     /* wait until SBSEND bit is set */
     while (!i2c_flag_get(I2C0, I2C_FLAG_SBSEND));
+    
     /* send slave address to I2C bus */
-    i2c_master_addressing(I2C0, i2c_dev_addr, I2C_RECEIVER);
+    i2c_master_addressing(I2C0, (i2c_dev_7bit_addr << 1), I2C_RECEIVER);
     /* disable ACK before clearing ADDSEND bit */
     while (!i2c_flag_get(I2C0, I2C_FLAG_ADDSEND));
     /* clear ADDSEND bit */
@@ -139,17 +156,18 @@ uint8_t i2c0_read(uint8_t i2c_dev_addr, uint8_t * data, uint8_t count)
 }
 
 /*!
-\brief      read from a i2c slave 8-bit register
-\param[in]  reg: internal register
-\param[in]  *value: pointer to the 8-bit variable which will hold the value 
-\param[out] none
-\retval     status
+    \brief      read from a i2c slave 8-bit register
+    \param[in]  i2c_dev_7bit_addr: the slave's 7-bit address
+    \param[in]  reg: internal register
+    \param[in]  *value: pointer to the 8-bit variable which will hold the value 
+    \param[out] none
+    \retval     status
 */
-uint8_t i2c_reg8_read(uint8_t i2c_dev_addr, uint8_t reg, uint8_t *value)
+uint8_t i2c_reg8_read(uint8_t i2c_dev_7bit_addr, uint8_t reg, uint8_t *value)
 {
-    i2c0_write(i2c_dev_addr, (uint8_t*)reg, 1);
+    i2c0_write(i2c_dev_7bit_addr, (uint8_t*)reg, 1);
     
-    i2c0_read(i2c_dev_addr, value, 1);
+    i2c0_read(i2c_dev_7bit_addr, value, 1);
     
     return 0; // reserved for status handling
 }
