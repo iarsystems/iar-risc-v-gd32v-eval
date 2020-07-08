@@ -51,16 +51,16 @@ Finally, grab the nearest fan or an air blower to change the temperature and wat
 
 Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations. The _threshold_ values are expressed by a 1000x factor. For example, 25°C should be expressed as `25000`.
 
-| __Temperature threshold__ |  __Set when data is__                                          | 
-| :--------------           | :-------------                                                 |
-| Low                       | below __TEMP_LOW_THRESHOLD__                                   |
-| Medium                    | between __TEMP_LOW_THRESHOLD__ and __TEMP_MEDIUM_THRESHOLD__   |
-| High                      | above __TEMP_MEDIUM_THRESHOLD__                                |
+| __Temperature threshold__ |  __Set when data is__                                          | __Board LED__  |
+| :--------------           | :-------------                                                 | :-------       |
+| Low                       | below __TEMP_LOW_THRESHOLD__                                   | Blue LED       |
+| Medium                    | between __TEMP_LOW_THRESHOLD__ and __TEMP_MEDIUM_THRESHOLD__   | Green LED      |
+| High                      | above __TEMP_MEDIUM_THRESHOLD__                                | Red LED        |
 
-| __Humidity threshold__    |  __Set when data is__                                          | 
-| :--------------           | :-------------                                                 |
-| Low                       | below __HUM_LOW_THRESHOLD__                                    |
-| Medium                    | between __HUM_LOW_THRESHOLD__ and __HUM_MEDIUM_THRESHOLD__     |
-| High                      | above __HUM_MEDIUM_THRESHOLD__                                 |
+| __Humidity threshold__    |  __Set when data is__                                          | __Board LED__  |
+| :--------------           | :-------------                                                 | :--------      |
+| Low                       | below __HUM_LOW_THRESHOLD__                                    | 3              |
+| Medium                    | between __HUM_LOW_THRESHOLD__ and __HUM_MEDIUM_THRESHOLD__     | 3 and 2        |           
+| High                      | above __HUM_MEDIUM_THRESHOLD__                                 | 3, 2 and 1     |
 
 To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging (CTRL + SHIFT + D)`.
