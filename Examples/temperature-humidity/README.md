@@ -47,6 +47,20 @@ In order to see the sensor data in real time, select `View → Terminal I/O`. A 
 
 Next, execute the program by selecting `Debug → Go (F5)`.
 
-Finally, tilt the board and watch the LED bar to toggle in accordance with the current gravitational data.
+Finally, grab the nearest fan or an air blower to change the temperature and watch the RGB LED and the LED bar update in accordance with the temperature/humidity sensor data.
+
+Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations.
+
+| __Temperature threshold__ |  __Set when data is__                                          | 
+| :--------------           | :-------------                                                 |
+| Low                       | below __TEMP_LOW_THRESHOLD__                                   |
+| Medium                    | between __TEMP_LOW_THRESHOLD__ and __TEMP_MEDIUM_THRESHOLD__   |
+| High                      | above __TEMP_MEDIUM_THRESHOLD__                                |
+
+| __Humidity threshold__    |  __Set when data is__                                          | 
+| :--------------           | :-------------                                                 |
+| Low                       | below __HUM_LOW_THRESHOLD__                                    |
+| Medium                    | between __HUM_LOW_THRESHOLD__ and __HUM_MEDIUM_THRESHOLD__     |
+| High                      | above __HUM_MEDIUM_THRESHOLD__                                 |
 
 To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging (CTRL + SHIFT + D)`.
