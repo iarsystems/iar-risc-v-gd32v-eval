@@ -28,6 +28,7 @@ typedef enum {
     CENTER 
 } direction_t;
 
+/* global variables */
 uint8_t txbuffer[] = "\n\n\r---\n\r3-axis accelerometer example\n\r    X     Y     Z\n";
 
 /* function prototypes */
@@ -37,10 +38,10 @@ void i2c_config(void);
 void tilt(direction_t LorR);
 
 /*!
-\brief      main function
-\param[in]  none
-\param[out] none
-\retval     none
+    \brief      main function
+    \param[in]  none
+    \param[out] none
+    \retval     none
 */
 void main(void)
 {
@@ -93,10 +94,10 @@ void main(void)
 }
 
 /*!
-\brief      simple LED bar tilt function
-\param[in]  LorRorC: LEFT, RIGHT or CENTER
-\param[out] none
-\retval     none
+    \brief      simple LED bar tilt function
+    \param[in]  LorRorC: LEFT, RIGHT or CENTER
+    \param[out] none
+    \retval     none
 */
 void tilt(direction_t LorRorC)
 {
@@ -154,10 +155,10 @@ void tilt(direction_t LorRorC)
     }
 }
 /*!
-\brief      setup GPIO
-\param[in]  none
-\param[out] none
-\retval     none
+    \brief      setup GPIO
+    \param[in]  none
+    \param[out] none
+    \retval     none
 */
 void gpio_config(void)
 {
@@ -170,10 +171,10 @@ void gpio_config(void)
 }
 
 /*!
-\brief      setup I2C0
-\param[in]  none
-\param[out] none
-\retval     none
+    \brief      setup I2C0
+    \param[in]  none
+    \param[out] none
+    \retval     none
 */
 void i2c_config(void)
 {  
@@ -196,10 +197,10 @@ void i2c_config(void)
 }
 
 /*!
-\brief      enable the clock line to the peripherals
-\param[in]  none
-\param[out] none
-\retval     none
+    \brief      enable the clock line to the peripherals
+    \param[in]  none
+    \param[out] none
+    \retval     none
 */
 void rcu_config(void)
 {
