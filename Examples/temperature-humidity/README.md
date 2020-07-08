@@ -1,28 +1,28 @@
 # IAR RISC-V GD32V EVAL - Temperature/Humidity sensor example
 
-This project exercises the SHT31 I2C Temperature/Humidity sensor mounted in this board.
+This project exercises the SHT31 I2C Temperature/Humidity sensor mounted on this board.
 
 ## Jumper settings
 
-To run this example, make sure that the jumper positions on the evaluation board are set to use the RGB LED. 
-The settings are __highlighted__ on the following jumper tables: 
+To run this example, make sure that the jumpers on the evaluation board are set to use the RGB LED. 
+The settings are __highlighted__ in the following tables: 
 
-| __J5__         | __Position__    |  __Options__   |
+| __J5__         | __Position__    |  __Option__    |
 | :------------- | :-------------- | :------------- |
 |                | 1-2             | LED3           |
 |                | __2-3__         | __Green LED__  |
 
-| __J6__         | __Position__    |  __Options__   |
+| __J6__         | __Position__    |  __Option__   |
 | :------------- | :-------------- | :------------- |
 |                | __1-2__         | __USB/Debug__  |
 |                | 2-3             | J4             |
 
-| __J8__         | __Position__    |  __Options__   |
+| __J8__         | __Position__    |  __Option__    |
 | :------------- | :-------------- | :------------- |
 |                | 1-2             | SW4            |
 |                | __2-3__         | __Red LED__    |
 
-| __J9__         | __Position__    |  __Options__   |
+| __J9__         | __Position__    |  __Option__    |
 | :------------- | :-------------- | :------------- |
 |                | 1-2             | SW5            |
 |                | __3-4__         | __Blue LED__   |
@@ -32,7 +32,7 @@ The settings are __highlighted__ on the following jumper tables:
 
 By default, the IAR Embedded Workbench is set to use the `System` character encoding. For this example, we will take advantage of the `UTF-8` character set for displaying the grade (__`°`__) character correctly.
 
-* To update the __code editor__ character set to use the __UTF-8__ encoding, go to `Tools → Options → File Encoding → Default character encoding` and choose `UTF-8`. Press `OK` to close the __IDE Options__ window.
+* To update the __Code Editor__ character set to use the __UTF-8__ encoding, go to `Tools → Options → File Encoding → Default character encoding` and choose `UTF-8`. Press `OK` to close the __IDE Options__ window.
 
 To build and run the project, select `Project → Make (F7)`.
 
@@ -53,7 +53,7 @@ To terminate the debugging session, stop the C-SPY debugger, choose `Debug → S
 
 ### Note
 
-Depending on the room temperature/humidity conditions, you might have to adjust the fixed point _threshold_ values be able to cross over the different threshold levels. You will find the _threshold_ values in the _main.c_ file are expressed by a __1000x__ factor. For example, 25°C should be expressed as `25000`. If that is the case you are facing, update these _threshold_ values, rebuild the project and restart the debugging session. The tables below summarizes how the _threshold levels_ are used to define which LED will be lit.
+Depending on the room temperature/humidity conditions, you might have to adjust the fixed point _threshold values_ be able to cross over the different _threshold levels_. You will find that _threshold values_ in the _main.c_ file are expressed by a __1000x__ factor. For example, 25°C should be expressed as `25000`. If that is the case you are facing, update these _threshold values_, rebuild the project and restart the debugging session. The tables below summarize how the _threshold levels_ changes which LED will be lit.
 
 | __Temperature threshold__ |  __Set when data is__                                          | __Board LED__  |
 | :--------------           | :-------------                                                 | :-------       |
