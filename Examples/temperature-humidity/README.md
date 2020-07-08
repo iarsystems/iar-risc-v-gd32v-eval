@@ -30,7 +30,7 @@ The settings are __highlighted__ on the following jumper tables:
 
 ## Building and Running
 
-By default, the IAR Embedded Workbench is set to use the `System` character set as default. For this example we will require the `UTF-8` character set for displaying the `__°__` character.
+By default, the IAR Embedded Workbench is set to use the `System` character set as default. For this example we will require the `UTF-8` character set for displaying the __`°`__ character.
 
 * To update the __code editor__ character set to use the __UTF-8__ encoding, go to `Tools → Options → File Encoding → Default character encoding` and choose `UTF-8`. Press `OK` to close this window.
 
