@@ -30,7 +30,7 @@ The settings are __highlighted__ on the following jumper tables:
 
 ## Building and Running
 
-By default, the IAR Embedded Workbench is set to use the `System` character set as default. For this example we will require the `UTF-8` character set for displaying the __`°`__ character.
+By default, the IAR Embedded Workbench is set to use the `System` character encoding. For this example we will need take advantage of the `UTF-8` character set for displaying the grade (__`°`__) character correctly.
 
 * To update the __code editor__ character set to use the __UTF-8__ encoding, go to `Tools → Options → File Encoding → Default character encoding` and choose `UTF-8`. Press `OK` to close this window.
 
@@ -47,9 +47,9 @@ In order to see the sensor data in real time, select `View → Terminal I/O`. A 
 
 Next, execute the program by selecting `Debug → Go (F5)`.
 
-Finally, grab the nearest fan or an air blower to change the temperature and watch the RGB LED and the LED bar update in accordance with the temperature/humidity sensor data.
+Finally, grab the nearest fan or an air blower to change the temperature and watch the RGB LED and the LED bar update in accordance with the temperature/humidity sensor data. It might take a while for the changes take effect as measuring temperature and humidity is not an instantaneous operation.
 
-Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations.
+Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations. The _threshold_ values are expressed by a 1000x factor. For example, 25°C should be expressed as `25000`.
 
 | __Temperature threshold__ |  __Set when data is__                                          | 
 | :--------------           | :-------------                                                 |
