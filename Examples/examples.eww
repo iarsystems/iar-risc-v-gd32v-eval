@@ -25,6 +25,9 @@
         <path>$WS_DIR$\timer0\timer0.ewp</path>
     </project>
 	<project>
+        <path>$WS_DIR$\temperature-humidity\temperature-humidity.ewp</path>
+    </project>
+	<project>
         <path>$WS_DIR$\toggle-io\toggle-io.ewp</path>
     </project>
 	<project>
