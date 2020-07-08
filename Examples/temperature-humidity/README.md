@@ -49,7 +49,11 @@ Next, execute the program by selecting `Debug → Go (F5)`.
 
 Finally, grab the nearest fan or an air blower to change the temperature and watch the RGB LED and the LED bar update in accordance with the temperature/humidity sensor data. It might take a while for the changes take effect as measuring temperature and humidity is not an instantaneous operation.
 
-Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations. The _threshold_ values are expressed by a 1000x factor. For example, 25°C should be expressed as `25000`.
+To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging (CTRL + SHIFT + D)`.
+
+### Note
+
+Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations. The _threshold_ values are expressed by a 1000x factor. For example, 25°C should be expressed as `25000`. In this case, update these values, rebuild the project and restart the debugging session.
 
 | __Temperature threshold__ |  __Set when data is__                                          | __Board LED__  |
 | :--------------           | :-------------                                                 | :-------       |
@@ -62,5 +66,3 @@ Depending on your weather conditions, you might have to adjust the fixed point _
 | Low                       | below __HUM_LOW_THRESHOLD__                                    | 3              |
 | Medium                    | between __HUM_LOW_THRESHOLD__ and __HUM_MEDIUM_THRESHOLD__     | 3 and 2        |           
 | High                      | above __HUM_MEDIUM_THRESHOLD__                                 | 3, 2 and 1     |
-
-To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging (CTRL + SHIFT + D)`.
