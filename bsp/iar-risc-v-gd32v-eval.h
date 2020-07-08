@@ -27,7 +27,10 @@ typedef enum
     LED2 = 1,
     LED3 = 2,
     LED4 = 3,
-	LED5 = 4
+	LED5 = 4,
+    LEDR = 5,
+    LEDG = 6,
+    LEDB = 7,
 } led_typedef_enum;
 
 typedef enum 
@@ -47,7 +50,7 @@ typedef enum
 } keymode_typedef_enum;
 
 /* IAR eval board LEDs */
-#define LEDn                             5U
+#define LEDn                             (8U)
 
 #define LED1_PIN                         GPIO_PIN_9
 #define LED1_GPIO_PORT                   GPIOA

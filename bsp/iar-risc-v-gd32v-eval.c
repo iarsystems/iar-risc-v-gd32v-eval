@@ -14,9 +14,24 @@
 #include "iar-risc-v-gd32v-eval.h"
 
 /* private variables */
-static uint32_t GPIO_PORT[LEDn] = {LED1_GPIO_PORT, LED2_GPIO_PORT,
-                                   LED3_GPIO_PORT, LED4_GPIO_PORT, LED4_GPIO_PORT};
-static uint32_t GPIO_PIN[LEDn] = {LED1_PIN, LED2_PIN, LED3_PIN, LED4_PIN, LED5_PIN};
+static uint32_t GPIO_PORT[LEDn] = {LED1_GPIO_PORT, 
+                                   LED2_GPIO_PORT,
+                                   LED3_GPIO_PORT,
+                                   LED4_GPIO_PORT,
+                                   LED5_GPIO_PORT,
+                                   LEDR_GPIO_PORT,
+                                   LEDG_GPIO_PORT,
+                                   LEDB_GPIO_PORT,
+};
+static uint32_t GPIO_PIN[LEDn] = {LED1_PIN,
+                                  LED2_PIN,
+                                  LED3_PIN,
+                                  LED4_PIN, 
+                                  LED5_PIN,
+                                  LEDR_PIN,
+                                  LEDG_PIN,
+                                  LEDB_PIN,
+};
 
 static rcu_periph_enum COM_CLK[COMn] = {EVAL_COM0_CLK, EVAL_COM1_CLK};
 static uint32_t COM_TX_PIN[COMn] = {EVAL_COM0_TX_PIN, EVAL_COM1_TX_PIN};
@@ -28,7 +43,11 @@ static rcu_periph_enum GPIO_CLK[LEDn] = {LED1_GPIO_CLK,
                                          LED2_GPIO_CLK,
                                          LED3_GPIO_CLK,
                                          LED4_GPIO_CLK,
-                                         LED5_GPIO_CLK};
+                                         LED5_GPIO_CLK,
+                                         LEDR_GPIO_CLK,
+                                         LEDG_GPIO_CLK,
+                                         LEDB_GPIO_CLK,
+};
 
 static uint32_t KEY_PORT[KEYn] = {KEY_A_GPIO_PORT,
                                   KEY_B_GPIO_PORT,
@@ -74,6 +93,9 @@ static uint8_t KEY_IRQn[KEYn] = {KEY_A_EXTI_IRQn,
       \arg        LED3
       \arg        LED4
       \arg        LED5
+      \arg        LEDR
+      \arg        LEDG
+      \arg        LEDB
     \param[out] none
     \retval     none
 */
@@ -95,6 +117,9 @@ void gd_eval_led_init(led_typedef_enum lednum)
       \arg        LED3
       \arg        LED4
       \arg        LED5
+      \arg        LEDR
+      \arg        LEDG
+      \arg        LEDB
     \param[out] none
     \retval     none
 */
@@ -111,6 +136,9 @@ void gd_eval_led_on(led_typedef_enum lednum)
       \arg        LED3
       \arg        LED4
       \arg        LED5
+      \arg        LEDR
+      \arg        LEDG
+      \arg        LEDB
     \param[out] none
     \retval     none
 */
@@ -127,6 +155,9 @@ void gd_eval_led_off(led_typedef_enum lednum)
       \arg        LED3
       \arg        LED4
       \arg        LED5
+      \arg        LEDR
+      \arg        LEDG
+      \arg        LEDB
     \param[out] none
     \retval     none
 */
