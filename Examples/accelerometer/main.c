@@ -19,6 +19,9 @@ See LICENSE.md for detailed license information.
 #include "i2c.h"
 #include "mma8652.h"
 
+/* tilt threshold in G's */
+#define TILT_THRESHOLD (0.1000f) 
+
 typedef enum {
     LEFT,
     RIGHT,
@@ -49,7 +52,7 @@ void main(void)
     gpio_config();
     /* I2C config */
     i2c_config(); 
-    /* initialize  the 3-axis accelerometer */
+    /* initialize the I2C 3-axis accelerometer */
     mma8652_init();
     delay_1ms(250);
     
@@ -65,14 +68,14 @@ void main(void)
         mma8652_getxyz(&x, &y, &z);
         
         /* print (x,y,z)-axis in g's to the (View -> Terminal I/O) */
-        printf ("%1.3f  %1.3f  %1.3f\n", x, y, z);
+        printf ("%2.3f  %2.3f  %2.3f\n", x, y, z);
         
-        /* check for tilt */
-        if (x < -0.25) 
+        /* check the tilt threshold */
+        if (x < -TILT_THRESHOLD) 
         {
             current_tilt = RIGHT;
         } 
-        else if (x > 0.25)
+        else if (x > TILT_THRESHOLD)
         {
             current_tilt = LEFT;
         }
@@ -85,22 +88,22 @@ void main(void)
         tilt(current_tilt);
         
         /* wait */
-        delay_1ms(150);
+        delay_1ms(100);
     }
 }
 
 /*!
-\brief      simple LED tilt function
-\param[in]  LorR: LEFT or RIGHT
+\brief      simple LED bar tilt function
+\param[in]  LorRorC: LEFT, RIGHT or CENTER
 \param[out] none
 \retval     none
 */
-void tilt(direction_t LorR)
+void tilt(direction_t LorRorC)
 {
     /* LED sequence on the board 3-2-(1)-4-5 */
     static uint8_t current_led = 3;
     
-    switch (LorR)
+    switch (LorRorC)
     {
     case LEFT:
         --current_led;
@@ -112,6 +115,12 @@ void tilt(direction_t LorR)
         if (current_led > 5)
         { current_led = 5; }
         break; 
+    case CENTER:
+        if (current_led < 3)
+        { ++current_led; }
+        else if (current_led > 3)
+        { --current_led; }
+        break;
     default:
         break;
     }
@@ -152,7 +161,7 @@ void gpio_config()
     gpio_init(LED3_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED3_PIN);
     gpio_init(LED4_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED4_PIN);
     gpio_init(LED5_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, LED5_PIN);
-
+    
     /* set LEDs initial state */
     gpio_bit_reset(LED1_GPIO_PORT, LED1_PIN);
     gpio_bit_reset(LED2_GPIO_PORT, LED2_PIN);
@@ -164,14 +173,14 @@ void gpio_config()
 void i2c_config(void)
 {  
     const uint8_t I2C0_OWN_ADDRESS7 = 0x72;
-        
+    
     /* connect PB8 to I2C0_SCL */
     /* connect PB9 to I2C0_SDA */
     gpio_init(GPIOB, GPIO_MODE_AF_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_9 | GPIO_PIN_8);   
     gpio_pin_remap_config(GPIO_I2C0_REMAP, ENABLE);
     
     /* I2C clock configure */
-    i2c_clock_config(I2C0, 100000, I2C_DTCY_2);
+    i2c_clock_config(I2C0, 400000, I2C_DTCY_2);
     /* I2C address configure */
     i2c_mode_addr_config(I2C0, I2C_I2CMODE_ENABLE, I2C_ADDFORMAT_7BITS, I2C0_OWN_ADDRESS7);
     /* enable I2C0 */
