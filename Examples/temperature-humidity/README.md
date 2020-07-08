@@ -4,7 +4,7 @@ This project exercises the SHT31 I2C Temperature/Humidity sensor mounted in this
 
 ## Jumper settings
 
-To run this example, make sure that the jumper positions on the evaluation board are set for the LEDs to blink. 
+To run this example, make sure that the jumper positions on the evaluation board are set to use the RGB LED. 
 The settings are __highlighted__ on the following jumper tables: 
 
 | __J5__         | __Position__    |  __Options__   |
@@ -30,9 +30,9 @@ The settings are __highlighted__ on the following jumper tables:
 
 ## Building and Running
 
-By default, the IAR Embedded Workbench is set to use the `System` character encoding. For this example we will need take advantage of the `UTF-8` character set for displaying the grade (__`°`__) character correctly.
+By default, the IAR Embedded Workbench is set to use the `System` character encoding. For this example, we will take advantage of the `UTF-8` character set for displaying the grade (__`°`__) character correctly.
 
-* To update the __code editor__ character set to use the __UTF-8__ encoding, go to `Tools → Options → File Encoding → Default character encoding` and choose `UTF-8`. Press `OK` to close this window.
+* To update the __code editor__ character set to use the __UTF-8__ encoding, go to `Tools → Options → File Encoding → Default character encoding` and choose `UTF-8`. Press `OK` to close the __IDE Options__ window.
 
 To build and run the project, select `Project → Make (F7)`.
 
@@ -43,17 +43,17 @@ This project uses the integrated IAR Embedded Workbench virtual terminal to outp
 
 In order to see the sensor data in real time, select `View → Terminal I/O`. A new window named __Terminal I/O__ will show up without any output so far.
 
-* To update the __Terminal I/O__ character set to use the __UTF-8__ encoding, go to `Tools → Options → Terminal I/O → Encoding` and choose `UTF-8`. Press `OK` to close this window.
+* To update the __Terminal I/O__ character set to use the __UTF-8__ encoding, go to `Tools → Options → Terminal I/O → Encoding` and choose `UTF-8`. Press `OK` to close the  __IDE Options__ window.
 
 Next, execute the program by selecting `Debug → Go (F5)`.
 
-Finally, grab the nearest fan or an air blower to change the temperature and watch the RGB LED and the LED bar update in accordance with the temperature/humidity sensor data. It might take a while for the changes take effect as measuring temperature and humidity is not an instantaneous operation.
+Finally, grab the nearest fan, air blower or hair dryer and use them to cause changes in the temperature surrounding the evaluation board. When the temperature/humidity thresholds are crossed, the RGB LED and the LED bar will update their states, always in accordance with the temperature/humidity sensor data. Keep in mind that it might take a while for the changes to take effect, as measuring temperature and humidity is not an instantaneous operation.
 
 To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging (CTRL + SHIFT + D)`.
 
 ### Note
 
-Depending on your weather conditions, you might have to adjust the fixed point _threshold_ values be able to see these variations. The _threshold_ values are expressed by a 1000x factor. For example, 25°C should be expressed as `25000`. In this case, update these values, rebuild the project and restart the debugging session.
+Depending on the room temperature/humidity conditions, you might have to adjust the fixed point _threshold_ values be able to cross over the different threshold levels. You will find the _threshold_ values in the _main.c_ file are expressed by a __1000x__ factor. For example, 25°C should be expressed as `25000`. If that is the case you are facing, update these _threshold_ values, rebuild the project and restart the debugging session. The tables below summarizes how the _threshold levels_ are used to define which LED will be lit.
 
 | __Temperature threshold__ |  __Set when data is__                                          | __Board LED__  |
 | :--------------           | :-------------                                                 | :-------       |
