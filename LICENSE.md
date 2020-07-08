@@ -27,4 +27,5 @@ SOFTWARE.
 | BSP for the IAR RISC-V GD32V    | MIT                  | IAR Systems AB                |
 | Coremark example                | Apache 2.0           | EEMBC                         |
 | Example projects                | MIT                  | IAR Systems AB                |
-| GD32VF103 Firmware              | BSD-3-Clause         | GigaDevice Semiconductor Inc. |
+| GD32VF103 Firmware Library      | BSD-3-Clause         | GigaDevice Semiconductor Inc. |
+| SHT3x Sensor driver             | BSD-3-Clause         | Sensirion AG                  |
