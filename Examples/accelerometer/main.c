@@ -2,7 +2,7 @@
 \file  main.c
 \brief Accelerometer example for the IAR RISC-V GD32V Eval board
 
-\version 20200708
+\version 20200709
 */
 
 /*
@@ -32,7 +32,6 @@ typedef enum {
 uint8_t txbuffer[] = "\n\n\r---\n\r3-axis accelerometer example\n\r    X     Y     Z\n";
 
 /* function prototypes */
-void rcu_config(void);
 void gpio_config(void);
 void i2c_config(void);
 void tilt(direction_t LorR);
@@ -47,8 +46,6 @@ void main(void)
 {
     SystemInit();
     
-    /* RCU config */
-    rcu_config();
     /* GPIO config */
     gpio_config();
     /* I2C config */
@@ -101,7 +98,7 @@ void main(void)
 */
 void tilt(direction_t LorRorC)
 {
-    /* LED sequence on the board 3-2-(1)-4-5 */
+    /* LED sequence on the board: LED3-LED2-(LED1)-LED4-LED5 */
     static uint8_t current_led = 3;
     
     switch (LorRorC)
@@ -166,6 +163,8 @@ void gpio_config(void)
     for (led_typedef_enum i = LED1; i <= LED5; i++)
     {
         gd_eval_led_init(i);
+        gd_eval_led_on(i);
+        delay_1ms(250);
         gd_eval_led_off(i);
     }
 }
@@ -181,6 +180,9 @@ void i2c_config(void)
     /* MCU device address for mastering the I2C bus */
     const uint8_t I2C0_OWN_ADDRESS7 = 0x72;
     
+    rcu_periph_clock_enable(RCU_I2C0);
+    rcu_periph_clock_enable(RCU_AF);
+    
     /* connect PB8 to I2C0_SCL */
     /* connect PB9 to I2C0_SDA */
     gpio_init(GPIOB, GPIO_MODE_AF_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_9 | GPIO_PIN_8);   
@@ -194,22 +196,4 @@ void i2c_config(void)
     i2c_enable(I2C0);
     /* enable acknowledge */
     i2c_ack_config(I2C0, I2C_ACK_ENABLE);
-}
-
-/*!
-    \brief      enable the clock line to the peripherals
-    \param[in]  none
-    \param[out] none
-    \retval     none
-*/
-void rcu_config(void)
-{
-    /* enable GPIO clock */
-    rcu_periph_clock_enable(RCU_GPIOA);
-    rcu_periph_clock_enable(RCU_GPIOB);
-    rcu_periph_clock_enable(RCU_GPIOC);
-    
-    /* enable I2C0 clock */
-    rcu_periph_clock_enable(RCU_I2C0);
-    rcu_periph_clock_enable(RCU_AF);
 }
