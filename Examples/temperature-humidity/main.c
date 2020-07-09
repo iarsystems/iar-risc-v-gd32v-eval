@@ -2,7 +2,7 @@
 \file  main.c
 \brief SHT3x Temp/Hum sensor example for the IAR RISC-V GD32V Eval board
 
-\version 20200708
+\version 20200709
 */
 
 /*
@@ -18,12 +18,11 @@ See LICENSE.md for detailed license information.
 #include "systick.h"
 #include "sht3x.h"
 
+#define TEMP_LOW_THRESHOLD     (24500)
+#define TEMP_MEDIUM_THRESHOLD  (25000)
 
-#define TEMP_LOW_THRESHOLD     (24300)
-#define TEMP_MEDIUM_THRESHOLD  (25250)
-
-#define HUM_LOW_THRESHOLD      (34950)
-#define HUM_MEDIUM_THRESHOLD   (35350)
+#define HUM_LOW_THRESHOLD      (33000)
+#define HUM_MEDIUM_THRESHOLD   (38000)
 
 typedef enum {
     TEMP_LOW,
@@ -38,7 +37,6 @@ typedef enum {
 } hum_t;
 
 /* function prototypes */
-void rcu_config(void);
 void gpio_config(void);
 void i2c_config(void);
 void red_alert(void);
@@ -59,8 +57,6 @@ void main(void)
 {
     SystemInit();
     
-    /* RCU config */
-    rcu_config();
     /* GPIO config */
     gpio_config();
     /* I2C config */
@@ -131,8 +127,8 @@ void main(void)
         /* print the updated values to the (View -> Terminal I/O) */
         update_terminal_io(&temperature, &humidity);
         
-        /* wait 5 seconds */
-        delay_1ms(5000);
+        /* wait 3 seconds */
+        delay_1ms(3000);
     }
 }
 
@@ -148,7 +144,6 @@ void gpio_config(void)
     for (led_typedef_enum i = LED1; i <= LEDB; i++)
     {
         gd_eval_led_init(i);
-        delay_1ms(250);
         gd_eval_led_on(i);
         delay_1ms(250);
         gd_eval_led_off(i);
@@ -166,6 +161,10 @@ void i2c_config(void)
     /* MCU device address for mastering the I2C bus */
     const uint8_t I2C0_OWN_ADDRESS7 = 0x72;
     
+    /* enable I2C0 clock */
+    rcu_periph_clock_enable(RCU_I2C0);
+    rcu_periph_clock_enable(RCU_AF);
+    
     /* connect PB8 to I2C0_SCL */
     /* connect PB9 to I2C0_SDA */
     gpio_init(GPIOB, GPIO_MODE_AF_OD, GPIO_OSPEED_50MHZ, GPIO_PIN_9 | GPIO_PIN_8);   
@@ -182,23 +181,11 @@ void i2c_config(void)
 }
 
 /*!
-    \brief      enable the clock line to the peripherals
+    \brief      emmits a warning using LEDR
     \param[in]  none
     \param[out] none
     \retval     none
 */
-void rcu_config(void)
-{
-    /* enable GPIO clock */
-    rcu_periph_clock_enable(RCU_GPIOA);
-    rcu_periph_clock_enable(RCU_GPIOB);
-    rcu_periph_clock_enable(RCU_GPIOC);
-    
-    /* enable I2C0 clock */
-    rcu_periph_clock_enable(RCU_I2C0);
-    rcu_periph_clock_enable(RCU_AF);
-}
-
 void red_alert(void)
 {
     for (uint8_t i = 0; i < 5; i++)
@@ -208,6 +195,12 @@ void red_alert(void)
     }
 }
 
+/*!
+    \brief      updates the (View -> Terminal I/O) data
+    \param[in]  temp: pointer to the temperature data
+    \param[out] hum: pointer to the humidity data
+    \retval     none
+*/
 void update_terminal_io(int32_t *temp, int32_t *hum)
 {
     printf("Temperature: %0.2f ºC, "
