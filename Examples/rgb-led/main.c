@@ -2,7 +2,7 @@
     \file  main.c
     \brief Toggles the RGB LED
     
-    \version 2020-06-17 
+    \version 20200709
 */
 
 /*
@@ -87,6 +87,7 @@ void main(void)
         gpio_bit_reset(LEDR_GPIO_PORT, LEDR_PIN);
         gpio_bit_reset(LEDG_GPIO_PORT, LEDG_PIN);
         gpio_bit_reset(LEDB_GPIO_PORT, LEDB_PIN);
+        
         delay_1ms(DELAY);
     }
 }
