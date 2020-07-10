@@ -12,7 +12,7 @@ The settings are __highlighted__ in the following tables:
 |                | 1-2             | LED3           |
 |                | __2-3__         | __Green LED__  |
 
-| __J6__         | __Position__    |  __Option__   |
+| __J6__         | __Position__    |  __Option__    |
 | :------------- | :-------------- | :------------- |
 |                | __1-2__         | __USB/Debug__  |
 |                | 2-3             | J4             |

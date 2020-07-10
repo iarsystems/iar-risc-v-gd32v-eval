@@ -1,8 +1,8 @@
 /*!
-\file  main.c
-\brief SHT3x Temp/Hum sensor example for the IAR RISC-V GD32V Eval board
-
-\version 20200709
+    \file  main.c
+    \brief SHT3x Temp/Hum sensor example for the IAR RISC-V GD32V Eval board
+    
+    \version 20200709
 */
 
 /*
@@ -14,7 +14,6 @@ See LICENSE.md for detailed license information.
 #include <stdio.h>
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "gd32vf103_libopt.h"
 #include "systick.h"
 #include "sht3x.h"
 
@@ -140,8 +139,8 @@ void main(void)
 */
 void gpio_config(void)
 {
-    /* initialize and turn off the RGB LED */
-    for (led_typedef_enum i = LED1; i <= LEDB; i++)
+    /* initialize and turn off the LEDs */
+    for (led_t i = LED1; i <= LEDB; i++)
     {
         gd_eval_led_init(i);
         gd_eval_led_on(i);
