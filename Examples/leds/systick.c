@@ -33,5 +33,5 @@ void delay_1ms(uint32_t count)
     do
     {
         delta_mtime = get_timer_value() - start_mtime;
-    } while (delta_mtime < (SystemCoreClock/54000.0 * count));
+    } while (delta_mtime < (SystemCoreClock/4000.0 * count));
 }
