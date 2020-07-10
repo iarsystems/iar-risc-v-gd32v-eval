@@ -1,8 +1,8 @@
 /*!
     \file  main.c
-    \brief Switches toggle the LEDs
+    \brief Switches toggle the board LEDs
 
-    \version 20200625
+    \version 20200709
 */
 
 /*
@@ -14,14 +14,22 @@
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
 
-#define DELAY 250
+/* switch delay */
+#define SW_DELAY 250
 
-/* Local functions */
-static void sw_processing(key_typedef_enum num);
+/* function prototypes */
+void gpio_config(void);
+void switches_config(void);
+static void sw_processing(sw_t);
 
-/* Global variables */
-volatile uint8_t sw_current_state[3];
-         uint8_t sw_previous_state[3];
+/* global variables */
+         sw_status_t sw_previous_state[3];
+volatile sw_status_t sw_current_state[3] =   {SW_RELEASE,
+                                              SW_RELEASE,
+                                              SW_RELEASE,
+};
+         
+         
 
 /*!
     \brief      main function
@@ -33,47 +41,60 @@ int main(void)
 {
     SystemInit();
     
-    /* enable the LEDs */
-    gd_eval_led_init(LED1);
-    gd_eval_led_init(LED2);
-    gd_eval_led_init(LED3);
-    
-    /* set LEDs initial state */
-    gpio_bit_reset(LED1_GPIO_PORT, LED1_PIN);
-    gpio_bit_reset(LED2_GPIO_PORT, LED2_PIN);
-    gpio_bit_reset(LED3_GPIO_PORT, LED3_PIN);
-           
-    /* initialize the keys */
-    gd_eval_key_init(KEY_A, KEY_MODE_GPIO);
-    gd_eval_key_init(KEY_B, KEY_MODE_GPIO);
-    gd_eval_key_init(KEY_C, KEY_MODE_GPIO);
+    /* GPIO config */
+    gpio_config();
+    /* switches config */
+    switches_config();
     
     while (1) 
     {
-        sw_processing(KEY_A);
-        sw_processing(KEY_B);
-        sw_processing(KEY_C);
+        sw_processing(S1);
+        sw_processing(S2);
+        sw_processing(S3);
     }
 }
 
 /*!
-    \brief      Performs keypressing evaluation
-    \param[in]  key_num: specify the key to be configured
-      \arg        KEY_A: S1 key
-      \arg        KEY_B: S2 key
-      \arg        KEY_C: S3 key
-      \arg        KEY_D: S4 key
-      \arg        KEY_E: S5 key
+    \brief      initialize board LEDs
+    \param[in]  none
     \param[out] none
     \retval     none
 */
-static void sw_processing(key_typedef_enum key_num)
+void gpio_config(void)
 {
-    sw_current_state[key_num] = gd_eval_key_state_get(key_num);
-    if (sw_current_state[key_num] != sw_previous_state[key_num]) 
+    for (led_t i = LED1; i <= LEDB; i++)
     {
-        gd_eval_led_toggle((led_typedef_enum)key_num);
-        delay_1ms(DELAY);
+        gd_eval_led_init(i);
     }
-    sw_previous_state[key_num] = sw_current_state[key_num];
+}
+
+/*!
+    \brief      initialize the board switches
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
+void switches_config(void)
+{
+    gd_eval_sw_init(S1, SW_MODE_GPIO);
+    gd_eval_sw_init(S2, SW_MODE_GPIO);
+    gd_eval_sw_init(S3, SW_MODE_GPIO);
+}
+
+/*!
+    \brief      performs keypressing evaluation
+    \param[in]  sw_num: specify the switch to be configured
+      \arg        Sx: S1..S5 switch
+    \param[out] none
+    \retval     none
+*/
+static void sw_processing(sw_t sw_num)
+{
+    sw_current_state[sw_num] = gd_eval_sw_state_get(sw_num);
+    if (sw_current_state[sw_num] != sw_previous_state[sw_num]) 
+    {
+        gd_eval_led_toggle((led_t)sw_num);
+        delay_1ms(SW_DELAY);
+    }
+    sw_previous_state[sw_num] = sw_current_state[sw_num];
 }
