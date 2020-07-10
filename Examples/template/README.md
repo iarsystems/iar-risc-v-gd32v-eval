@@ -1,5 +1,10 @@
-# Clock tree setup example
+# Template project
 
-This example only provides the clock tree setup for the GD32V103F device. 
-  
-System clock is set to 108 MHz.
+## Introduction
+
+This project provides a clean slate, it provides the basic clock tree setup for the GD32VF103 device in the IAR RISC-V GD32V Eval board. 
+
+
+## Details
+
+The system clock is set to 108 MHz.
