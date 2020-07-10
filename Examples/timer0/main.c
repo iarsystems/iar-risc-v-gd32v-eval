@@ -1,8 +1,8 @@
 /*!
     \file  main.c
-    \brief Setup the TIMER peripheral for flashing the Eval board LEDs
+    \brief setup the TIMER0 peripheral for pulsating the RED color in the RGB LED
     
-    \version 20200625
+    \version 20200710
 */
 
 /*
@@ -14,7 +14,13 @@
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
 
-/* Function prototypes */
+typedef enum 
+{
+    INHALE = SET,
+    EXHALE = RESET,
+} breathe_t;
+
+/* function prototypes */
 void gpio_config(void);
 void timer_config(void);
 
@@ -26,8 +32,8 @@ void timer_config(void);
 */
 void main(void)
 {
-    int16_t i = 0;
-    FlagStatus breathe_flag = SET;
+    int32_t i = 0;
+    breathe_t breathe_flag = INHALE;
     
     /* configure the GPIO ports */
     gpio_config();
@@ -38,23 +44,12 @@ void main(void)
     while(1)
     {
         delay_1ms(1);
+
+        i = (INHALE == breathe_flag) ? i + 10 : i - 10;
+        breathe_flag = (500 < i) ? EXHALE: breathe_flag;
+        breathe_flag = (0 >= i)  ? INHALE: breathe_flag;
         
-        if (SET == breathe_flag)
-        {
-            i = i + 10;
-        } else {
-            i = i - 10;
-        }
-        if (500 < i)
-        {
-            breathe_flag = RESET;
-        }
-        if (0 >= i)
-        {
-            breathe_flag = SET;
-        }
-        
-        /* configure TIMER channel output pulse value */
+        /* configure the timer channel output pulse value */
         timer_channel_output_pulse_value_config(TIMER0, TIMER_CH_3, i);
     }
 }
@@ -69,7 +64,7 @@ void gpio_config(void)
 {
     rcu_periph_clock_enable(LEDR_GPIO_CLK);
 
-    /* Configure PA11(TIMER0_CH3) as alternate function */
+    /* Configure PA11(TIMER0_CH3) to its alternate function */
     gpio_init(LEDR_GPIO_PORT, GPIO_MODE_AF_PP, GPIO_OSPEED_50MHZ, LEDR_PIN);
 }
 
@@ -98,7 +93,7 @@ void timer_config(void)
     timer_initpara.repetitioncounter = 0;
     timer_init(TIMER0,&timer_initpara);
 
-     /* CH0 configuration in PWM mode */
+     /* CH3 configuration in PWM mode */
     timer_ocintpara.outputstate  = TIMER_CCX_ENABLE;
     timer_ocintpara.outputnstate = TIMER_CCXN_DISABLE;
     timer_ocintpara.ocpolarity   = TIMER_OC_POLARITY_HIGH;
