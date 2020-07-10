@@ -1,8 +1,8 @@
 /*!
-\file  main.c
-\brief Exercise the ADC using the potentiometer
-
-\version 20200625
+    \file  main.c
+    \brief Exercise the ADC using the potentiometer
+    
+    \version 20200710
 */
 
 /*
@@ -14,23 +14,22 @@ See LICENSE.md for detailed license information.
 #include <stdio.h> 
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "gd32vf103_libopt.h"
 #include "systick.h"
 
 #define ARRAYNUM(arr_name)      (uint32_t)(sizeof(arr_name) / sizeof(*(arr_name)))
 #define TRANSMIT_SIZE           (ARRAYNUM(txbuffer) - 1)
 
-/* Global variables */
+/* global variables */
 /*! USART1 */
-uint8_t txbuffer[] = "ADC Example for the IAR RISC-V GD32V Eval board\n\r";
+uint8_t txbuffer[64] = "\n\n\r---\n\rADC example\n\r";
 uint8_t tx_size = TRANSMIT_SIZE;
 __IO uint8_t txcount = 0; 
 /*! ADC */
 uint16_t adcResult;
 
-/* Function prototypes */
+/* function prototypes */
 void gd_eval_adc_init(void);
-void gd_eval_usart_data_transmit(uint32_t usart_periph, uint8_t *data);
+void gd_eval_usart_data_transmit(com_t, uint8_t *);
 
 /*!
 \brief      main function
@@ -42,13 +41,13 @@ void main(void)
 {
     SystemInit();
     
-    /* EVAL_COM1 interrupt configuration */
+    /* COM port interrupt configuration */
     eclic_global_interrupt_enable();
     eclic_priority_group_set(ECLIC_PRIGROUP_LEVEL3_PRIO1);
     eclic_irq_enable(USART1_IRQn, 2, 0);
     eclic_irq_enable(ADC0_1_IRQn, 1, 0);
     
-    /* configure IAR RISC-V GD32V EVAL COM1 UART */
+    /* configure the COM port */
     gd_eval_com_init(EVAL_COM1);        
     
     /* configure the ADC GPIO port */
@@ -63,18 +62,18 @@ void main(void)
     adc_interrupt_enable(ADC1, ADC_INT_EOC); 
     adc_software_trigger_enable(ADC1, ADC_REGULAR_CHANNEL);
     
-    /* Transmit Example's welcome message */  
+    /* transmit welcome message */  
     gd_eval_usart_data_transmit(EVAL_COM1, txbuffer);
     
     while(1)
     {
-        /* Read the Potentiometer value */
+        /* read the potentiometer value */
         adcResult = adc_regular_data_read(ADC1);
         
-        /* Format the string to be sent to USART */
-        sprintf((char*)txbuffer, "\n\rPot. value: %u", adcResult);
+        /* format the string to be sent to COM */
+        snprintf((char *)txbuffer, sizeof(txbuffer), "\r\n...Potentiometer value: %4u", adcResult);
         
-        /* Transmit Potentiometer value */
+        /* transmit txbuffer */
         gd_eval_usart_data_transmit(EVAL_COM1, txbuffer);
         
         delay_1ms(2000);
@@ -117,18 +116,4 @@ void gd_eval_adc_init(void)
     
     /* ADC calibration and reset calibration */    
     adc_calibration_enable(ADC1);    
-}
-
-/*!
-    \brief      USART transmit data function
-    \param[in]  usart_periph: USARTx(x=0,1,2)/UARTx(x=3,4)
-    \param[in]  data: pointer to the data to transmit
-    \param[out] none
-    \retval     none
-*/
-void gd_eval_usart_data_transmit(uint32_t usart_periph, uint8_t *data)
-{
-    usart_interrupt_enable(usart_periph, USART_INT_TBE);
-    usart_data_transmit(usart_periph, data[0]);
-    while (RESET == usart_flag_get(usart_periph, USART_FLAG_TC));
 }

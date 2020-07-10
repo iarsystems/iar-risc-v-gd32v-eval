@@ -11,4 +11,4 @@ Configure the Serial Port in the Virtual Terminal with the following settings:
 | Stop bit       | 1               |
 | Flow Control   | None            |
 
-As the potentiometer R1 changes, its value is shown through the serial port on regular intervals.
+As the potentiometer __R1__ changes, its value is shown through the serial port on regular intervals.
