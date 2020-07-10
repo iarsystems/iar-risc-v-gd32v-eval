@@ -95,13 +95,7 @@ int main(void)
         typed = MISTYPED;
         
         /* select a new word from the dictionary */
-        uint8_t *selected_word, *previous_word;
-        
-        /* do not repeat the previous word */
-        while (!strncmp((char const *)selected_word, 
-                        (char const *)previous_word, 
-                        strlen((char const *)selected_word)))
-        {   selected_word = dictionary[rand()%25];   }
+        uint8_t *selected_word = dictionary[rand()%25];
         
         /* transmit the selected word to be typed */
         uint8_t new_word[BUFFER_SIZE];
@@ -118,8 +112,6 @@ int main(void)
             /* transmit the result */
             gd_eval_usart_int_transmit(EVAL_COM1, message[typed], strlen((char const *)message[typed]));
         }
-        
-        previous_word = selected_word;
     }
 }
 
