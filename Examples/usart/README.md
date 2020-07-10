@@ -1,4 +1,4 @@
-# USART interrupt driven Transmitter/Receiver project example
+# IAR RISC-V GD32V EVAL - USART interrupt-driven Transmitter/Receiver example
 
 For the __USART__ example, configure the Serial Port in the Virtual Terminal with the following settings:
 

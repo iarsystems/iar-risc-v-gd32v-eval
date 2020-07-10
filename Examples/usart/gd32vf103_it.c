@@ -2,7 +2,7 @@
     \file  gd32vf103_it.c
     \brief Interrupt service routines
 
-    \version 20200625
+    \version 20200710
 */
 
 /*
@@ -12,13 +12,12 @@
 */
 
 #include "gd32vf103_it.h"
+#include <stdio.h>
 
 extern uint8_t txbuffer[];
 extern uint8_t rxbuffer[];
-extern uint8_t tx_size;
-extern uint8_t rx_size;
-extern __IO uint8_t txcount;
-extern __IO uint16_t rxcount;
+extern size_t nbr_data_to_read, nbr_data_to_send;
+extern uint16_t tx_counter, rx_counter;
 
 /*!
     \brief      ISR for the USART1 peripheral with TX/RX handling
@@ -28,24 +27,31 @@ extern __IO uint16_t rxcount;
 */
 void USART1_IRQHandler(void)
 {
-    if (RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_RBNE))
-    {
-        /* receive data */
-        rxbuffer[rxcount++] = usart_data_receive(USART1);
+    if(RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_RBNE)){
+        /* read one byte from the receive data register */
+        rxbuffer[rx_counter++] = (uint8_t)usart_data_receive(USART1);
         
-        if (rxcount == rx_size)
+        /* echo a dot */
+        snprintf((char *)txbuffer, 2, "..");
+        tx_counter = 0;
+        nbr_data_to_send = 2;
+        usart_interrupt_enable(USART1, USART_INT_TBE);
+
+        if(rx_counter >= nbr_data_to_read)
         {
-          usart_interrupt_disable(USART1, USART_INT_RBNE);
+            /* disable the USART1 receive interrupt */
+            usart_interrupt_disable(USART1, USART_INT_RBNE);
         }
     }
-    
-    if (RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_TBE))
-    {
-        /* transmit data */
-        usart_data_transmit(USART1, txbuffer[txcount++]);
-        
-        if ((txcount == tx_size) || (txbuffer[txcount] == 0))
+       
+    if(RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_TBE)){
+        /* write one byte to the transmit data register */
+        usart_data_transmit(USART1, txbuffer[tx_counter]);
+        tx_counter++;
+
+        if(tx_counter >= nbr_data_to_send)
         {
+            /* disable the USART1 transmit interrupt */
             usart_interrupt_disable(USART1, USART_INT_TBE);
         }
     }

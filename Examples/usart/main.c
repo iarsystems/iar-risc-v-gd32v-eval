@@ -2,7 +2,7 @@
     \file  main.c
     \brief USART transmit and receive interrupt
 
-    \version 20200625 
+    \version 20200710
 */
 
 /*
@@ -12,19 +12,64 @@
 */
 
 #include <stdio.h>
-
+#include <string.h>
+#include <time.h>
 #include "iar-risc-v-gd32v-eval.h"
 
-#define ARRAYNUM(arr_name)      (uint32_t)(sizeof(arr_name) / sizeof(*(arr_name)))
-#define TRANSMIT_SIZE           (ARRAYNUM(txbuffer) - 1)
+#define BUFFER_SIZE (48)
 
-/* Global variables */
-uint8_t txbuffer[] = "\n\rUSART interrupt test\n\r";
-uint8_t rxbuffer[32];
-uint8_t tx_size = TRANSMIT_SIZE;
-uint8_t rx_size = 32;
-__IO uint8_t txcount = 0; 
-__IO uint16_t rxcount = 0; 
+typedef enum 
+{
+    CORRECT  = 0,
+    MISTYPED = 1,
+    CAPS_ON  = 2,
+    
+} verify_err_t;
+
+/* global variables */
+uint8_t* dictionary[] =                      {"banana",
+                                              "orange",
+                                              "apple",
+                                              "lime",
+                                              "watermelon",
+                                              "blueberry",
+                                              "grapefruit",
+                                              "peach",
+                                              "pineapple",
+                                              "strawberry",
+                                              "coconut",
+                                              "bacon",
+                                              "pear",
+                                              "apricot",
+                                              "avocado",
+                                              "blackberry",
+                                              "mango",
+                                              "kiwi",
+                                              "beef",
+                                              "plum",
+                                              "pomegranate",
+                                              "papaya",
+                                              "fig",
+                                              "tangerine",
+                                              "passion fruit",
+};
+uint8_t *message[5] =                        {"\n\rWell done!\n\r",
+                                              "\n\rTry again!\n\r",
+                                              "\n\rTurn off Caps Lock!!\n\r",
+                                              "\n\n\r---\n\rUSART example\n\r",
+                                              "\r\nType: ",
+};
+uint8_t txbuffer[BUFFER_SIZE];
+uint8_t rxbuffer[BUFFER_SIZE];
+__IO uint16_t tx_counter = 0, rx_counter = 0;
+size_t nbr_data_to_read, nbr_data_to_send;
+verify_err_t typed = MISTYPED; 
+
+/* function prototypes */
+verify_err_t verify_word(uint8_t* src, uint8_t* dst, uint16_t length);
+void gd_eval_usart_int_transmit(com_t, uint8_t const *, size_t);
+void gd_eval_usart_int_receive(com_t, uint8_t *, size_t);
+void init_com(void);
 
 /*!
     \brief      main function
@@ -32,37 +77,124 @@ __IO uint16_t rxcount = 0;
     \param[out] none
     \retval     none
 */
-void main(void)
+int main(void)
 {
     SystemInit();
     
-    /* EVAL_COM1 interrupt configuration */
+    /* initialize COM port */
+    init_com();
+    
+    /* initiate the PRNG */
+    srand(time(NULL)); 
+    
+    /* transmit welcome message */  
+    gd_eval_usart_int_transmit(EVAL_COM1, message[3], BUFFER_SIZE);
+    
+    while(1)
+    {
+        typed = MISTYPED;
+        
+        /* select a new word from the dictionary */
+        uint8_t *selected_word, *previous_word;
+        
+        /* do not repeat the previous word */
+        while (!strncmp((char const *)selected_word, 
+                        (char const *)previous_word, 
+                        strlen((char const *)selected_word)))
+        {   selected_word = dictionary[rand()%25];   }
+        
+        /* transmit the selected word to be typed */
+        uint8_t new_word[BUFFER_SIZE];
+        snprintf((char *)new_word, BUFFER_SIZE, "%s%s\n\r", message[4], selected_word);
+        gd_eval_usart_int_transmit(EVAL_COM1, new_word, strlen((char const *)new_word));
+        
+        while(CORRECT != typed) 
+        {
+            /* receive the typed word */  
+            gd_eval_usart_int_receive(EVAL_COM1, rxbuffer, strlen((char const *)selected_word));
+            /* verify the typed word */  
+            typed = verify_word(selected_word, rxbuffer, strlen((char const *)selected_word));
+            
+            /* transmit the result */
+            gd_eval_usart_int_transmit(EVAL_COM1, message[typed], strlen((char const *)message[typed]));
+        }
+        
+        previous_word = selected_word;
+    }
+}
+
+/*!
+    \brief      checks if the word has been typed correctly
+    \param[in]  src: selected word
+    \param[in]  dst: typed word
+    \param[in]  length: the compare data length
+    \param[out] none
+    \retval     verify_err_t 
+*/
+verify_err_t verify_word(uint8_t* src, uint8_t* dst, uint16_t length) 
+{
+    while(length--)
+    {
+        if (*dst >= 'A' && *dst <= 'Z') return CAPS_ON;
+            
+        if (*src++ != *dst++)
+        {
+            return MISTYPED;
+        }
+    }
+    return CORRECT;
+}
+
+/*!
+    \brief      USART interrupt-driven transmit data function
+    \param[in]  com: communication port
+      \arg        EVAL_COMx: EVAL_COM0..EVAL_COM1 port
+    \param[in]  data: pointer to the data to transmit
+    \param[out] none
+    \retval     none
+*/
+void gd_eval_usart_int_transmit(com_t com, uint8_t const *data, size_t buffer_sz)
+{
+    memset(&txbuffer,'\0',sizeof(txbuffer));
+    snprintf((char *)txbuffer, sizeof(txbuffer), (char const*)data);
+    tx_counter = 0;
+    nbr_data_to_send = buffer_sz;
+    /* enable COM transmit interrupt */
+    usart_interrupt_enable(com, USART_INT_TBE);
+    while(tx_counter < buffer_sz);
+}
+
+/*!
+    \brief      USART interrupt-driven receive data function
+    \param[in]  com: communication port
+      \arg        EVAL_COMx: EVAL_COM0..EVAL_COM1 port
+    \param[in]  data: pointer to the variable which will hold the data
+    \param[out] none
+    \retval     none
+*/
+void gd_eval_usart_int_receive(com_t com, uint8_t *data, size_t buffer_sz)
+{
+    memset(&rxbuffer,0x00,sizeof(rxbuffer));
+    rx_counter = 0;
+    nbr_data_to_read = buffer_sz;
+    /* enable COM receive interrupt */
+    usart_interrupt_enable(com, USART_INT_RBNE);
+    while(rx_counter < buffer_sz);
+}
+
+/*!
+    \brief      initialize communication port
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
+void init_com(void)
+{
+    /* enable the global interrupt */
     eclic_global_interrupt_enable();
     eclic_priority_group_set(ECLIC_PRIGROUP_LEVEL3_PRIO1);
     eclic_irq_enable(USART1_IRQn, 1, 0);
     
-    /* configure IAR RISC-V GD32V EVAL COM1*/
+    /* configure EVAL_COM1 */
     gd_eval_com_init(EVAL_COM1);
-    
-    /* enable EVAL_COM1 TBE interrupt */  
-    usart_interrupt_enable(EVAL_COM1, USART_INT_TBE);
-    
-    /* wait until the transmit buffer is sent to EVAL_COM1 */
-    while (txcount < tx_size);
-    
-    while (RESET == usart_flag_get(EVAL_COM1, USART_FLAG_TC));
-    
-    usart_interrupt_enable(EVAL_COM1, USART_INT_RBNE);
-    
-    /* wait until EVAL_COM1 receives the receive buffer */
-    while (rxcount < rx_size);
-    
-    if (rxcount == rx_size)
-    {
-        /* Prints on the Terminal I/O */
-        /* Enable it on View -> Terminal I/O */
-        printf("\n\rUSART data received successfully!\n\r");
-    }
-    
-    while(1);
 }
