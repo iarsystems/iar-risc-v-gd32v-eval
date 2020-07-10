@@ -1,4 +1,4 @@
-# Toggle GPIO example
+# IAR RISC-V GD32V EVAL - Toggle GPIO example
 
-This example provides a project example which toggles an LED available on a GPIO pin. 
+This project is an example which toggles an LED available on a GPIO pin. 
   
