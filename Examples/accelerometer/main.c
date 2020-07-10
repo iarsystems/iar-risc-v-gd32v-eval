@@ -1,8 +1,8 @@
 /*!
-\file  main.c
-\brief Accelerometer example for the IAR RISC-V GD32V Eval board
-
-\version 20200709
+    \file  main.c
+    \brief Accelerometer example for the IAR RISC-V GD32V Eval board
+    
+    \version 20200709
 */
 
 /*
@@ -14,7 +14,6 @@ See LICENSE.md for detailed license information.
 #include <stdio.h>
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "gd32vf103_libopt.h"
 #include "systick.h"
 #include "i2c.h"
 #include "mma8652.h"
@@ -124,7 +123,7 @@ void tilt(direction_t LorRorC)
     }
     
     /* turn off LEDs */
-    for (led_typedef_enum i = LED1; i <= LED5; i++)
+    for (led_t i = LED1; i <= LED5; i++)
     {
         gd_eval_led_off(i);
     }
@@ -160,7 +159,7 @@ void tilt(direction_t LorRorC)
 void gpio_config(void)
 {
     /* initialize and turn off LEDs */
-    for (led_typedef_enum i = LED1; i <= LED5; i++)
+    for (led_t i = LED1; i <= LED5; i++)
     {
         gd_eval_led_init(i);
         gd_eval_led_on(i);
