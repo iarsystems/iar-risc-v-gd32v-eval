@@ -189,7 +189,7 @@ void gd_eval_sw_init(sw_t sw_num, sw_mode_t sw_mode)
 /*!
     \brief      check the selected switch state
     \param[in]  sw_num: specify the switch to be checked
-       \arg        Sx: S1..S5 switch
+      \arg        Sx: S1..S5 switch
     \param[out] none
     \retval     the switch's pressed/release status
 */
