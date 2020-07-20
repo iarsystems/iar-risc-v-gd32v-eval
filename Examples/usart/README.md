@@ -9,6 +9,3 @@ For the __USART__ example, configure the Serial Port in the Virtual Terminal wit
 | Bit Parity     | None            |
 | Stop bit       | 1               | 
 | Flow Control   | None            | 
-
-
-** You also will need to activate the Terminal I/O built into the IAR Embedded Workbench IDE (View → Terminal I/O) **
