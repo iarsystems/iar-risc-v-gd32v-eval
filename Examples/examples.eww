@@ -19,6 +19,9 @@
         <path>$WS_DIR$\leds\leds.ewp</path>
     </project>
 	<project>
+        <path>$WS_DIR$\spi-flash\spi-flash.ewp</path>
+    </project>
+	<project>
         <path>$WS_DIR$\switches\switches.ewp</path>
     </project>
 	<project>
