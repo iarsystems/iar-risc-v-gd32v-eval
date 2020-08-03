@@ -35,7 +35,7 @@ OF SUCH DAMAGE.
 #ifndef GD32VF103_H
 #define GD32VF103_H
 
-#ifdef cplusplus
+#ifdef __cplusplus
  extern "C" {
 #endif 
 
@@ -100,23 +100,23 @@ OF SUCH DAMAGE.
 typedef enum IRQn
 {
 
-	CLIC_INT_RESERVED        	 = 0,      			/*!< RISC-V reserved		*/
-	CLIC_INT_SFT         		 = 3,				/*!< Software interrupt		*/
-	CLIC_INT_TMR         		 = 7,				/*!< CPU Timer interrupt	*/
-	CLIC_INT_BWEI        		 = 17,				/*!< Bus Error interrupt	*/
-	CLIC_INT_PMOVI       		 = 18,				/*!< Performance Monitor	*/
-
+    CLIC_INT_RESERVED        	 = 0,      /*!< RISC-V reserved		 				 */
+    CLIC_INT_SFT         	 = 3,	   /*!< Software interrupt	 				 */
+    CLIC_INT_TMR         	 = 7,	   /*!< CPU Timer interrupt	 				 */
+    CLIC_INT_BWEI        	 = 17,	   /*!< Bus Error interrupt	 				 */
+    CLIC_INT_PMOVI       	 = 18,	   /*!< Performance Monitor	 				 */
+    
     /* interruput numbers */
-    WWDGT_IRQn                   = 19,      /*!< window watchDog timer interrupt                          */
-    LVD_IRQn                     = 20,      /*!< LVD through EXTI line detect interrupt                   */
-    TAMPER_IRQn                  = 21,      /*!< tamper through EXTI line detect                          */
-    RTC_IRQn                     = 22,      /*!< RTC alarm interrupt                                      */
-    FMC_IRQn                     = 23,      /*!< FMC interrupt                                            */
-    RCU_CTC_IRQn                 = 24,      /*!< RCU and CTC interrupt                                    */
-    EXTI0_IRQn                   = 25,      /*!< EXTI line 0 interrupts                                   */
-    EXTI1_IRQn                   = 26,      /*!< EXTI line 1 interrupts                                   */
-    EXTI2_IRQn                   = 27,      /*!< EXTI line 2 interrupts                                   */
-    EXTI3_IRQn                   = 28,      /*!< EXTI line 3 interrupts                                   */
+    WWDGT_IRQn                   = 19,     /*!< window watchDog timer interrupt                          */
+    LVD_IRQn                     = 20,     /*!< LVD through EXTI line detect interrupt                   */
+    TAMPER_IRQn                  = 21,     /*!< tamper through EXTI line detect                          */
+    RTC_IRQn                     = 22,     /*!< RTC alarm interrupt                                      */
+    FMC_IRQn                     = 23,     /*!< FMC interrupt                                            */
+    RCU_CTC_IRQn                 = 24,     /*!< RCU and CTC interrupt                                    */
+    EXTI0_IRQn                   = 25,     /*!< EXTI line 0 interrupts                                   */
+    EXTI1_IRQn                   = 26,     /*!< EXTI line 1 interrupts                                   */
+    EXTI2_IRQn                   = 27,     /*!< EXTI line 2 interrupts                                   */
+    EXTI3_IRQn                   = 28,     /*!< EXTI line 3 interrupts                                   */
     EXTI4_IRQn                   = 29,     /*!< EXTI line 4 interrupts                                   */
     DMA0_Channel0_IRQn           = 30,     /*!< DMA0 channel0 interrupt                                  */
     DMA0_Channel1_IRQn           = 31,     /*!< DMA0 channel1 interrupt                                  */
@@ -171,7 +171,7 @@ typedef enum IRQn
     CAN1_EWMC_IRQn               = 85,     /*!< CAN1 EWMC interrupt                                      */
     USBFS_IRQn                   = 86,     /*!< USBFS global interrupt                                   */
 
-	ECLIC_NUM_INTERRUPTS
+    ECLIC_NUM_INTERRUPTS
 } IRQn_Type;
 
 /* includes */
@@ -239,7 +239,7 @@ typedef enum {ERROR = 0, SUCCESS = !ERROR} ErrStatus;
 #include "gd32vf103_libopt.h"
 #endif /* USE_STDPERIPH_DRIVER */
 
-#ifdef cplusplus
+#ifdef __cplusplus
 }
 #endif
 #endif 
