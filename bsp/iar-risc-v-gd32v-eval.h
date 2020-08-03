@@ -14,7 +14,7 @@
 #ifndef __IAR_RISCV_GD32V_EVAL_H
 #define __IAR_RISCV_GD32V_EVAL_H
 
-#ifdef cplusplus
+#ifdef __cplusplus
  extern "C" {
 #endif
 
@@ -178,8 +178,8 @@ void gd_eval_com_init(com_t);
 /* transmit data to the COM port */
 void gd_eval_usart_data_transmit(com_t, uint8_t *);
 
-#ifdef cplusplus
+#ifdef __cplusplus
 }
-#endif
+#endif /* __cplusplus */
 
 #endif /* __IAR_RISCV_GD32V_EVAL_H */

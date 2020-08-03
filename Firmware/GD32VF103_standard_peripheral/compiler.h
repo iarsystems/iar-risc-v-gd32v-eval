@@ -14,6 +14,10 @@
 #ifndef __COMPILER_H__
 #define __COMPILER_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifdef __ICCRISCV__
 
 #include <intrinsics.h>
@@ -24,6 +28,7 @@
 #define set_csr     __write_csr
 #define write_csr   __write_csr
 #define clear_csr   __clear_bits_csr
+
 /* from csr.h */
 #define mstatus     _CSR_MSTATUS
 #define mcycle      _CSR_MCYCLE
@@ -31,11 +36,12 @@
 #define mtvec       _CSR_MTVEC
 #define minstret    _CSR_MINSTRET
 #define minstreth   _CSR_MINSTRETH
-/* internal wrappers */
-#ifndef cplusplus
-#define cplusplus   __cplusplus
-#endif
+
 
 #endif /* __ICCRISCV__ */ 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __COMPILER_H__ */
