@@ -2,7 +2,7 @@
     \file    iar-risc-v-gd32v-eval.h
     \brief   definitions for IAR RISC-V GD32V Eval board hardware resources
 
-    \version 20200709
+    \version 20200803
 */
 
 /*
@@ -27,7 +27,7 @@ typedef enum
     LED2 = 1,
     LED3 = 2,
     LED4 = 3,
-	LED5 = 4,
+    LED5 = 4,
     LEDR = 5,
     LEDG = 6,
     LEDB = 7,
@@ -118,7 +118,7 @@ typedef enum
 #define S1_PIN                                GPIO_PIN_10
 #define S1_GPIO_PORT                          GPIOA
 #define S1_GPIO_CLK                           RCU_GPIOA
-#define S1_EXTI_LINE                          EXTI_11
+#define S1_EXTI_LINE                          EXTI_10
 #define S1_EXTI_PORT_SOURCE                   GPIO_PORT_SOURCE_GPIOA
 #define S1_EXTI_PIN_SOURCE                    GPIO_PIN_SOURCE_10
 #define S1_EXTI_IRQn                          EXTI10_15_IRQn
@@ -127,25 +127,25 @@ typedef enum
 #define S2_PIN                                GPIO_PIN_5
 #define S2_GPIO_PORT                          GPIOB
 #define S2_GPIO_CLK                           RCU_GPIOB
-#define S2_EXTI_LINE                          EXTI_12
+#define S2_EXTI_LINE                          EXTI_5
 #define S2_EXTI_PORT_SOURCE                   GPIO_PORT_SOURCE_GPIOB
 #define S2_EXTI_PIN_SOURCE                    GPIO_PIN_SOURCE_5
-#define S2_EXTI_IRQn                          EXTI10_15_IRQn
+#define S2_EXTI_IRQn                          EXTI5_9_IRQn
                                            
 /* S3 */                                   
 #define S3_PIN                                GPIO_PIN_8
 #define S3_GPIO_PORT                          GPIOA
 #define S3_GPIO_CLK                           RCU_GPIOA
-#define S3_EXTI_LINE                          EXTI_13
+#define S3_EXTI_LINE                          EXTI_8
 #define S3_EXTI_PORT_SOURCE                   GPIO_PORT_SOURCE_GPIOA
 #define S3_EXTI_PIN_SOURCE                    GPIO_PIN_SOURCE_8
-#define S3_EXTI_IRQn                          EXTI10_15_IRQn
+#define S3_EXTI_IRQn                          EXTI5_9_IRQn
                                       
 /* S4 */                              
 #define S4_PIN                                GPIO_PIN_11
 #define S4_GPIO_PORT                          GPIOA
 #define S4_GPIO_CLK                           RCU_GPIOA
-#define S4_EXTI_LINE                          EXTI_14
+#define S4_EXTI_LINE                          EXTI_11
 #define S4_EXTI_PORT_SOURCE                   GPIO_PORT_SOURCE_GPIOA
 #define S4_EXTI_PIN_SOURCE                    GPIO_PIN_SOURCE_11
 #define S4_EXTI_IRQn                          EXTI10_15_IRQn
@@ -154,7 +154,7 @@ typedef enum
 #define S5_PIN                                GPIO_PIN_11
 #define S5_GPIO_PORT                          GPIOB
 #define S5_GPIO_CLK                           RCU_GPIOB
-#define S5_EXTI_LINE                          EXTI_15
+#define S5_EXTI_LINE                          EXTI_11
 #define S5_EXTI_PORT_SOURCE                   GPIO_PORT_SOURCE_GPIOB
 #define S5_EXTI_PIN_SOURCE                    GPIO_PIN_SOURCE_11
 #define S5_EXTI_IRQn                          EXTI10_15_IRQn
