@@ -2,7 +2,7 @@
     \file  main.c
     \brief Switches toggle the board LEDs
 
-    \version 20200709
+    \version 20200806
 */
 
 /*
@@ -14,22 +14,12 @@
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
 
-/* switch delay */
-#define SW_DELAY 250
+#define DEBOUNCE_DELAY    10  // ms
 
 /* function prototypes */
-void gpio_config(void);
-void switches_config(void);
-static void sw_processing(sw_t);
-
-/* global variables */
-         sw_status_t sw_previous_state[3];
-volatile sw_status_t sw_current_state[3] =   {SW_RELEASE,
-                                              SW_RELEASE,
-                                              SW_RELEASE,
-};
-         
-         
+static void gpio_config(void);
+static void switches_config(void);
+static void sw_processing(void);
 
 /*!
     \brief      main function
@@ -48,53 +38,67 @@ int main(void)
     
     while (1) 
     {
-        sw_processing(S1);
-        sw_processing(S2);
-        sw_processing(S3);
+        sw_processing();
     }
 }
 
 /*!
-    \brief      initialize board LEDs
+    \brief      initialize LEDs LED1..LED3
     \param[in]  none
     \param[out] none
     \retval     none
 */
-void gpio_config(void)
+static void gpio_config(void)
 {
-    for (led_t i = LED1; i <= LEDB; i++)
+    for (led_t l = LED1; l <= LED3; l++)
     {
-        gd_eval_led_init(i);
+        gd_eval_led_init(l);
     }
 }
 
 /*!
-    \brief      initialize the board switches
+    \brief      initialize switches S1..S3
     \param[in]  none
     \param[out] none
     \retval     none
 */
-void switches_config(void)
+static void switches_config(void)
 {
-    gd_eval_sw_init(S1, SW_MODE_GPIO);
-    gd_eval_sw_init(S2, SW_MODE_GPIO);
-    gd_eval_sw_init(S3, SW_MODE_GPIO);
+    for (sw_t s = S1; s <= S3; s++)
+    {
+        gd_eval_sw_init(s, SW_MODE_GPIO);
+    }
 }
 
 /*!
     \brief      performs keypressing evaluation
-    \param[in]  sw_num: specify the switch to be configured
-      \arg        Sx: S1..S5 switch
+    \param[in]  none
     \param[out] none
     \retval     none
 */
-static void sw_processing(sw_t sw_num)
+static void sw_processing(void)
 {
-    sw_current_state[sw_num] = gd_eval_sw_state_get(sw_num);
-    if (sw_current_state[sw_num] != sw_previous_state[sw_num]) 
+    static sw_status_t Sx_current[SW_AMT];
+    static sw_status_t Sx_previous[SW_AMT];
+    
+    /* performs processing for S1, S2 and S3 */
+    for (sw_t s = S1; s <= S3; s++)
     {
-        gd_eval_led_toggle((led_t)sw_num);
-        delay_1ms(SW_DELAY);
+        Sx_previous[s] = Sx_current[s];
+        Sx_current[s] = gd_eval_sw_state_get(s);
+    
+        if (SW_PRESSED == Sx_current[s])
+        {
+            if (Sx_current[s] == Sx_previous[s])
+            {
+                /* debouncing */
+                delay_1ms(DEBOUNCE_DELAY);
+                break;
+            }
+            else 
+            {
+                gd_eval_led_toggle((led_t)s);
+            }
+        }
     }
-    sw_previous_state[sw_num] = sw_current_state[sw_num];
 }
