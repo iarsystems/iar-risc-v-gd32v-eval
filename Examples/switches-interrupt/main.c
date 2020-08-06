@@ -1,6 +1,6 @@
 /*!
     \file  main.c
-    \brief Switches toggle the board LEDs
+    \brief Interrupt-driven switches example
 
     \version 20200806
 */
@@ -14,11 +14,15 @@
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
 
-#define DEBOUNCE_DELAY    10  // ms
+#define DEBOUNCE_DELAY    25  // ms
+#define PROGRAM_DELAY    200  // ms
+
+/* global variables */
+volatile sw_status_t Sx_pressed[SW_AMT];
 
 /* function prototypes */
 static void gpio_config(void);
-static void switches_config(void);
+static void switches_config(void);  
 static void sw_processing(void);
 
 /*!
@@ -36,9 +40,11 @@ int main(void)
     /* switches config */
     switches_config();
     
-    while (1) 
+    while (1)
     {
         sw_processing();
+        
+        delay_1ms(PROGRAM_DELAY);
     }
 }
 
@@ -55,7 +61,6 @@ static void gpio_config(void)
         gd_eval_led_init(l);
     }
 }
-
 /*!
     \brief      initialize switches S1..S3
     \param[in]  none
@@ -66,7 +71,8 @@ static void switches_config(void)
 {
     for (sw_t s = S1; s <= S3; s++)
     {
-        gd_eval_sw_init(s, SW_MODE_GPIO);
+        gd_eval_sw_init(s, SW_MODE_EXTI);
+        Sx_pressed[s] = SW_RELEASE;
     }
 }
 
@@ -78,27 +84,14 @@ static void switches_config(void)
 */
 static void sw_processing(void)
 {
-    static sw_status_t Sx_current[SW_AMT];
-    static sw_status_t Sx_previous[SW_AMT];
-    
     /* performs processing for S1, S2 and S3 */
     for (sw_t s = S1; s <= S3; s++)
     {
-        Sx_previous[s] = Sx_current[s];
-        Sx_current[s] = gd_eval_sw_state_get(s);
-    
-        if (SW_PRESSED == Sx_current[s])
-        {
-            if (Sx_current[s] == Sx_previous[s])
-            {
-                /* debouncing */
-                delay_1ms(DEBOUNCE_DELAY);
-                break;
-            }
-            else 
-            {
-                gd_eval_led_toggle((led_t)s);
-            }
+        if (SW_PRESSED == Sx_pressed[s])
+        {            
+            gd_eval_led_toggle((led_t)s);            
+            delay_1ms(DEBOUNCE_DELAY);
+            Sx_pressed[s] = SW_RELEASE;
         }
     }
 }

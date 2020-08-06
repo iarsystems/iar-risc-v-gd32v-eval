@@ -12,6 +12,7 @@
 */
 
 #include "iar-risc-v-gd32v-eval.h"
+#include "systick.h"
 
 /* private variables */
 static uint32_t GPIO_PORT[LEDn] =            {LED1_GPIO_PORT, 
@@ -169,13 +170,13 @@ void gd_eval_sw_init(sw_t sw_num, sw_mode_t sw_mode)
     rcu_periph_clock_enable(RCU_AF);
 
     /* configure button pin as input */
-    gpio_init(SW_PORT[sw_num], GPIO_MODE_IN_FLOATING, GPIO_OSPEED_2MHZ, SW_PIN[sw_num]);
+    gpio_init(SW_PORT[sw_num], GPIO_MODE_IN_FLOATING, GPIO_OSPEED_50MHZ, SW_PIN[sw_num]);
 
     if (SW_MODE_EXTI == sw_mode)
     {
         /* enable and set switch EXTI interrupt to the lowest priority */
         eclic_global_interrupt_enable();
-        eclic_irq_enable(SW_IRQn[sw_num],1, 1);
+        eclic_irq_enable(SW_IRQn[sw_num], 1, 1);
 
         /* connect switch EXTI line to switch GPIO pin */
         gpio_exti_source_select(SW_PORT_SOURCE[sw_num], SW_PIN_SOURCE[sw_num]);

@@ -2,7 +2,7 @@
     \file    iar-risc-v-gd32v-eval.h
     \brief   definitions for IAR RISC-V GD32V Eval board hardware resources
 
-    \version 20200803
+    \version 20200806
 */
 
 /*
@@ -31,6 +31,7 @@ typedef enum
     LEDR = 5,
     LEDG = 6,
     LEDB = 7,
+    LED_AMT
 } led_t;
 
 typedef enum 
@@ -40,6 +41,7 @@ typedef enum
     S3 = 2,
     S4 = 3,
     S5 = 4,
+    SW_AMT
 } sw_t;
 
 typedef enum 
