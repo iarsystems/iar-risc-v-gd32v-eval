@@ -331,6 +331,7 @@
                     <state>$PROJ_DIR$/../../../../firmware/GD32VF103_standard_peripheral</state>
                     <state>$PROJ_DIR$/../../../../firmware/GD32VF103_standard_peripheral/Include</state>
                     <state>$PROJ_DIR$/../../../../firmware/RISCV/drivers</state>
+                    <state>$PROJ_DIR$/../../../../bsp</state>
                     <state>$PROJ_DIR$/../..</state>
                     <state>$PROJ_DIR$/port</state>
                 </option>
