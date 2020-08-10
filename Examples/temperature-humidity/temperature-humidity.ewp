@@ -926,6 +926,12 @@
         <file>
             <name>$PROJ_DIR$\..\..\bsp\iar-risc-v-gd32v-eval.c</name>
         </file>
+		<file>
+			<name>$PROJ_DIR$\..\..\bsp\low_level_init.c</name>
+		</file>
+		<file>
+			<name>$PROJ_DIR$\..\..\bsp\systick.c</name>
+		</file>
     </group>
     <group>
         <name>DW</name>
@@ -958,15 +964,9 @@
         </file>
     </group>
     <file>
-        <name>$PROJ_DIR$\low_level_init.c</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\README.md</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\systick.c</name>
     </file>
 </project>

@@ -35,6 +35,7 @@
 #include <stdio.h>
 
 #include "gd32vf103_libopt.h"
+#include "systick.h"
 #include "i2c.h"
 
 extern void i2c_config(void);
@@ -120,18 +121,5 @@ int8_t sensirion_i2c_write(uint8_t address, const uint8_t* data,
  */
 void sensirion_sleep_usec(uint32_t useconds)
 {
-    uint64_t start_mtime, delta_mtime;
-    uint64_t tmp = get_timer_value(); // don't start measuruing until we see an mtime tick
-
-    do
-    {
-        start_mtime = get_timer_value();
-    }
-    while (start_mtime == tmp);
-
-    do
-    {
-        delta_mtime = get_timer_value() - start_mtime;
-    }
-    while (delta_mtime < (SystemCoreClock/4000000.0 * useconds));
+    delay_1us(useconds);
 }

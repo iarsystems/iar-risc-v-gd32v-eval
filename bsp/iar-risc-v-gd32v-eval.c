@@ -12,10 +12,9 @@
 */
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "systick.h"
 
 /* private variables */
-static uint32_t GPIO_PORT[LEDn] =            {LED1_GPIO_PORT, 
+static uint32_t GPIO_PORT[LEDn] =            {LED1_GPIO_PORT,
                                               LED2_GPIO_PORT,
                                               LED3_GPIO_PORT,
                                               LED4_GPIO_PORT,
@@ -23,32 +22,32 @@ static uint32_t GPIO_PORT[LEDn] =            {LED1_GPIO_PORT,
                                               LEDR_GPIO_PORT,
                                               LEDG_GPIO_PORT,
                                               LEDB_GPIO_PORT,
-};                                       
+};
 static uint32_t GPIO_PIN[LEDn] =             {LED1_PIN,
                                               LED2_PIN,
                                               LED3_PIN,
-                                              LED4_PIN, 
+                                              LED4_PIN,
                                               LED5_PIN,
                                               LEDR_PIN,
                                               LEDG_PIN,
                                               LEDB_PIN,
-};                                           
-static rcu_periph_enum COM_CLK[COMn] =       {EVAL_COM0_CLK, 
+};
+static rcu_periph_enum COM_CLK[COMn] =       {EVAL_COM0_CLK,
                                               EVAL_COM1_CLK,
-};                                           
-static uint32_t COM_TX_PIN[COMn] =           {EVAL_COM0_TX_PIN, 
+};
+static uint32_t COM_TX_PIN[COMn] =           {EVAL_COM0_TX_PIN,
                                               EVAL_COM1_TX_PIN,
-};                                           
-static uint32_t COM_RX_PIN[COMn] =           {EVAL_COM0_RX_PIN, 
+};
+static uint32_t COM_RX_PIN[COMn] =           {EVAL_COM0_RX_PIN,
                                               EVAL_COM1_RX_PIN,
-};                                       
-static uint32_t COM_GPIO_PORT[COMn] =        {EVAL_COM0_GPIO_PORT, 
+};
+static uint32_t COM_GPIO_PORT[COMn] =        {EVAL_COM0_GPIO_PORT,
                                               EVAL_COM1_GPIO_PORT,
 };
 static rcu_periph_enum COM_GPIO_CLK[COMn] =  {EVAL_COM0_GPIO_CLK,
                                               EVAL_COM1_GPIO_CLK,
 };
-static rcu_periph_enum GPIO_CLK[LEDn] =      {LED1_GPIO_CLK, 
+static rcu_periph_enum GPIO_CLK[LEDn] =      {LED1_GPIO_CLK,
                                               LED2_GPIO_CLK,
                                               LED3_GPIO_CLK,
                                               LED4_GPIO_CLK,
@@ -103,7 +102,7 @@ static uint8_t SW_IRQn[Sn] =                 {S1_EXTI_IRQn,
 /*!
     \brief      configure LED GPIO
     \param[in]  lednum: specify the LED to be configured
-      \arg        LEDx: LED1..LEDB  
+      \arg        LEDx: LED1..LEDB
     \param[out] none
     \retval     none
 */
@@ -111,7 +110,7 @@ void gd_eval_led_init(led_t lednum)
 {
     /* enable the LED clock */
     rcu_periph_clock_enable(GPIO_CLK[lednum]);
-    /* configure LED GPIO port */ 
+    /* configure LED GPIO port */
     gpio_init(GPIO_PORT[lednum], GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN[lednum]);
 
     GPIO_BC(GPIO_PORT[lednum]) = GPIO_PIN[lednum];
@@ -131,7 +130,7 @@ void gd_eval_led_on(led_t lednum)
 /*!
     \brief      turn off selected the board's LED
     \param[in]  lednum: specify the LED to be turned off
-      \arg        LEDx: LED1..LEDB  
+      \arg        LEDx: LED1..LEDB
     \param[out] none
     \retval     none
 */
@@ -143,13 +142,13 @@ void gd_eval_led_off(led_t lednum)
 /*!
     \brief      toggle selected LED
     \param[in]  lednum: specify the LED to be toggled
-      \arg        LEDx: LED1..LEDB  
+      \arg        LEDx: LED1..LEDB
     \param[out] none
     \retval     none
 */
 void gd_eval_led_toggle(led_t lednum)
 {
-    gpio_bit_write(GPIO_PORT[lednum], GPIO_PIN[lednum], 
+    gpio_bit_write(GPIO_PORT[lednum], GPIO_PIN[lednum],
         (bit_status)(1-gpio_input_bit_get(GPIO_PORT[lednum], GPIO_PIN[lednum])));
 }
 
@@ -201,7 +200,7 @@ sw_status_t gd_eval_sw_state_get(sw_t sw_num)
 
 /*!
     \brief      configure the board COM port
-    \param[in]  com: communication port  
+    \param[in]  com: communication port
       \arg        EVAL_COMx: EVAL_COM0..EVAL_COM1 port
     \param[out] none
     \retval     none
@@ -209,7 +208,7 @@ sw_status_t gd_eval_sw_state_get(sw_t sw_num)
 void gd_eval_com_init(com_t com)
 {
     uint32_t com_id = (EVAL_COM0 == com) ? 0 : 1;
-    
+
     /* enable GPIO clock */
     rcu_periph_clock_enable(COM_GPIO_CLK[com_id]);
     /* enable USART clock */
