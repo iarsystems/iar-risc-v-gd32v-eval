@@ -2,7 +2,7 @@
     \file    i2c.c
     \brief   BSP I2C header
 
-    \version 20200707
+    \version 20200810
 */
 
 /*
@@ -10,15 +10,29 @@
 
     See LICENSE.md for detailed license information.
 */
-#ifndef I2C_H
-#define I2C_H
+#ifndef BSP_I2C_H
+#define BSP_I2C_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "gd32vf103.h"
 
-uint8_t i2c0_write(uint8_t addr, uint8_t * data, uint8_t count);
-uint8_t i2c_reg8_write(uint8_t i2c_dev_addr, uint8_t reg, uint8_t value);
+typedef enum
+{
+    BSP_I2C_OK,
+    BSP_I2C_FAIL
+} i2c_state_t;
 
-uint8_t i2c0_read(uint8_t addr, uint8_t * data, uint8_t count);
-uint8_t i2c_reg8_read(uint8_t i2c_dev_addr, uint8_t reg, uint8_t *value);
+i2c_state_t bsp_i2c0_write(uint8_t addr, uint8_t * data, uint8_t count);
+i2c_state_t bsp_i2c0_reg8_write(uint8_t i2c_dev_addr, uint8_t reg, uint8_t value);
 
-#endif /* I2C_H */
+i2c_state_t bsp_i2c0_read(uint8_t addr, uint8_t * data, uint8_t count);
+i2c_state_t bsp_i2c0_reg8_read(uint8_t i2c_dev_addr, uint8_t reg, uint8_t *value);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* BSP_I2C_H */

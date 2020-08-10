@@ -66,7 +66,7 @@ int16_t sensirion_i2c_select_bus(uint8_t bus_idx) {
  * Initialize all hard- and software components that are needed for the I2C
  * communication.
  */
-void sensirion_i2c_init(void) 
+void sensirion_i2c_init(void)
 {
     i2c_config();
 }
@@ -88,9 +88,9 @@ void sensirion_i2c_release(void) {
  * @param count   number of bytes to read from I2C and store in the buffer
  * @returns 0 on success, error code otherwise
  */
-int8_t sensirion_i2c_read(uint8_t address, uint8_t* data, uint16_t count) 
-{   
-    return i2c0_read(address, (uint8_t *)data, count);
+int8_t sensirion_i2c_read(uint8_t address, uint8_t* data, uint16_t count)
+{
+    return bsp_i2c0_read(address, (uint8_t *)data, count);
 }
 
 /**
@@ -105,9 +105,9 @@ int8_t sensirion_i2c_read(uint8_t address, uint8_t* data, uint16_t count)
  * @returns 0 on success, error code otherwise
  */
 int8_t sensirion_i2c_write(uint8_t address, const uint8_t* data,
-                           uint16_t count) 
+                           uint16_t count)
 {
-    return i2c0_write(address, (uint8_t *)data, count);
+    return bsp_i2c0_write(address, (uint8_t *)data, count);
 }
 
 /**
@@ -118,11 +118,11 @@ int8_t sensirion_i2c_write(uint8_t address, const uint8_t* data,
  *
  * @param useconds the sleep time in microseconds
  */
-void sensirion_sleep_usec(uint32_t useconds) 
+void sensirion_sleep_usec(uint32_t useconds)
 {
     uint64_t start_mtime, delta_mtime;
     uint64_t tmp = get_timer_value(); // don't start measuruing until we see an mtime tick
-    
+
     do
     {
         start_mtime = get_timer_value();
@@ -132,6 +132,6 @@ void sensirion_sleep_usec(uint32_t useconds)
     do
     {
         delta_mtime = get_timer_value() - start_mtime;
-    } 
+    }
     while (delta_mtime < (SystemCoreClock/4000000.0 * useconds));
 }
