@@ -28,7 +28,7 @@
         <path>$WS_DIR$\switches-interrupt\switches-interrupt.ewp</path>
     </project>
     <project>
-        <path>$WS_DIR$\timer0\timer0.ewp</path>
+        <path>$WS_DIR$\timer-pwm\timer-pwm.ewp</path>
     </project>
     <project>
         <path>$WS_DIR$\temperature-humidity\temperature-humidity.ewp</path>
