@@ -1,8 +1,8 @@
 /*!
     \file  main.c
     \brief Template for starting new projects
-    
-    \version 20200625
+
+    \version 20200818
 */
 
 /*
@@ -12,7 +12,11 @@
 */
 
 #include "iar-risc-v-gd32v-eval.h"
-#include "gd32vf103_libopt.h"
+#include "i2c.h"
+#include "mma8652.h"
+#include "sht3x.h"
+#include "systick.h"
+
 
 /*!
     \brief      main function
@@ -23,9 +27,9 @@
 void main(void)
 {
     SystemInit();
-    
+
     while(1)
     {
-
+        delay_1ms(1000);
     }
 }
