@@ -6,6 +6,7 @@ You can read more about pull requests at [GitHub Documentation][about-pull-reque
 
 ### GitHub pull request basic workflow 
 1. Create a personal [Fork][github-create-fork] of the [IAR RISC-V GD32V Eval Board repository][gd32v-repo]
+*   If you have done this previously, you can always [sync your fork to the upstream][sync-fork-url].
 
 2. Clone the forked repository to your local machine
 ```
@@ -49,3 +50,4 @@ $ git push
 [about-pull-requests]: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
 [github-create-fork]: https://guides.github.com/activities/forking/
 [gd32v-repo]: https://github.com/IARSystems/iar-risc-v-gd32v-eval
+[sync-fork-url]: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork
