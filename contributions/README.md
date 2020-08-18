@@ -44,7 +44,7 @@ $ git push
 *   Keep the title **short** and provide a **clear** description about what your pull request does.
 *   If your commit fixes a reported issue (for example #123), add the following message to the commit `Closes #123`.
 
-[coding-guidelines-url]: https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/doc/CODING_GUIDELINES.md
+[coding-guidelines-url]: CODING_GUIDELINES.md
 [project-template]: https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/contributions/template/README.md
 [about-pull-requests]: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
 [github-create-fork]: https://guides.github.com/activities/forking/
