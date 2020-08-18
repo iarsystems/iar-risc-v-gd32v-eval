@@ -901,12 +901,42 @@
     </configuration>
     <group>
         <name>BSP</name>
+        <group>
+            <name>SHT3x</name>
+            <file>
+                <name>$PROJ_DIR$\..\..\bsp\sht3x\sensirion_common.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\bsp\sht3x\sensirion_humidity_conversion.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\bsp\sht3x\sensirion_hw_i2c_implementation.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\bsp\sht3x\sensirion_temperature_unit_conversion.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\..\bsp\sht3x\sht3x.c</name>
+            </file>
+        </group>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\i2c.c</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\..\..\bsp\iar-risc-v-gd32v-eval.c</name>
         </file>
-		<file>
-			<name>$PROJ_DIR$\..\..\bsp\low_level_init.c</name>
-		</file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\LE25Uxx.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\low_level_init.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\MMA8652.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\systick.c</name>
+        </file>
     </group>
     <group>
         <name>DW</name>
@@ -916,6 +946,69 @@
     </group>
     <group>
         <name>FW</name>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_adc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_bkp.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_can.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_crc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_dac.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_dbg.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_dma.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_eclic.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_exmc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_exti.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_fmc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_fwdgt.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_gpio.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_i2c.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_pmu.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_rcu.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_rtc.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_spi.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_timer.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_usart.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_wwdgt.c</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
         </file>

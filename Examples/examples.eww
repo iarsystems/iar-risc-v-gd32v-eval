@@ -7,9 +7,6 @@
         <path>$WS_DIR$\adc\adc.ewp</path>
     </project>
     <project>
-        <path>$WS_DIR$\template\template.ewp</path>
-    </project>
-    <project>
         <path>$WS_DIR$\rgb-led\rgb-led.ewp</path>
     </project>
     <project>
