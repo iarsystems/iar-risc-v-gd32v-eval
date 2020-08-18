@@ -1,8 +1,10 @@
 # IAR RISC-V GD32V Evaluation kit - Project examples
 
-The project [examples](Examples) in this repository are designed to be run on the [__IAR RISC-V GD32V Evaluation board__](https://www.iar.com/evalkit) with the [IAR Embedded Workbench for RISC-V](https://iar.com/riscv)
+The project [examples](Examples) in this repository are designed to be run on the [__IAR RISC-V GD32V Evaluation board__][gd32v-evalkit-url] with the [IAR Embedded Workbench for RISC-V][ewriscv-url]
 
 For documentation and schematics, follow this [link](docs).
+
+For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
 ---
 
@@ -33,5 +35,8 @@ If an [example](Examples) requires any specific jumper settings, refer to its re
 
 ---
 
-Questions? Please reach out to [fae@iar.com](mailto:fae@iar.com?subject=Question%20from%20iar-risc-v-gd32v-eval%20repository). 
-We are happy to assist you with any related questions.
+Questions? Please reach out to [fae@iar.com][fae-email]. We are happy to assist you with any related questions.
+
+[fae-email]: mailto:fae@iar.com?subject=Mail%20from%20GitHub/IARSystems/iar-risc-v-gd32v-eval%20repository
+[gd32v-evalkit-url]: https://www.iar.com/evalkit
+[ewriscv-url]: https://iar.com/riscv
