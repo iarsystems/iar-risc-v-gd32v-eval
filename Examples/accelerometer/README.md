@@ -38,4 +38,4 @@ Next, execute the program by selecting `Debug → Go` (or <kbd>F5</kbd>).
 
 Finally, tilt the board and watch the LED bar to toggle in accordance with the current gravitational data.
 
-To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging` ( or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D<k/bd>).
+To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging` ( or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>).
