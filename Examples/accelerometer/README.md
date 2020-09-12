@@ -25,17 +25,17 @@ The settings are __highlighted__ in the following tables:
 
 ## Building and Running
 	
-To build and run the project, select `Project → Make (F7)`.
+To build and run the project, select `Project → Make` (or <kbd>F7</kbd>).
 
-Once the build is complete, connect your evaluation board debugger 20-pin header (__J11__) to the I-jet debugging probe and then select `Project → Download and Debug (CTRL + D)`.
+Once the build is complete, connect your evaluation board debugger 20-pin header (__J11__) to the I-jet debugging probe and then select `Project → Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>).
 
 The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
 This project uses the integrated IAR Embedded Workbench virtual terminal to output the accelerometer (x,y,z)-axis data.
 
 In order to see the sensor data in real time, select `View → Terminal I/O`. A new window named __Terminal I/O__ will show up without any output so far.
 
-Next, execute the program by selecting `Debug → Go (F5)`.
+Next, execute the program by selecting `Debug → Go` (or <kbd>F5</kbd>).
 
 Finally, tilt the board and watch the LED bar to toggle in accordance with the current gravitational data.
 
-To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging (CTRL + SHIFT + D)`.
+To terminate the debugging session, stop the C-SPY debugger, choose `Debug → Stop Debugging` ( or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D<k/bd>).
