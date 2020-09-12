@@ -12,13 +12,13 @@ For the __SPI Flash__ example, configure the Serial Port in the Virtual Terminal
 
 ## Building and Running
 	
-To build and run the project, select `Project → Make (F7)`.
+To build and run the project, select `Project → Make` ( or <kbd>F7</kbd>).
 
-Once the build is complete, connect your evaluation board debugger 20-pin header (__J11__) to the I-jet debugging probe and then select `Project → Download and Debug (CTRL + D)`.
+Once the build is complete, connect your evaluation board debugger 20-pin header (__J11__) to the I-jet debugging probe and then select `Project → Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>).
 
 The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
 
-Next, execute the program by selecting `Debug → Go (F5)`.
+Next, execute the program by selecting `Debug → Go` (or <kbd>F5</kbd>).
 
 The program will fill and copy `txbuffer` contents to the SPI Flash memory. Then it will read the contents back, storing it the results on `rxbuffer`. Those contents are going to be printed to the Serial Terminal by using the retargeted `printf()` function. A final message should tell if the operation was succesful. The expected print out can be seen below.
 
@@ -68,4 +68,4 @@ Read from rxbuffer:
 SPI Flash: LE25U20 test passed!
 ```
 
-To terminate the debugging session, stop the C-SPY debugger by choosing `Debug → Stop Debugging (CTRL + SHIFT + D)`.
+To terminate the debugging session, stop the C-SPY debugger by choosing `Debug → Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>).
