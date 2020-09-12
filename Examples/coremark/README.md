@@ -12,11 +12,11 @@ By running the code on a target, a __CoreMark score__ is obtained. The better a 
 	
 To build and run the benchmark, select 
 
-`Project → Make (F7)`
+`Project → Make` (or <kbd>F7</kbd>)
 
 Once the build is complete, connect your evaluation board debugger 20-pin header to the I-jet debugging probe and then select
 
-`Project → Download and Debug (CTRL + D)`
+`Project → Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>)
 
 The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
 This project uses the integrated IAR Embedded Workbench virtual terminal to output the benchmark results.
@@ -26,14 +26,14 @@ In order to see the results, select
 
 A new window named __Terminal I/O__ will show up without any output so far.
 Next, execute the program by selecting
-`Debug → Go (F5)`
+`Debug → Go` (or <kbd>F5</kbd>)
 
 The program will execute for about 10 seconds and once it finishes, it will print out the __Coremark score__ for your evaluation board.
 
-### Notes
-* According to the CoreMark [rules](#run-rules), the source files named core* cannot be touched. The only exception to that rule are the __core_portme__ files.
-* A typical way to compare the scores from different cores/compilers combinations is to rate them by __CoreMark/MHz__.
-* If you wish to know how many CoreMark/MHz your board got, do the math! It is as easy as taking the *CoreMark score* and dividing it by 108 MHz.
+> Notes
+> * According to the CoreMark [rules](#run-rules), the source files named core* cannot be touched. The only exception to that rule are the __core_portme__ files.
+> * A typical way to compare the scores from different cores/compilers combinations is to rate them by __CoreMark/MHz__.
+> * If you wish to know how many CoreMark/MHz your board got, do the math! It is as easy as taking the *CoreMark score* and dividing it by 108 MHz.
 
 ---
 # Submitting Results
