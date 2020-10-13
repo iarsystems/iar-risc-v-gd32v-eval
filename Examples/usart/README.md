@@ -17,15 +17,11 @@ To build the project, select
 
 [ijet-guide-url]: https://netstorage.iar.com/SuppDB/Public/UPDINFO/014617/riscv/doc/EWRISCV_DebugProbes.pdf 
 
-Open a __Serial Terminal Emulator__ and configure it with the following settings:
+Open a __Serial Terminal Emulator__ and configure the COM port with the following settings:
 
-| __Setting__    |  __Selection__  |
-| :------------- | :-------------- |
-| Baud rate      | 115200          |
-| Data           | 8               |
-| Bit Parity     | None            |
-| Stop bit       | 1               | 
-| Flow Control   | None            | 
+| __Baud rate__ | __Data__ | __Bit Parity__ | __Stop Bit__ | __Flow Control__ |
+|--------------:|---------:|---------------:|-------------:|-----------------:|
+|      `115200` |      `8` |         `None` |          `1` |           `None` |
 
 > __Note__
 > * This project example was tested with [Tera Term][tera-term-url] and [PuTTY][putty-url] as __Serial Terminal Emulator__.
