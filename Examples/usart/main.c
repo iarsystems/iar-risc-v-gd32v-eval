@@ -55,7 +55,7 @@ uint8_t* dictionary[] =                      {"banana",
 uint8_t *message[5] =                        {"\n\rWell done!\n\r",
                                               "\n\rTry again!\n\r",
                                               "\n\rTurn off Caps Lock!!\n\r",
-                                              "\n\r\n\r---\n\rUSART example",
+                                              "\n\r\n\r---\n\rUSART example\n\r",
                                               "\n\rType: ",
 };
 uint8_t txbuffer[BUFFER_SIZE];
