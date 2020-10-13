@@ -40,7 +40,7 @@ The IDE will slightly change its initial appearance and new menu options will be
 Next, execute the program by selecting
 `Debug → Go` (or <kbd>F5</kbd>)
 
-The __Virtual Terminal__ should display a welcome message with an output similar to the following:
+The __Serial Terminal Emulator__ should display a welcome message with an output similar to the following:
 ```
 ---
 USART example
