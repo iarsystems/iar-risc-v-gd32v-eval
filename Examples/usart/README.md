@@ -24,10 +24,14 @@ Open a __Serial Terminal Emulator__ and configure the COM port with the followin
 |      `115200` |      `8` |         `None` |          `1` |           `None` |
 
 > __Note__
-> * This project example was tested with [Tera Term][tera-term-url] and [PuTTY][putty-url] as __Serial Terminal Emulator__.
+> This project example was tested with the following __Serial Virtual Terminal Emulators__
+> * [PuTTY][putty-url]
+> * [Tera Term][tera-term-url]
+> * [Termite][termite-url] 
 
-[tera-term-url]: https://ttssh2.osdn.jp/index.html.en
 [putty-url]: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
+[tera-term-url]: https://ttssh2.osdn.jp/index.html.en
+[termite-url]: https://www.compuphase.com/software_termite.htm
 
 ## Running
 
