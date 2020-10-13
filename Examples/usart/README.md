@@ -49,7 +49,8 @@ Type: <fruit>
 █
 ```
 
-> * The <fruit> is randomly selected from a word list.
+> __Note__
+> * The `<fruit>` is randomly selected from a word list.
 
 When a character is sent to the serial port, a __dot__ will show on the __Serial Terminal Emulator__. For example:
 ```
