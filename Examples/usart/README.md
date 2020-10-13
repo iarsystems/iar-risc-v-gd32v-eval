@@ -1,4 +1,4 @@
-# IAR RISC-V GD32V EVAL - USART interrupt-driven Transmitter/Receiver mini game 
+# USART interrupt-driven Transmit/Receive example
 
 ## Building
 	
@@ -24,6 +24,7 @@ Open a __Serial Terminal Emulator__ and configure the COM port with the followin
 |      `115200` |      `8` |         `None` |          `1` |           `None` |
 
 > __Note__
+>
 > This project example was tested with the following __Serial Virtual Terminal Emulators__
 > * [PuTTY][putty-url]
 > * [Tera Term][tera-term-url]
