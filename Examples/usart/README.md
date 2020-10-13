@@ -92,4 +92,4 @@ Try again!
 ---
 Navigate: [Initial Page][home-url]
 
-[home-url]: ../README.md
+[home-url]: ../../README.md
