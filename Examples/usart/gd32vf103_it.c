@@ -2,7 +2,7 @@
     \file  gd32vf103_it.c
     \brief Interrupt service routines
 
-    \version 20200710
+    \version 20201013
 */
 
 /*
@@ -27,29 +27,36 @@ extern uint16_t tx_counter, rx_counter;
 */
 void USART1_IRQHandler(void)
 {
-    if(RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_RBNE)){
-        /* read one byte from the receive data register */
+    if (RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_RBNE))
+    {
+        /* read 1 byte from the receive data register */
         rxbuffer[rx_counter++] = (uint8_t)usart_data_receive(USART1);
-        
-        /* echo a dot */
-        snprintf((char *)txbuffer, 2, "..");
-        tx_counter = 0;
-        nbr_data_to_send = 2;
-        usart_interrupt_enable(USART1, USART_INT_TBE);
 
-        if(rx_counter >= nbr_data_to_read)
+        /* when 1 byte is received, set "dot" to be transmitted as visual feedback */
+
+        USART_DATA(USART1) = USART_DATA_DATA & '.';
+
+        if (rx_counter < nbr_data_to_read)
+        {
+            /* echo a "dot" for visual feedback */
+            usart_interrupt_enable(USART1, USART_INT_TBE);
+        }
+        else
         {
             /* disable the USART1 receive interrupt */
             usart_interrupt_disable(USART1, USART_INT_RBNE);
         }
     }
-       
-    if(RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_TBE)){
-        /* write one byte to the transmit data register */
-        usart_data_transmit(USART1, txbuffer[tx_counter]);
-        tx_counter++;
 
-        if(tx_counter >= nbr_data_to_send)
+    if (RESET != usart_interrupt_flag_get(USART1, USART_INT_FLAG_TBE))
+    {
+        if (tx_counter < nbr_data_to_send)
+        {
+            /* write 1 byte to the transmit data register */
+            USART_DATA(USART1) = USART_DATA_DATA & txbuffer[tx_counter];
+            tx_counter++;
+        }
+        else
         {
             /* disable the USART1 transmit interrupt */
             usart_interrupt_disable(USART1, USART_INT_TBE);

@@ -2,7 +2,7 @@
     \file  main.c
     \brief USART transmit and receive interrupt
 
-    \version 20200710
+    \version 20201013
 */
 
 /*
@@ -18,12 +18,11 @@
 
 #define BUFFER_SIZE (48)
 
-typedef enum 
+typedef enum
 {
     CORRECT  = 0,
     MISTYPED = 1,
     CAPS_ON  = 2,
-    
 } verify_err_t;
 
 /* global variables */
@@ -56,14 +55,14 @@ uint8_t* dictionary[] =                      {"banana",
 uint8_t *message[5] =                        {"\n\rWell done!\n\r",
                                               "\n\rTry again!\n\r",
                                               "\n\rTurn off Caps Lock!!\n\r",
-                                              "\n\n\r---\n\rUSART example\n\r",
-                                              "\r\nType: ",
+                                              "\n\r\n\r---\n\rUSART example",
+                                              "\n\rType: ",
 };
 uint8_t txbuffer[BUFFER_SIZE];
 uint8_t rxbuffer[BUFFER_SIZE];
 __IO uint16_t tx_counter = 0, rx_counter = 0;
 size_t nbr_data_to_read, nbr_data_to_send;
-verify_err_t typed = MISTYPED; 
+verify_err_t typed = MISTYPED;
 
 /* function prototypes */
 verify_err_t verify_word(uint8_t* src, uint8_t* dst, uint16_t length);
@@ -80,35 +79,34 @@ void init_com(void);
 int main(void)
 {
     SystemInit();
-    
+
     /* initialize COM port */
     init_com();
-    
+
     /* initiate the PRNG */
-    srand(time(NULL)); 
-    
-    /* transmit welcome message */  
-    gd_eval_usart_int_transmit(EVAL_COM1, message[3], BUFFER_SIZE);
-    
+    srand(time(NULL));
+
+    /* transmit welcome message */
+    gd_eval_usart_int_transmit(EVAL_COM1, message[3], strlen((char const *)message[3]));
+
     while(1)
     {
         typed = MISTYPED;
-        
+
         /* select a new word from the dictionary */
-        uint8_t *selected_word = dictionary[rand()%25];
-        
+        uint8_t *selected_word = dictionary[rand() % 25];
+
         /* transmit the selected word to be typed */
         uint8_t new_word[BUFFER_SIZE];
         snprintf((char *)new_word, BUFFER_SIZE, "%s%s\n\r", message[4], selected_word);
         gd_eval_usart_int_transmit(EVAL_COM1, new_word, strlen((char const *)new_word));
-        
-        while(CORRECT != typed) 
+
+        while(CORRECT != typed)
         {
-            /* receive the typed word */  
+            /* receive the typed word */
             gd_eval_usart_int_receive(EVAL_COM1, rxbuffer, strlen((char const *)selected_word));
-            /* verify the typed word */  
+            /* verify the typed word */
             typed = verify_word(selected_word, rxbuffer, strlen((char const *)selected_word));
-            
             /* transmit the result */
             gd_eval_usart_int_transmit(EVAL_COM1, message[typed], strlen((char const *)message[typed]));
         }
@@ -121,14 +119,14 @@ int main(void)
     \param[in]  dst: typed word
     \param[in]  length: the compare data length
     \param[out] none
-    \retval     verify_err_t 
+    \retval     verify_err_t
 */
-verify_err_t verify_word(uint8_t* src, uint8_t* dst, uint16_t length) 
+verify_err_t verify_word(uint8_t* src, uint8_t* dst, uint16_t length)
 {
     while(length--)
     {
         if (*dst >= 'A' && *dst <= 'Z') return CAPS_ON;
-            
+
         if (*src++ != *dst++)
         {
             return MISTYPED;
@@ -166,7 +164,7 @@ void gd_eval_usart_int_transmit(com_t com, uint8_t const *data, size_t buffer_sz
 */
 void gd_eval_usart_int_receive(com_t com, uint8_t *data, size_t buffer_sz)
 {
-    memset(&rxbuffer,0x00,sizeof(rxbuffer));
+    memset(&rxbuffer,'\0',sizeof(rxbuffer));
     rx_counter = 0;
     nbr_data_to_read = buffer_sz;
     /* enable COM receive interrupt */
@@ -186,7 +184,7 @@ void init_com(void)
     eclic_global_interrupt_enable();
     eclic_priority_group_set(ECLIC_PRIGROUP_LEVEL3_PRIO1);
     eclic_irq_enable(USART1_IRQn, 1, 0);
-    
+
     /* configure EVAL_COM1 */
     gd_eval_com_init(EVAL_COM1);
 }
