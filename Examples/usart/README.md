@@ -4,7 +4,7 @@
 	
 To build the project, select 
 
-`Project → Make` (or <kbd>F7</kbd>)
+`Project` → `Make` (or <kbd>F7</kbd>)
 
 
 ## Board Setup
@@ -33,12 +33,12 @@ Open a __Serial Terminal Emulator__ and configure the COM port with the followin
 
 To start the debug session on the IAR Embedded Workbench IDE select
 
-`Project → Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>)
+`Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>)
 
 The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
 
 Next, execute the program by selecting
-`Debug → Go` (or <kbd>F5</kbd>)
+`Debug` → `Go` (or <kbd>F5</kbd>)
 
 The __Serial Terminal Emulator__ should display a welcome message with an output similar to the following:
 ```
