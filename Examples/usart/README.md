@@ -58,7 +58,7 @@ When a character is sent to the serial port, a __dot__ will show on the __Serial
 USART example
 
 Type: kiwi
-...█
+.█
 ```
 
 Once the word has been correctly typed, a result message will be displayed and a new word will be randomly selected for the next round:
