@@ -8,28 +8,14 @@ For learning how you can contribute with new projects to this repository, follow
 
 ---
 
-The board comes with jumpers for user-selectable functionality as in the tables below.
+The board brings jumpers for user-selectable functionality for its buttons and LEDs, according to the table below. 
 
-| __J5__         | __Position__    |  __Option__    |
-| :------------- | :-------------- | :------------- |
-|                | 1-2             | LED3           |
-|                | 2-3             | Green LED      |
-
-| __J6__         | __Position__    |  __Option__    |
-| :------------- | :-------------- | :------------- |
-|                | 1-2             | USB/Debug      |
-|                | 2-3             | J4             |
-
-| __J8__         | __Position__    |  __Option__    |
-| :------------- | :-------------- | :------------- |
-|                | 1-2             | SW4            |
-|                | 2-3             | Red LED        |
-
-| __J9__         | __Position__    |  __Option__    |
-| :------------- | :-------------- | :------------- |
-|                | 1-2             | SW5            |
-|                | 3-4             | Blue LED       |
-|                | 5-6             | LED4           |
+| __Jumper__     | __Position__       |  __Selection__          |
+| :------------- | :----------------- | :---------------------- |
+| J5             |  1-2<br>2-3        | LED3<br>Green LED       |
+| J6             |  1-2<br>2-3        | USB/Debug<br>J4         |
+| J8             |  1-2<br>2-3        | SW4<br>Red LED          |
+| J9             |  1-2<br>3-4<br>5-6 | SW5<br>Blue LED<br>LED4 |
 
 If an [example](Examples) requires any specific jumper settings, refer to its respective README.md file.
 
