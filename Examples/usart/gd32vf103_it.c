@@ -33,7 +33,6 @@ void USART1_IRQHandler(void)
         rxbuffer[rx_counter++] = (uint8_t)usart_data_receive(USART1);
 
         /* when 1 byte is received, set "dot" to be transmitted as visual feedback */
-
         USART_DATA(USART1) = USART_DATA_DATA & '.';
 
         if (rx_counter < nbr_data_to_read)
