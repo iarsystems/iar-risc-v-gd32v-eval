@@ -2,7 +2,7 @@
     \file  gd32vf103_it.c
     \brief Interrupt service routines
 
-    \version 20201013
+    \version 20201014
 */
 
 /*
@@ -12,7 +12,6 @@
 */
 
 #include "gd32vf103_it.h"
-#include <stdio.h>
 
 extern uint8_t txbuffer[];
 extern uint8_t rxbuffer[];
@@ -32,8 +31,8 @@ void USART1_IRQHandler(void)
         /* read 1 byte from the receive data register */
         rxbuffer[rx_counter++] = (uint8_t)usart_data_receive(USART1);
 
-        /* when 1 byte is received, set "dot" to be transmitted as visual feedback */
-        USART_DATA(USART1) = USART_DATA_DATA & '.';
+        /* when 1 byte is received, set transmit data buffer with a "dot" */
+        usart_data_transmit(USART1, '.');
 
         if (rx_counter < nbr_data_to_read)
         {
