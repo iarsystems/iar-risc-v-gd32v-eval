@@ -51,8 +51,11 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 ## 2.	Set up the evaluation board
 
 1. Connect your computer and the I-jet Lite debug probe using the USB-micro cable (packing with the I-jet Lite). Do not connect the I-jet Lite to the evaluation board yet.
+
 2. The “USB” LED on the front side of the I-jet Lite will be lit with green when Windows completes searching for a USB driver. 
+
 3. Connect the I-jet Lite to the JTAG __J11__ connector. 
+
 4. Connect your computer and the USB-mini B connector using the USB-mini cable. Optionally the power supply can be provided from I-jet Lite. See the section [Target power supply from I-jet Lite for more details](5-target-power-supply-from-i-jet-lite). 
 
 ## 3.	Running example applications
@@ -71,23 +74,24 @@ When you have installed and set up all the software and hardware, you can try on
 
 4. Right-click on the desired project and select `Set as Active`.
 
-5. Choose `Project` → `Make` (or <kbd>F7</kbd>) or click the `Make` button on the main toolbar to compile and link the project.
+5. Unfold the project in the __Workspace__ window and open its __README.md__ file. The README.md file provides any specific board setup or details specific to the active project.
 
-6. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Debug Toolbar_.
+6. Choose `Project` → `Make` (or <kbd>F7</kbd>) or click the `Make` button on the main toolbar to compile and link the project.
 
-7. Use the default settings in the hardware setup dialog box that is displayed. Click `OK`. This will cause your application to be downloaded to the evaluation board.
+7. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Debug Toolbar_.
 
-8. The source file including the _main()_ function is now displayed in the editor window and the application is stopped at the entry point.
+8. Use the default settings in the hardware setup dialog box that is displayed. Click `OK`. This will cause your application to be downloaded to the evaluation board.
 
-9. Click `Debug` → `Go` (or <kbd>F5</kbd>) or click the `Go` button on the _Debug Toolbar_ to start the application. 
+9. The source file including the _main()_ function is now displayed in the editor window and the application is stopped at the entry point.
 
-10. To halt the execution, choose `Debug` → `Break` or click the `Break` button on the _Debug toolbar_.
+10. Click `Debug` → `Go` (or <kbd>F5</kbd>) or click the `Go` button on the _Debug Toolbar_ to start the application. 
 
-11.	To exit C-SPY, choose `Debug` → `Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>) or click the `Stop Debugging` button on the _Debug Toolbar_.
+11. To halt the execution, choose `Debug` → `Break` or click the `Break` button on the _Debug toolbar_.
+
+12.	To exit C-SPY, choose `Debug` → `Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>) or click the `Stop Debugging` button on the _Debug Toolbar_.
 
 > __Note__
-> * You can select a new project of the workspace and repeat the process to try it.
-> * Each project comes with its own __README.md__ file which might provide directions on the board setup for the chosen project.
+> * You can `Set as Active` another project of the workspace and repeat this process.
 
 ##  4. Viewing and editing project options
 
