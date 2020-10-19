@@ -54,10 +54,15 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 1. Using the MIPI-20 flat cable, connect the I-jet Lite to the __J11__ JTAG header of the evaluation board.
 
 2. Using the USB micro B cable, connect the I-jet Lite to an USB port of the host PC. 
+
 > __Notes__
-> * The green __USB__ LED on the I-jet Lite should turn on as soon as Windows recognizes the device.
+> * The __USB__ indicator on the I-jet Lite should turn on green as soon as Windows recognizes the device.
+>
 > * The I-jet Lite requires an USB port 2.0 (or later) on the host PC.
+>
 > * The I-jet Lite can power the evaluation board. Refer to the section [Target power supply from I-jet Lite](5-target-power-supply-from-i-jet-lite) for more details. 
+>
+> * Please refer to the [Debug Probes User Guide](https://netstorage.iar.com/SuppDB/Public/UPDINFO/014860/riscv/doc/EWRISCV_DebugProbes.pdf) for further reference.
 
 ## 3.	Running example applications
 
