@@ -2,7 +2,7 @@
 
 The project [examples](Examples) in this repository are designed to be run on the [__IAR RISC-V GD32V Evaluation board__][gd32v-evalkit-url] with the [IAR Embedded Workbench for RISC-V][ewriscv-url]
 
-For documentation and schematics, follow this [link](docs).
+For documentation and schematics, follow this [link](docs). Start with the [__Getting Started__ guide](docs/getting-started.md).
 
 For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
