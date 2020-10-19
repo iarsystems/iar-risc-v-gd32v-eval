@@ -3,6 +3,15 @@
 This guide briefly describes how to get started using __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__ with the __I-jet Lite__ debug probe, to run an example application on the [IAR RISC-V GD32V Eval board](https://iar.com/evalkit). 
 
 ## Table of contents
+* [IAR RISC-V GD32V Eval board at a glance](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#iar-risc-v-gd32v-eval-board-at-a-glance)
+* [I-jet Lite debug probe](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#i-jet-lite-debug-probe)
+* [Install IAR Embedded Workbench for RISC-V](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#1install-iar-embedded-workbench-for-risc-v)
+* [Set up the evaluation board](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#2set-up-the-evaluation-board)
+* [Running example applications](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#3running-example-applications)
+* [Viewing and editing project options](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#4-viewing-and-editing-project-options)
+* [Target power supply from I-jet Lite](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#5-target-power-supply-from-i-jet-lite)
+* [Board overview](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#board-overview)
+* [Troubleshooting](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#troubleshooting)
 
 
 ### IAR RISC-V GD32V Eval board at a glance
