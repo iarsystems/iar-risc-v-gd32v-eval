@@ -50,13 +50,13 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 
 ## 2.	Set up the evaluation board
 
-1. Connect your computer and the I-jet Lite debug probe using the USB-micro cable (packing with the I-jet Lite). Do not connect the I-jet Lite to the evaluation board yet.
+1. Using the MIPI-20 flat cable, connect the I-jet Lite to the __J11__ JTAG header of the evaluation board.
 
-2. The “USB” LED on the front side of the I-jet Lite will be lit with green when Windows completes searching for a USB driver. 
-
-3. Connect the I-jet Lite to the JTAG __J11__ connector. 
-
-4. Connect your computer and the USB-mini B connector using the USB-mini cable. Optionally the power supply can be provided from I-jet Lite. See the section [Target power supply from I-jet Lite for more details](5-target-power-supply-from-i-jet-lite). 
+2. Using the USB micro B cable, connect the I-jet Lite to an USB port of the host PC. 
+> __Notes__
+> * The green __USB__ LED on the I-jet Lite should turn on as soon as Windows recognizes the device.
+> * The I-jet Lite requires an USB port 2.0 (or later) on the host PC.
+> * The I-jet Lite can power the evaluation board. Refer to the section [Target power supply from I-jet Lite](5-target-power-supply-from-i-jet-lite) for more details. 
 
 ## 3.	Running example applications
 
@@ -112,6 +112,7 @@ When you have installed and set up all the software and hardware, you can try on
 5. Click `OK` if you want to save your settings.
 
 ## 5. Target power supply from I-jet Lite
+To power the Evaluation Board directly from the I-jet Lite, proceed as follows.
 
 1. Choose `Project` → `Options` → `I-jet` → `Setup` to enable __Target power__ supply from the I-jet Lite. 
 
