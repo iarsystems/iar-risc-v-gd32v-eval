@@ -13,6 +13,7 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * [Board overview](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#board-overview)
 * [Troubleshooting](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#troubleshooting)
 
+## Getting Started
 
 ### IAR RISC-V GD32V Eval board at a glance
 * GD32VF103RBT6 RISC-V GigaDevice MCU
