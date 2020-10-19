@@ -30,7 +30,8 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * Reset button 
 * JTAG connector 20-pin 0.05” 
 * USB micro-B connector for USB/Serial converter 
-* Powered supplied directly through USB micro-B connector or through I-jet Lite (pin 11/13 JTAG connector)
+* Power can be supplied directly through USB micro-B connector or through I-jet Lite (pin 11/13 JTAG connector)
+
 ![](images/00-board.png)
 
 ### I-jet Lite debug probe 
