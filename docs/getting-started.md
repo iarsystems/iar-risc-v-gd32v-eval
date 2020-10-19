@@ -101,13 +101,13 @@ When you have installed and set up all the software and hardware, you can try on
 
 1. Choose `Project` → `Options` → `I-jet` → `Setup` to enable __Target power__ supply from the I-jet Lite. 
 
-![](images/07-board-layout.png)
+![](images/06-ijet.png)
 
 2. Then close the `1-2` pins (USB/Debug)  on the board's jumper __J6__.
 
 ## Board overview
 
-![](images/07-ijet.png)
+![](images/07-board-layout.png)
  
 ## Troubleshooting
 If you are unable to find the cause of a problem, try resetting the evaluation board by using the reset button on the board. Then restart the C-SPY Debugger in the IAR Embedded Workbench IDE. You can also try disconnecting and reconnecting the power to the evaluation board, pressing the reset button and then restarting C-SPY.
