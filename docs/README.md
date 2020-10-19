@@ -1,6 +1,6 @@
 ## Documentation
 
-* [Getting started with the IAR RISC-V GD32V Eval board](iar-risc-v-gd32v-evaluation-board-getting-started-guide.pdf)
+* [Getting Started with the IAR RISC-V GD32V Eval board](getting-started.md)
 
 * [IAR RISC-V GD32V Schematics](iar-risc-v-gd32v-evaluation-board-schematics-rev3c.pdf)
 
