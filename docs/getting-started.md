@@ -31,7 +31,8 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * MIPI-20 cable and USB-micro cable included 
 * Fully integrated with IAR Embedded Workbench 
 * RoHS/CE compliant (used with starter kit only)
-![](images/00-ijet-lite.png)
+
+![](images/00-ijet-lite.PNG)
  
 ## 1.	Install IAR Embedded Workbench for RISC-V
 
@@ -98,11 +99,11 @@ When you have installed and set up all the software and hardware, you can try on
 
 ## 5. Target power supply from I-jet Lite
 
-Choose `Project` → `Options` → `I-jet` → `Setup` to enable __Target power__ supply from the I-jet Lite. 
+1. Choose `Project` → `Options` → `I-jet` → `Setup` to enable __Target power__ supply from the I-jet Lite. 
 
 ![](images/07-board-layout.png)
 
-Then close the `1-2` (USB/Debug) pins on the board's jumper __J6__.
+2. Then close the `1-2` pins (USB/Debug)  on the board's jumper __J6__.
 
 ## Board overview
 
