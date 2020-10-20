@@ -124,7 +124,7 @@ To power the Evaluation Board directly from the I-jet Lite, proceed as follows.
 
 ![](images/06-ijet.png)
 
-2. Then close the `1-2` pins (USB/Debug)  on the board's jumper __J6__.
+2. Then close the `1-2` pins (USB/Debug)  on the board's jumper __J4__.
 
 ## Board overview
 
