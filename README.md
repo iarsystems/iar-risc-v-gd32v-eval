@@ -4,7 +4,13 @@ The project [examples](Examples) in this repository are designed to be run on th
 
 Start with the [__Getting Started__ guide](docs/getting-started.md).
 
-For documentation and schematics, follow this [link](docs). 
+For related documentation and schematics, follow this [link](docs). 
+
+If you have questions regarding this repository contents, you can start by checking its [issue tracker][repo-old-issue-url] for the previously asked questions.
+If it is a new question, feel free to post it [here][repo-new-issue-url].
+
+[repo-new-issue-url]: https://github.com/IARSystems/iar-risc-v-gd32v-eval/issues/new
+[repo-old-issue-url]: https://github.com/IARSystems/iar-risc-v-gd32v-eval/issues?q=is%3Aissue+is%3Aopen%7Cclosed
 
 For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
@@ -23,8 +29,5 @@ If an [example](Examples) requires any specific jumper settings, refer to its re
 
 ---
 
-Questions? Please reach out to [fae@iar.com][fae-email]. We are happy to assist you with any related questions.
-
-[fae-email]: mailto:fae@iar.com?subject=Mail%20from%20GitHub/IARSystems/iar-risc-v-gd32v-eval%20repository
 [gd32v-evalkit-url]: https://www.iar.com/evalkit
 [ewriscv-url]: https://iar.com/riscv
