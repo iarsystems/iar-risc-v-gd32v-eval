@@ -16,7 +16,7 @@ For learning how you can contribute with new projects to this repository, follow
 
 ---
 
-The board brings jumpers for user-selectable functionality for its buttons and LEDs, according to the table below. 
+The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options, according to the table below. 
 
 | __Jumper__     | __Position__       |  __Selection__          |
 | :------------- | :----------------- | :---------------------- |
