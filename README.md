@@ -27,7 +27,5 @@ The board brings jumpers with user-selectable functionality for its buttons, LED
 
 If an [example](Examples) requires any specific jumper settings, refer to its respective README.md file.
 
----
-
 [gd32v-evalkit-url]: https://www.iar.com/evalkit
 [ewriscv-url]: https://iar.com/riscv
