@@ -904,12 +904,12 @@
         <file>
             <name>$PROJ_DIR$\..\..\bsp\iar-risc-v-gd32v-eval.c</name>
         </file>
-		<file>
-			<name>$PROJ_DIR$\..\..\bsp\low_level_init.c</name>
-		</file>
-		<file>
-			<name>$PROJ_DIR$\..\..\bsp\systick.c</name>
-		</file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\low_level_init.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\bsp\systick.c</name>
+        </file>
     </group>
     <group>
         <name>DW</name>
@@ -920,19 +920,16 @@
     <group>
         <name>FW</name>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_adc.c</name>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_adc.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_eclic.c</name>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_eclic.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_gpio.c</name>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_gpio.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_rcu.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\source\gd32vf103_usart.c</name>
+            <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_rcu.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
