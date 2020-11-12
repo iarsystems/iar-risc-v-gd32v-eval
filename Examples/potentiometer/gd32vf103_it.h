@@ -2,7 +2,7 @@
     \file  gd32vf103_it.h
     \brief Header file for the interrupt service routines
     
-    \version 20200625
+    \version 20201111
 */
 
 /*
@@ -17,8 +17,6 @@
 #include "gd32vf103.h"
 
 /* function declarations */
-/* handler for the USART1 interrupt */
-void USART1_IRQHandler(void);
 /* handler for the ADC interrupt */
 void ADC0_1_IRQHandler(void);
 
