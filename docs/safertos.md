@@ -1,4 +1,4 @@
-# SAFE[RTOS][sr-url]® Demo for RISC-V with IAR on GigaDevice32
+# SAFERTOS® Demo for RISC-V with IAR on GigaDevice32
 
 SAFE**RTOS**® is a pre-certified safety Real Time Operating System (RTOS) for embedded processors. It delivers superior performance and pre-certified dependability, whilst utilizing minimal resources.                                  
 
@@ -15,7 +15,7 @@ _A fully functional, time-limited SAFE**RTOS** demo running on the GigaDevice32 
 
 Create an account with the download centre to access user manuals, datasheets, and a workshop detailing the transition from FreeRTOS to SAFE**RTOS**, as well as a range of SAFE**RTOS** demos supporting IAR.
 
-## Why SAFE[RTOS][sr-url]®?
+## Why SAFERTOS®?
 
 SAFE**RTOS**® is tailored to your specific processor/compiler combination, and delivered with full source code and the [WITTENSTEIN high integrity systems][ws-url] Design Assurance Pack (DAP). The DAP gives you complete transparency over the full Design Life Cycle, and illustrates the exceptional high quality of our RTOS product. The DAP ensures:
 
