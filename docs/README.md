@@ -16,7 +16,7 @@
 * [RISC-V ISA Specification - Vol II - Privileged Architecture](https://github.com/riscv/riscv-isa-manual/releases/download/draft-20200611-d08e29e/riscv-privileged.pdf)
 
 ### Integrated Solutions
-## Partners with integrated solutions for IAR Embedded Workbench for RISC-V
+Partners with integrated solutions for IAR Embedded Workbench for RISC-V
 * [FreeRTOS](freertos.md)
 
 * [SAFERTOS®](safertos.md)
