@@ -64,11 +64,30 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 >
 > * Please refer to the [Debug Probes User Guide](https://netstorage.iar.com/SuppDB/Public/UPDINFO/014860/riscv/doc/EWRISCV_DebugProbes.pdf) for further reference.
 
-## 3.	Running example applications
+## 3.	Build and run the example projects
 
 When you have installed and set up all the software and hardware, you can try one of the example applications provided for IAR Embedded Workbench For trial projects you can access the [board's repository](https://github.com/IARSystems/iar-risc-v-gd32v-eval) at the [IAR Systems GitHub page](https://github.com/IARSystems).
 
-1. Clone (or download) the repository for the [IAR RISC-V GD32V Eval board](https://github.com/IARSystems/iar-risc-v-gd32v-eval).
+1. Using a Git client (such as [Git for Windows](https://git-scm.com/download/win)), launch __Git CMD__ and then perform the following to clone this repository.
+```
+md %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv
+
+cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv
+
+git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-submodules
+```
+
+> __Note__
+> * It is important to clone with `--recurse-submodules` because the __GD32VF103 Firmware Library__ is fetched directly from its official GitHub repository.
+> * After the repository is cloned for the first time, it can be entirely updated in a similar manner, by changing to its directory and performing `git pull` as below:
+>
+> ```
+> cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32-eval
+>
+> git pull --recurse-submodules
+> ```
+>
+> * The __IAR GD32V RISC-V Board Examples__ were tested with the __GD32VF103 Firmware Library V1.1.0__.
 
 ![](images/01-repo.png)
 
