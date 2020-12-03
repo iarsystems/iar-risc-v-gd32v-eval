@@ -54,6 +54,7 @@ uint8_t txbuffer[] = "\n\n\r---\n\rTemperature and humidity sensor example\n\r";
 */
 void main(void)
 {
+    /* initialize the system  */
     SystemInit();
     
     /* GPIO config */
@@ -202,8 +203,8 @@ void red_alert(void)
 */
 void update_terminal_io(int32_t *temp, int32_t *hum)
 {
-    printf("Temperature: %0.2f ºC, "
-           "Rel.Humidity: %0.2f %%\n",
+    printf("Temperature: %0.2f'C, "
+           "Rel.Humidity: %0.2f%%\n",
             *temp / 1000.0f,
             *hum  / 1000.0f); 
 }

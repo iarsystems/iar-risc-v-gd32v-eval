@@ -35,6 +35,7 @@ void perform_kitt_sequence(void);
 */
 void main(void)
 {
+    /* initialize the system  */
     SystemInit();
     
     /* initialize the LEDs */

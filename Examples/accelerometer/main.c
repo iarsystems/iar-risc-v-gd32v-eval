@@ -54,6 +54,7 @@ void tilt(direction_t LorR);
 */
 void main(void)
 {
+    /* initialize the system  */
     SystemInit();
 
     /* GPIO config */

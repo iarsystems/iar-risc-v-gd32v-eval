@@ -33,6 +33,7 @@ static void sw_processing(void);
 */
 int main(void)
 {
+    /* initialize the system  */
     SystemInit();
     
     /* GPIO config */

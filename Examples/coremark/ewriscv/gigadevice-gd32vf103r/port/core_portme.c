@@ -18,7 +18,7 @@ Original Author: Shay Gal-on
 #include "coremark.h"
 #include "core_portme.h"
 
-#define BIT(x)                       ((uint32_t)((uint32_t)0x01U<<(x)))
+#define BIT(x)            ((uint32_t)((uint32_t)0x01U<<(x)))
 
 #pragma inline=forced
 ee_u32 __get_clk_lo(void) { return __read_csr(_CSR_CYCLE); }
@@ -106,7 +106,7 @@ CORE_TICKS get_time(void) {
 */
 secs_ret time_in_secs(CORE_TICKS ticks) {
 	secs_ret retval=((secs_ret)ticks) / (secs_ret)EE_TICKS_PER_SEC;
-    return retval;
+  return retval;
 }
 
 ee_u32 default_num_contexts=MULTITHREAD;
@@ -124,12 +124,15 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 		ee_printf("ERROR! Please define ee_u32 to a 32b unsigned type!\n");
 	}
 	p->portable_id=1;
+  
+  /* initialize the system  */
+  SystemInit();
     
-    /* Print header */
-    ee_printf("*** Starting Coremark 1.0 ***\n");
-    ee_printf("MCU Model        : GD32VF103\n");
-    ee_printf("CPU Clock        : %.1f MHz\n",CLOCKS_PER_SEC/1000000.0f);
-    ee_printf("...\n");
+  /* Print header */
+  ee_printf("*** Starting Coremark 1.0 ***\n");
+  ee_printf("MCU Model        : GD32VF103\n");
+  ee_printf("CPU Clock        : %.1f MHz\n",CLOCKS_PER_SEC/1000000.0f);
+  ee_printf("...\n");
 }
 /* Function : portable_fini
 	Target specific final code 
@@ -137,8 +140,8 @@ void portable_init(core_portable *p, int *argc, char *argv[])
 void portable_fini(core_portable *p)
 {
 	p->portable_id=0;
-    ee_printf("...\n");
-    ee_printf("*** Finished Coremark ***\n");
+  ee_printf("...\n");
+  ee_printf("*** Finished Coremark ***\n");
 }
 
 

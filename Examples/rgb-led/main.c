@@ -2,7 +2,7 @@
     \file  main.c
     \brief Toggles the RGB LED
     
-    \version 20200709
+    \version 20201203
 */
 
 /*
@@ -14,7 +14,7 @@
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
 
-#define DELAY 250 // ms
+#define DELAY 100 // ms
 
 /*!
     \brief      main function
@@ -24,6 +24,9 @@
 */
 void main(void)
 {
+    /* initialize the system  */
+    SystemInit();
+    
     /* enable the RGB LED clock */
     rcu_periph_clock_enable(LEDR_GPIO_CLK);
     rcu_periph_clock_enable(LEDG_GPIO_CLK);

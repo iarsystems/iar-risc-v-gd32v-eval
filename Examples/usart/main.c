@@ -2,7 +2,7 @@
     \file  main.c
     \brief USART transmit and receive interrupt
 
-    \version 20201013
+    \version 20201203
 */
 
 /*
@@ -13,6 +13,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <time.h>
 #include "iar-risc-v-gd32v-eval.h"
 
