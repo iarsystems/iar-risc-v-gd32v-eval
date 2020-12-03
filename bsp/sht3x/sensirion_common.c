@@ -50,7 +50,7 @@ uint32_t sensirion_bytes_to_float(const uint8_t* bytes) {
     } tmp;
 
     tmp.u32_value = sensirion_bytes_to_uint32_t(bytes);
-    return tmp.float32;
+    return (uint32_t)tmp.float32;
 }
 
 uint8_t sensirion_common_generate_crc(const uint8_t* data, uint16_t count) {
