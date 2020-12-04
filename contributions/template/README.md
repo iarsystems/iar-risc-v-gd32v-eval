@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project provides a clean slate as a shortcut for starting new projects with the IAR GD32V Eval Board and the IAR Embedded Workbench for RISC-V.
+This project provides a clean slate as a shortcut for starting new projects with the __IAR RISC-V GD32V Eval__ board and the __IAR Embedded Workbench for RISC-V__.
 
 be used for quickly creating new projects using the GD32VF103 Firmware Library as well as for contributing with new projects on the contributions folder in the official repository.
 
@@ -34,4 +34,4 @@ If you need guidance on how to rewrite this README.md using the Markdown syntax,
 
 * All the drivers from the GD32VF103 Firmware Library are included by default.
 
-* All the BSP drivers for the IAR GD32V RISC-V Eval Board are included by default.
+* All the BSP drivers for the IAR RISC-V  GD32V Eval board are included by default.

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <infocenter_data version="1.0">
-  <iar_name>IAR GD32V EVAL board Template</iar_name>
+  <iar_name>IAR RISC-V GD32V Eval board Template</iar_name>
   <iar_description>This project provides reference template that can be used with the evaluation board to build a new firmware application</iar_description>
   <iar_curdir>$CUR_DIR$</iar_curdir>
 </infocenter_data>
