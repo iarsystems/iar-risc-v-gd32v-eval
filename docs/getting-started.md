@@ -102,7 +102,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 2. From the Windows Start menu, launch the __IAR Embedded Workbench IDE__ by choosing __IAR Systems__ → __IAR Embedded Workbench for RISC-V__.
 
-3. Go to `Help` → `Information Center` → `Example projects` → `IAR GD32V EVAL` → `IAR GD32V EVAL board examples` and finally click on `Select Folder` to save this Workspace to its default location, inside the `%USERPROFILE%\Documents\IAR Embedded Workbench` folder.
+3. Go to `Help` → `Information Center` → `Example projects` → `IAR RISC-V GD32V Eval` → `IAR RISC-V GD32V Eval board examples` and finally click on `Select Folder` to save this Workspace to its default location, inside the `%USERPROFILE%\Documents\IAR Embedded Workbench` folder.
 
 ![](images/02-examples.png)
 
@@ -129,7 +129,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ##  View and edit project options
 
-1. On the `Project` menu, select `Options`. Make sure the project name is highlighted in the workspace window and a dialog box will be displayed.
+1. Make sure the desired project name is __highlighted__ in the workspace window. On the `Project` menu, select `Options`. An __Options for node `<active-project>`__ will be displayed.
 
 ![](images/03-options.png)
  
