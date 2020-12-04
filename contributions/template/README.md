@@ -4,8 +4,7 @@
 
 This project provides a clean slate as a shortcut for starting new projects with the IAR GD32V Eval Board and the IAR Embedded Workbench for RISC-V.
 
-This template should be used for easily creating new projects and also for contributing with new projects on the contributions folder in this repository.
-When the project.template.eww is open on the IDE, a dialog window will offer to save the project in a new location.
+be used for quickly creating new projects using the GD32VF103 Firmware Library as well as for contributing with new projects on the contributions folder in the official repository.
 
 When contributing with new projects, a new unique name folder for saving the project must be created on the same level of the template folder as follows:
 
@@ -31,8 +30,8 @@ If you need guidance on how to rewrite this README.md using the Markdown syntax,
 
 ## Details of the Template
 
-* It provides GD32VF103 MCU system clock tree setup to 108 MHz.
+* It provides GD32VF103 MCU system clock setup to 108 MHz.
 
-* All the GD32VF103 drivers from the Firmware Library are included by default.
+* All the drivers from the GD32VF103 Firmware Library are included by default.
 
-* All the BSP drivers for the IAR GD32V Eval Board are included by default.
+* All the BSP drivers for the IAR GD32V RISC-V Eval Board are included by default.

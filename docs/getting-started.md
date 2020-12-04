@@ -3,15 +3,16 @@
 This guide briefly describes how to get started using __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__ with the __I-jet Lite__ debug probe, to run an example application on the [IAR RISC-V GD32V Eval board](https://iar.com/evalkit). 
 
 ## Table of contents
-* [IAR RISC-V GD32V Eval board at a glance](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#iar-risc-v-gd32v-eval-board-at-a-glance)
-* [I-jet Lite debug probe](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#i-jet-lite-debug-probe)
-* [Install IAR Embedded Workbench for RISC-V](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#install-iar-embedded-workbench-for-risc-v)
-* [Set up the evaluation board](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#set-up-the-evaluation-board)
-* [Build and Debug the example projects](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#build-and-debug-the-example-applications)
-* [View and edit project options](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#view-and-edit-project-options)
-* [Target power supply from I-jet Lite](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#target-power-supply-from-i-jet-lite)
-* [Board overview](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#board-overview)
-* [Troubleshooting](https://github.com/IARSystems/iar-risc-v-gd32v-eval/blob/master/docs/getting-started.md#troubleshooting)
+* [IAR RISC-V GD32V Eval board at a glance](#iar-risc-v-gd32v-eval-board-at-a-glance)
+* [I-jet Lite debug probe](#i-jet-lite-debug-probe)
+* [Install IAR Embedded Workbench for RISC-V](#install-iar-embedded-workbench-for-risc-v)
+* [Set up the evaluation board](#set-up-the-evaluation-board)
+* [Build and Debug the example projects](#build-and-debug-the-example-applications)
+* [View and edit project options](#view-and-edit-project-options)
+* [Target power supply from I-jet Lite](#target-power-supply-from-i-jet-lite)
+* [Board overview](#board-overview)
+* [Troubleshooting](#troubleshooting)
+
 
 ## Getting Started
 
@@ -24,7 +25,7 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * [RGB LED](../Examples/rgb-led)
 * User [switches](../Examples/switches)
 * [Potentiometer](../Examples/potentiometer)
-* I²C 3-axis [accelerometer](../Examples/potentiometer)
+* I²C 3-axis [accelerometer](../Examples/accelerometer)
 * I²C [temperature-humidity](../Examples/temperature-humidity) sensors
 * Light sensor
 * On-board microphone
@@ -33,7 +34,7 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * Reset button 
 * JTAG connector 20-pin 0.05” 
 * USB micro-B connector for USB/Serial converter 
-* Power can be supplied directly through USB micro-B connector or through I-jet Lite (pin 11/13 JTAG connector)
+* Power can be supplied directly from the USB connector (__J7__) or from the I-jet Lite (__J11__ pins 11 and 13)
 
 
 
@@ -41,13 +42,15 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 
 <img align="right" src="images/00-ijet-lite.PNG" width=200px />
 
-* MCU support: RISC-V, Arm Cortex-M/A/R devices 
-* JTAG/SWD(/SWO) debugging support 
-* Flash download into supported evaluation boards 
-* Up to 5V target interface voltage 
-* MIPI-20 cable and USB-micro cable included 
-* Fully integrated with IAR Embedded Workbench 
-* RoHS/CE compliant (used with starter kit only)
+* CPU support: RISC-V cores, Arm Cortex-M/A/R cores 
+* Hi-speed USB 2.0 interface
+* Debugging interfaces: JTAG, SWD
+* Single-Wire Output (SWO) support  
+* Program the evaluation board Flash memory
+* Target can be powered from the debugging interface (up to 5V) 
+* MIPI-20 flat cable and USB micro B cable are included 
+* Fully integrated with the IAR Embedded Workbench for RISC-V (and for Arm) 
+* RoHS/CE compliant (used with evaluation kit only)
  
 ## Install IAR Embedded Workbench for RISC-V
 
@@ -63,7 +66,7 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 > __Notes__
 > * The __USB__ indicator on the I-jet Lite should turn on green as soon as Windows recognizes the device.
 >
-> * The I-jet Lite requires an USB port 2.0 (or later) on the host PC.
+> * The I-jet Lite requires an USB 2.0 port on the host PC.
 >
 > * The I-jet Lite can power the evaluation board. Refer to the section [Target power supply from I-jet Lite](5-target-power-supply-from-i-jet-lite) for more details. 
 >
