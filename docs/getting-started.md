@@ -7,7 +7,7 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * [I-jet Lite debug probe](#i-jet-lite-debug-probe)
 * [Install IAR Embedded Workbench for RISC-V](#install-iar-embedded-workbench-for-risc-v)
 * [Set up the evaluation board](#set-up-the-evaluation-board)
-* [Build and Debug the example projects](#build-and-debug-the-example-applications)
+* [Build and Debug the example projects](#build-and-debug-the-example-projects)
 * [View and edit project options](#view-and-edit-project-options)
 * [Target power supply from I-jet Lite](#target-power-supply-from-i-jet-lite)
 * [Board overview](#board-overview)
