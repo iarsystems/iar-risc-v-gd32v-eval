@@ -46,7 +46,7 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * Hi-speed USB 2.0 interface
 * Debugging interfaces: JTAG, SWD
 * Single-Wire Output (SWO) support  
-* Program the evaluation board Flash memory
+* Flash the firmware image into the MCU
 * Target can be powered from the debugging interface (up to 5V) 
 * MIPI-20 flat cable and USB micro B cable are included 
 * Fully integrated with the IAR Embedded Workbench for RISC-V (and for Arm) 
