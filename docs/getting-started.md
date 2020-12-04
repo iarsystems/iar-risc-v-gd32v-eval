@@ -129,30 +129,28 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ##  View and edit project options
 
-1. Make sure the desired project name is __highlighted__ in the workspace window. On the `Project` menu, select `Options`. An __Options for node `<active-project>`__ will be displayed.
+1. Make sure the desired project name is __highlighted__ in the workspace window. On the `Project` menu, select `Options`. An __Options for node `<active-project>`__ window will be displayed.
 
 ![](images/03-options.png)
  
-2. The Options dialog box provides options for the building tools and the debugger. For example, by selecting processor family and device under General Options in the category list to, the correct linker configuration file and device description file are automatically chosen for this device.
+2. The Project Options window offers a graphical user interface for conveniently setting all the options for the build configuration. For example, by selecting processor family and device under the __Target__ _tab_ of the __General Options__ _Category_, the appropriate linker configuration and device description for the debugger are automatically selected for the chosen device.
 
 ![](images/04-target.png)
  
-3. Select `Debugger` in the category list to verify what options are used.
-
-4. The option `Run to` is used to specify the location to which C-SPY executes when the debugger is started and after a reset. By default, IAR Embedded Workbench will insert a breakpoint in the main() function automatically.
+3. Select the __Debugger__ in the category. The option `Run to` is used to specify a function for an automatic initial breakpoint when the application is executed during a C-SPY Debugger. By default, IAR Embedded Workbench will insert a breakpoint in the `main()` function entry point. This is particularly useful for skipping the application's low-level initialization functions. 
 
 ![](images/05-debugger.png)
  
 5. Click `OK` if you want to save your settings.
 
 ## Target power supply from I-jet Lite
-To power the Evaluation Board directly from the I-jet Lite, proceed as follows.
+To power the evaluation board directly from the I-jet Lite, proceed as follows.
 
 1. Choose `Project` → `Options` → `I-jet` → `Setup` to enable __Target power__ supply from the I-jet Lite. 
 
 ![](images/06-ijet.png)
 
-2. Then close the `1-2` pins (USB/Debug)  on the board's jumper __J6__.
+2. Then, on the board, use a jumper on __J6__ to connect the pins `1-2` (for USB/Debug).
 
 ## Board overview
 
