@@ -30,6 +30,7 @@ void gd_eval_adc_init(void);
 */
 void main(void)
 {
+    /* initialize the system  */
     SystemInit();
     
     /* configure the ADC for the board Potentiometer */

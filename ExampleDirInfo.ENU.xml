@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<infocenter_data version="1.0">
+  <iar_template_variant>A</iar_template_variant>
+  <iar_name>IAR RISC-V GD32V Eval</iar_name>
+  <iar_description>This is a set of example projects that shows how to use the board peripherals.</iar_description>
+</infocenter_data>

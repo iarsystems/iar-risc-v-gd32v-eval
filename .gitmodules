@@ -1,0 +1,3 @@
+[submodule "GD32VF103_Firmware_Library"]
+	path = GD32VF103_Firmware_Library
+	url = https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library.git

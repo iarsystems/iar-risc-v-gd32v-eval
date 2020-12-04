@@ -21,6 +21,7 @@ Original Author: Shay Gal-on
 #include <stddef.h>
 #include <stdint.h>
 #include <intrinsics.h>
+#include "system_gd32vf103.h"
 
 #ifndef ITERATIONS
     #define ITERATIONS       4096
