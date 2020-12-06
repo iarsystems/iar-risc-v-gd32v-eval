@@ -10,13 +10,18 @@ This guide briefly describes how to get started using __[IAR Embedded Workbench 
 * [Build and Debug the example projects](#build-and-debug-the-example-projects)
 * [View and edit project options](#view-and-edit-project-options)
 * [Target power supply from I-jet Lite](#target-power-supply-from-i-jet-lite)
-* [Board overview](#board-overview)
 * [Troubleshooting](#troubleshooting)
 
 
 ## Getting Started
 
 ### IAR RISC-V GD32V Eval board at a glance
+
+![](images/07-board-layout.png)
+
+> Click on the [board layout](images/07-board-layout.png) to enlarge.
+
+---
 
 <img align="right" src="images/00-board.png" width=400px />
 
@@ -141,7 +146,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ![](images/05-debugger.png)
  
-5. Click `OK` if you want to save your settings.
+4. Click `OK` if you want to save your settings.
 
 ## Target power supply from I-jet Lite
 To power the evaluation board directly from the I-jet Lite, proceed as follows.
@@ -151,10 +156,6 @@ To power the evaluation board directly from the I-jet Lite, proceed as follows.
 ![](images/06-ijet.png)
 
 2. Then, on the board, use a jumper on __J6__ to connect the pins `1-2` (for USB/Debug).
-
-## Board overview
-
-![](images/07-board-layout.png)
  
 ## Troubleshooting
 If you are unable to find the cause of a problem, try the following:
