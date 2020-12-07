@@ -165,7 +165,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 > __Notes__
 > * You can `Set as Active` any project from this workspace and repeat the process.
-> * The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options. Refer to the respective example's README.md to know if the [example](Examples) requires any specific jumper settings. The table below brings the board's general jumper configuration.
+> * The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options. Refer to the respective example's README.md to know if the [example](../Examples) requires any specific jumper settings. The table below brings the board's general jumper configuration.
 >
 > | __Jumper__     | __Position__       |  __Selection__          |
 > | :------------- | :----------------- | :---------------------- |
