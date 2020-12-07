@@ -163,7 +163,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 9.	To exit the __IAR C-SPY Debugger__, choose `Debug` → `Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>) or click the `Stop Debugging` button on the _Debug Toolbar_.
 
-> __Note__
+> __Notes__
 > * You can `Set as Active` any project from this workspace and repeat the process.
 > * The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options, according to the table below. 
 >
