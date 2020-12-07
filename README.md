@@ -16,18 +16,5 @@ If it is a new question, feel free to post it [here][repo-new-issue-url].
 
 For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
----
-
-The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options, according to the table below. 
-
-| __Jumper__     | __Position__       |  __Selection__          |
-| :------------- | :----------------- | :---------------------- |
-| J5             |  1-2<br>2-3        | LED3<br>Green LED       |
-| J6             |  1-2<br>2-3        | USB/Debug<br>J4         |
-| J8             |  1-2<br>2-3        | SW4<br>Red LED          |
-| J9             |  1-2<br>3-4<br>5-6 | SW5<br>Blue LED<br>LED4 |
-
-If an [example](Examples) requires any specific jumper settings, refer to its respective README.md file.
-
 [gd32v-evalkit-url]: https://www.iar.com/evalkit
 [ewriscv-url]: https://iar.com/riscv
