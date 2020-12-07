@@ -165,6 +165,16 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 > __Note__
 > * You can `Set as Active` any project from this workspace and repeat the process.
+> * The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options, according to the table below. 
+>
+> | __Jumper__     | __Position__       |  __Selection__          |
+> | :------------- | :----------------- | :---------------------- |
+> | J5             |  1-2<br>2-3        | LED3<br>Green LED       |
+> | J6             |  1-2<br>2-3        | USB/Debug<br>J4         |
+> | J8             |  1-2<br>2-3        | SW4<br>Red LED          |
+> | J9             |  1-2<br>3-4<br>5-6 | SW5<br>Blue LED<br>LED4 |
+
+If an [example](Examples) requires any specific jumper settings, refer to its respective README.md file.
 
 ##  View and edit project options
 
