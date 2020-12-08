@@ -1,6 +1,6 @@
 # Getting started with the IAR RISC-V GD32V Eval board
 
-This guide briefly describes how to get started using __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__ with the __I-jet Lite__ debug probe, to run its example projects on the [IAR RISC-V GD32V Eval board](https://iar.com/evalkit). 
+This guide briefly describes how to get started using the [IAR RISC-V GD32V Eval board](https://iar.com/evalkit) with the __I-jet Lite__ debug probe and how to run its example projects on the __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__.
 
 ## Table of contents
 * [IAR RISC-V GD32V Eval board at a glance](#iar-risc-v-gd32v-eval-board-at-a-glance)
@@ -122,7 +122,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ![](images/08-download-zip1.png)
 
-5. Save the __iar-riscv-v-gd32v-eval-master.zip__ to the folder `riscv` created during the step 1 and extract it there.
+5. Save the __iar-riscv-v-gd32v-eval-master.zip__ file to the folder `riscv` created during the step 1 and extract it there.
 
 6. Click on the [__GD32VF103_Firmware_Library @ 7fd6c43__](https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library/tree/7fd6c43a723c2d9b96ef337fd22f05cfefee0e9d).
 
@@ -135,7 +135,9 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 8. Save the __GD32VF103_Firmware_Library-7fd6c43a723c2d9b96ef337fd22f05cfefee0e9d.zip__ file to `riscv\iar-risc-v-gd32v-eval-master`.
 
-9. Open the __GD32VF103_Firmware_Library-7fd6c43a723c2d9b96ef337fd22f05cfefee0e9d.zip__ file and extract the contents of the __Firmware__ folder to `riscv\iar-risc-v-gd32v-eval-master\GD32VF103_Firmware_Library`.
+9. Open the __GD32VF103_Firmware_Library-7fd6c43a723c2d9b96ef337fd22f05cfefee0e9d.zip__ file and extract the __Firmware__ folder to `riscv\iar-risc-v-gd32v-eval-master\GD32VF103_Firmware_Library`.
+
+10. Erase the downloaded ZIP files.
 
 ## Build and Debug the example projects
 
@@ -145,13 +147,13 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ![](images/02-examples.png)
 
-3. Select the desired project: right-click on the project name in the __Workspace__ window and `Set as Active`. 
+3. Select the desired project: right-click on the project name in the __Workspace__ window and `Set as Active`. The active project name is __highlighted__.
 
 4. Unfold the project in the __Workspace__ window and open its __README.md__ file. The README.md file provides any specific board setup or details specific to the active project.
 
 5. Choose `Project` → `Make` (or <kbd>F7</kbd>) or click the `Make` button on the main toolbar to compile and link the project.
 
-6. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Debug Toolbar_. This action will launch the __IAR C-SPY Debugger__.
+6. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Toolbar_. This action will launch the __IAR C-SPY Debugger__.
 
 > __Notes__
 > * When in an __IAR C-SPY Debugger__ session, the IDE menu will slightly change, providing new menu options for debugging. Also, a new _Debug Toolbar_ will appear, providing functionality to control the downloaded application's execution flow. 
@@ -161,10 +163,18 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 8. To halt the execution, choose `Debug` → `Break` or click the `Break` button on the _Debug Toolbar_.
 
-9.	To exit the __IAR C-SPY Debugger__, choose `Debug` → `Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>) or click the `Stop Debugging` button on the _Debug Toolbar_.
+9. To exit the __IAR C-SPY Debugger__, choose `Debug` → `Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>) or click the `Stop Debugging` button on the _Debug Toolbar_.
 
-> __Note__
+> __Notes__
 > * You can `Set as Active` any project from this workspace and repeat the process.
+> * The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options. Refer to the respective example's README.md to know if the [example](../Examples) requires any specific jumper settings. The table below brings the board's general jumper configuration.
+>
+> | __Jumper__     | __Position__       |  __Selection__          |
+> | :------------- | :----------------- | :---------------------- |
+> | J5             |  1-2<br>2-3        | LED3<br>Green LED       |
+> | J6             |  1-2<br>2-3        | USB/Debug<br>J4         |
+> | J8             |  1-2<br>2-3        | SW4<br>Red LED          |
+> | J9             |  1-2<br>3-4<br>5-6 | SW5<br>Blue LED<br>LED4 |
 
 ##  View and edit project options
 
