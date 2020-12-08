@@ -122,7 +122,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ![](images/08-download-zip1.png)
 
-5. Save the __iar-riscv-v-gd32v-eval-master.zip__ to the folder `riscv` created during the step 1 and extract it there.
+5. Save the __iar-riscv-v-gd32v-eval-master.zip__ file to the folder `riscv` created during the step 1 and extract it there.
 
 6. Click on the [__GD32VF103_Firmware_Library @ 7fd6c43__](https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library/tree/7fd6c43a723c2d9b96ef337fd22f05cfefee0e9d).
 
