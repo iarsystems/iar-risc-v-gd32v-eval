@@ -153,7 +153,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 5. Choose `Project` → `Make` (or <kbd>F7</kbd>) or click the `Make` button on the main toolbar to compile and link the project.
 
-6. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Debug Toolbar_. This action will launch the __IAR C-SPY Debugger__.
+6. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Toolbar_. This action will launch the __IAR C-SPY Debugger__.
 
 > __Notes__
 > * When in an __IAR C-SPY Debugger__ session, the IDE menu will slightly change, providing new menu options for debugging. Also, a new _Debug Toolbar_ will appear, providing functionality to control the downloaded application's execution flow. 
