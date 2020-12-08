@@ -147,7 +147,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 ![](images/02-examples.png)
 
-3. Select the desired project: right-click on the project name in the __Workspace__ window and `Set as Active`. 
+3. Select the desired project: right-click on the project name in the __Workspace__ window and `Set as Active`. The active project name is __highlighted__.
 
 4. Unfold the project in the __Workspace__ window and open its __README.md__ file. The README.md file provides any specific board setup or details specific to the active project.
 
