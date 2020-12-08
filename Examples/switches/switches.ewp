@@ -253,6 +253,7 @@
                 <option>
                     <name>CCExtraOptions</name>
                     <state>--silent</state>
+                    <state>--nonportable_path_warnings</state>
                 </option>
                 <option>
                     <name>OutputFile</name>
@@ -328,10 +329,10 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/GD32VF103_standard_peripheral</state>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/GD32VF103_standard_peripheral/include</state>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/RISCV/drivers</state>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/RISCV/env_IAR</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/GD32VF103_standard_peripheral</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/GD32VF103_standard_peripheral/Include</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/RISCV/drivers</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/RISCV/env_IAR</state>
                     <state>$PROJ_DIR$/../../bsp</state>
                     <state>$PROJ_DIR$</state>
                 </option>

@@ -253,6 +253,7 @@
                 <option>
                     <name>CCExtraOptions</name>
                     <state>--silent</state>
+                    <state>--nonportable_path_warnings</state>
                 </option>
                 <option>
                     <name>OutputFile</name>
@@ -328,10 +329,10 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/GD32VF103_standard_peripheral</state>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/GD32VF103_standard_peripheral/include</state>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/RISCV/drivers</state>
-                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/firmware/RISCV/env_IAR</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/GD32VF103_standard_peripheral</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/GD32VF103_standard_peripheral/Include</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/RISCV/drivers</state>
+                    <state>$PROJ_DIR$/../../GD32VF103_Firmware_Library/Firmware/RISCV/env_IAR</state>
                     <state>$PROJ_DIR$/../../bsp</state>
                     <state>$PROJ_DIR$</state>
                 </option>
@@ -936,13 +937,13 @@
             <name>$PROJ_DIR$\..\..\GD32VF103_Firmware_Library\Firmware\GD32VF103_standard_peripheral\Source\gd32vf103_usart.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\GD32VF103_Firmware_Library\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
+            <name>$PROJ_DIR$\..\..\GD32VF103_Firmware_Library\Firmware\RISCV\env_IAR\low_level_init.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\GD32VF103_Firmware_Library\Firmware\RISCV\drivers\n200_func.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\..\GD32VF103_Firmware_Library\Firmware\RISCV\env_IAR\low_level_init.c</name>
+            <name>$PROJ_DIR$\..\..\GD32VF103_Firmware_Library\Firmware\GD32VF103_standard_peripheral\system_gd32vf103.c</name>
         </file>
     </group>
     <file>

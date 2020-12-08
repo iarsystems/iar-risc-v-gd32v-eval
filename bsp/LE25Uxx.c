@@ -33,8 +33,7 @@ OF SUCH DAMAGE.
 */
 
 #include "gd32vf103.h"
-#include "le25uxx.h"
-//#include <string.h>
+#include "LE25Uxx.h"
 
 #define  SFLASH_ID                            (0x620612)
 #define  FLASH_WRITE_ADDRESS                  (0x000002)

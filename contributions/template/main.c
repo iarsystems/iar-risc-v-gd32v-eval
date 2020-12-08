@@ -2,7 +2,7 @@
     \file  main.c
     \brief Template for starting new projects
 
-    \version 20200818
+    \version 20201208
 */
 
 /*
@@ -13,7 +13,7 @@
 
 #include "iar-risc-v-gd32v-eval.h"
 #include "i2c.h"
-#include "mma8652.h"
+#include "MMA8652.h"
 #include "sht3x.h"
 #include "systick.h"
 

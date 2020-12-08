@@ -2,7 +2,7 @@
     \file    main.c
     \brief   SPI flash example
     
-    \version 20200720
+    \version 20201208
 */
 
 /*
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
-#include "le25uxx.h"
+#include "LE25Uxx.h"
 
 typedef ErrStatus status_t;
 

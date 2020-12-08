@@ -2,7 +2,7 @@
     \file  main.c
     \brief Accelerometer example for the IAR RISC-V GD32V Eval board
 
-    \version 20200709
+    \version 20201208
 */
 
 /*
@@ -16,7 +16,7 @@ See LICENSE.md for detailed license information.
 #include "iar-risc-v-gd32v-eval.h"
 #include "systick.h"
 #include "i2c.h"
-#include "mma8652.h"
+#include "MMA8652.h"
 
 /* tilt threshold in G's */
 #define TILT_THRESHOLD (0.1500f)
