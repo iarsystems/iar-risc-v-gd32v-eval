@@ -74,7 +74,7 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 >
 > * The I-jet Lite requires an USB 2.0 port on the host PC.
 >
-> * The I-jet Lite can power the evaluation board. Refer to the section [Target power supply from I-jet Lite](5-target-power-supply-from-i-jet-lite) for more details. 
+> * The I-jet Lite can power the evaluation board. Refer to the section [Target power supply from I-jet Lite](#target-power-supply-from-i-jet-lite) for more details. 
 >
 > * The [Debug Probes User Guide](https://netstorage.iar.com/SuppDB/Public/UPDINFO/014860/riscv/doc/EWRISCV_DebugProbes.pdf) provides further information.
 
