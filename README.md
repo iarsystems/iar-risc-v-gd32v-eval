@@ -16,5 +16,11 @@ If it is a new question, feel free to post it [here][repo-new-issue-url].
 
 For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
+#### Additional Resources
+There is an useful selection of recorded webinars about RISC-V covering debugging, code quality and more available [here.][iar-webinars-url]
+Additionally, the IAR Build Tools for Linux are also available for RISC-V making automated building and testing straightforward in CI/CD workflows with Docker, Jenkins and Self-Hosted Runners. More information can be found [here!][iar-bx-url]
+
 [gd32v-evalkit-url]: https://www.iar.com/evalkit
 [ewriscv-url]: https://iar.com/riscv
+[iar-webinars-url]: https://www.iar.com/webinars
+[iar-bx-url]: https://www.iar.com/bx
