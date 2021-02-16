@@ -1,6 +1,6 @@
 # Getting started with the IAR RISC-V GD32V Eval board
 
-This guide briefly describes how to get started using the [IAR RISC-V GD32V Eval board](https://iar.com/evalkit) with the __I-jet Lite__ debug probe and how to run its example projects on the __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__.
+This guide briefly describes how to get started using the __IAR RISC-V GD32V Eval board__  with the __I-jet Lite__ debug probe and how to run its example projects on the __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__.
 
 ## Table of contents
 * [IAR RISC-V GD32V Eval board at a glance](#iar-risc-v-gd32v-eval-board-at-a-glance)
