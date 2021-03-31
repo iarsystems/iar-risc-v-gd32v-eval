@@ -9,9 +9,9 @@
         <debug>1</debug>
         <settings>
             <name>General</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
-                <version>1</version>
+                <version>3</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -149,11 +149,52 @@
                     <name>GGeneralAutoVectorSetup</name>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>GDeviceCoreIBASRadioSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceMultSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceAtomicSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceCompactSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceFloatSelectSlave</name>
+                    <version>0</version>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceXandesdspSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GCoreDevice</name>
+                    <state>RV32IMAC</state>
+                </option>
+                <option>
+                    <name>RadioStdOutErr</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>RadioLibLowLev</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>OGBufferedTerminalOutput</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCRISCV</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <version>6</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -369,7 +410,7 @@
         </settings>
         <settings>
             <name>IASMRISCV</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -507,7 +548,7 @@
         </settings>
         <settings>
             <name>OBJCOPY</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -559,9 +600,9 @@
         </settings>
         <settings>
             <name>ILINK</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
-                <version>2</version>
+                <version>5</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -760,14 +801,6 @@
                     <state>0</state>
                 </option>
                 <option>
-                    <name>IlinkCspyDebugSupportEnable</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>IlinkCspyBufferedWrite</name>
-                    <state>0</state>
-                </option>
-                <option>
                     <name>IlinkLogAutoLibSelect</name>
                     <state>0</state>
                 </option>
@@ -873,11 +906,43 @@
                     <name>IlinkAutoVectorSetupSlave</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>ILINKStdOutErr</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkLogCrtRoutineSelection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogFragmentInfo</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogInlining</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogMerging</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkDemangle</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkBufferedTerminalOutput</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkCspyDebugSupportEnable2</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>

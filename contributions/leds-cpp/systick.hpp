@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <intrinsics.h>
 
-#include "gd32vf103.h"
+#include "gd32vf103.hpp"
 #include "n200_func.h"
 
 class SystemTick

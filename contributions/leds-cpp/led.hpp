@@ -1,6 +1,6 @@
 #pragma once
 
-#include "iar-risc-v-gd32v-eval.h"
+#include "iar-risc-v-gd32v-eval.hpp"
 
 class Led
 {
