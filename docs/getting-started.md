@@ -2,18 +2,6 @@
 
 This guide briefly describes how to get started using the __IAR RISC-V GD32V Eval board__  with the __I-jet Lite__ debug probe and how to run its example projects on the __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__.
 
-## Table of contents
-* [IAR RISC-V GD32V Eval board at a glance](#iar-risc-v-gd32v-eval-board-at-a-glance)
-* [I-jet Lite debug probe](#i-jet-lite-debug-probe)
-* [Install IAR Embedded Workbench for RISC-V](#install-iar-embedded-workbench-for-risc-v)
-* [Set up the evaluation board](#set-up-the-evaluation-board)
-* [Clone the repository](#clone-the-repository)
-* [Build and Debug the example projects](#build-and-debug-the-example-projects)
-* [View and edit project options](#view-and-edit-project-options)
-* [Target power supply from I-jet Lite](#target-power-supply-from-i-jet-lite)
-* [Troubleshooting](#troubleshooting)
-
-
 ## Getting Started
 
 ### IAR RISC-V GD32V Eval board at a glance

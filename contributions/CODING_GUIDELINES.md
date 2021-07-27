@@ -8,31 +8,6 @@ For programming languages other than Assembly, C and C++ (e.g. Python) used in t
 
 **Note 1:** You can use C-STAT with its standard checks enabled. It helps to avoid common embedded programming mistakes in both C and C++ source files.
 
-### Table Of Contents
-
-* [1. New lines &amp; curly braces](#1-new-lines--curly-braces)
-  * [a. Function blocks, class/struct definitions, namespaces](#a-function-blocks-classstruct-definitions-namespaces)
-  * [b. Other code blocks](#b-other-code-blocks)
-  * [c. Blocks in switch's case labels](#c-blocks-in-switchs-case-labels)
-  * [d. If-else statements](#d-if-else-statements)
-  * [e. Single statement if blocks](#e-single-statement-if-blocks)
-  * [f. Acceptable conditions to omit braces](#f-acceptable-conditions-to-omit-braces)
-  * [g. Brace enclosed initializers](#g-brace-enclosed-initializers)
-* [2. Indentation](#2-indentation)
-* [3. File encoding and line endings](#3-file-encoding-and-line-endings)
-* [4. Initialization lists](#4-initialization-lists)
-* [5. Enums](#5-enums)
-* [6. Names](#6-names)
-  * [a. Type names and namespaces](#a-type-names-and-namespaces)
-  * [b. Variable names](#b-variable-names)
-  * [c. Private member variable names](#c-private-member-variable-names)
-* [7. Header inclusion order](#7-header-inclusion-order)
-* [8. Include guard](#8-include-guard)
-* [9. Misc](#9-misc)
-* [10. Git commit message](#10-git-commit-message)
-* [11. Not covered above](#11-not-covered-above)
----
-
 ### 1. New lines & curly braces ###
 
 #### a. Function blocks, class/struct definitions, namespaces ####
