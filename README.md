@@ -6,14 +6,13 @@ The [examples projects](Examples) in this repository are designed for the __IAR 
 
 - For related documentation and schematics, follow this [link](docs).
 
+## Contributing
+For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
 ## Issues
 Found an issue or have a suggestion related to [__this__][url-repo] repository? Feel free to use the public issue tracker.
 - Do not forget to take a look at [earlier issues][url-repo-issue-old].
 - If creating a [new][url-repo-issue-new] issue, please describe it in detail.
-
-## Contributing
-For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
 ## Additional resources
 Follow this [link](docs/safertos.md), if you want learn more about [SAFE**RTOS**®](docs/safertos.md) on the IAR RISC-V GD32V board.
