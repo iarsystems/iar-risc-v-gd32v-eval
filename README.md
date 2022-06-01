@@ -1,26 +1,25 @@
-# IAR RISC-V GD32V Evaluation kit - Project examples
+# Project examples for the<br> IAR RISC-V GD32V Evaluation kit
 
-The [Examples projects](Examples) in this repository are designed to be run on the __IAR RISC-V GD32V Evaluation board__  with the [IAR Embedded Workbench for RISC-V][ewriscv-url].
+The [examples projects](Examples) in this repository are designed for the __IAR RISC-V GD32V Evaluation board__  with the [IAR Embedded Workbench for RISC-V][ewriscv-url].
 
-Start with the [__Getting Started__ guide](docs/getting-started.md).
+- Start with the [__Getting Started__ guide](docs/getting-started.md).
 
-For related documentation and schematics, follow this [link](docs).
+- For related documentation and schematics, follow this [link](docs).
 
-Follow this [link](docs/safertos.md), if you want learn more about [SAFE**RTOS**®](docs/safertos.md) on the IAR RISC-V GD32V board.
 
-If you have questions regarding this repository contents, you can start by checking its [issue tracker][repo-old-issue-url] for the previously asked questions.
-If it is a new question, feel free to post it [here][repo-new-issue-url].
+## Issues
+Found an issue or have a suggestion related to [__this__][url-repo] repository? Feel free to use the public issue tracker.
+- Do not forget to take a look at [earlier issues][url-repo-issue-old].
+- If creating a [new][url-repo-issue-new] issue, please describe it in detail.
 
-[repo-new-issue-url]: https://github.com/IARSystems/iar-risc-v-gd32v-eval/issues/new
-[repo-old-issue-url]: https://github.com/IARSystems/iar-risc-v-gd32v-eval/issues?q=is%3Aissue+is%3Aopen%7Cclosed
-
+## Contributing
 For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
-#### Additional Resources
-There is an useful selection of recorded webinars about RISC-V covering debugging, code quality and more available [here.][iar-webinars-url]
-Additionally, the IAR Build Tools for Linux are also available for RISC-V making automated building and testing straightforward in CI/CD workflows with Docker, Jenkins and Self-Hosted Runners. More information can be found [here!][iar-bx-url]
+## Additional resources
+Follow this [link](docs/safertos.md), if you want learn more about [SAFE**RTOS**®](docs/safertos.md) on the IAR RISC-V GD32V board.
 
-[gd32v-evalkit-url]: https://www.iar.com/evalkit
-[ewriscv-url]: https://iar.com/riscv
-[iar-webinars-url]: https://www.iar.com/webinars
-[iar-bx-url]: https://www.iar.com/bx
+<!-- links -->
+[ewriscv-url]:        https://iar.com/riscv
+[url-repo]:           https://github.com/iarsystems/iar-risc-v-gd32v-eval
+[url-repo-issue-new]: https://github.com/iarsystems/iar-risc-v-gd32v-eval/issues/new
+[url-repo-issue-old]: https://github.com/iarsystems/iar-risc-v-gd32v-eval/issues?q=is%3Aissue+is%3Aopen%7Cclosed
