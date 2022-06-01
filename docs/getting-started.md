@@ -4,13 +4,14 @@ This guide briefly describes how to get started using the __IAR RISC-V GD32V Eva
 
 ## Getting Started
 
-### IAR RISC-V GD32V Eval board at a glance
+### Evaluation board at-a-glance
 
 ![](images/07-board-layout.png)
 
 > Click on the [board layout](images/07-board-layout.png) to enlarge.
 
----
+
+### Board specifications
 
 <img align="right" src="images/00-board.png" width=400px />
 
