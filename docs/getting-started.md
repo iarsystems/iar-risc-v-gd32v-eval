@@ -57,7 +57,7 @@ Please refer to the installation instructions from the welcome e-mail for the RI
 
 2. Connect the I-jet Lite to an USB port of the host PC using the USB micro B cable.
 
-> __Notes__
+> __Note__
 > * The __USB__ indicator on the I-jet Lite should turn on green as soon as Windows recognizes the device.
 >
 > * The I-jet Lite requires an USB 2.0 port on the host PC.
@@ -143,7 +143,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 6. Choose `Project` → `Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>) or click the `Download and Debug` button on the _Toolbar_. This action will launch the __IAR C-SPY Debugger__.
 
-> __Notes__
+> __Note__
 > * When in an __IAR C-SPY Debugger__ session, the IDE menu will slightly change, providing new menu options for debugging. Also, a new _Debug Toolbar_ will appear, providing functionality to control the downloaded application's execution flow. 
 > * The downloaded application will execute automatically on target until it reaches the entry point of the application's `main()` function, where its execution will remain paused until an user action changes the execution flow. The Code Editor window will display the source file containing the `main()` function, highlighting the line where the application currently is.
 
@@ -153,7 +153,7 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 9. To exit the __IAR C-SPY Debugger__, choose `Debug` → `Stop Debugging` (or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd> + <kbd>D</kbd>) or click the `Stop Debugging` button on the _Debug Toolbar_.
 
-> __Notes__
+> __Note__
 > * You can `Set as Active` any project from this workspace and repeat the process.
 > * The board brings jumpers with user-selectable functionality for its buttons, LEDs and powering options. Refer to the respective example's README.md to know if the [example](../Examples) requires any specific jumper settings. The table below brings the board's general jumper configuration.
 >
