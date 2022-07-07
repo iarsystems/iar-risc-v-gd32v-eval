@@ -85,19 +85,7 @@ cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv
 git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-submodules
 ```
 
-> __Note__
-> * It is important to clone with `--recurse-submodules` because the __GD32VF103 Firmware Library__ is fetched directly from its official GitHub repository.
-> * After the repository is cloned for the first time, it can be updated in a similar manner, by changing to its directory and pulling the updates as below:
->
-> ```
-> cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32-eval
->
-> git pull --recurse-submodules
-> ```
->
-> * The __IAR GD32V RISC-V Board Examples__ were tested with the __GD32VF103 Firmware Library V1.1.0__.
-
-![](images/01-repo.png)
+> __Note__ By cloning with `--recurse-submodules` the __GD32VF103 Firmware Library v1.1.0__, used by the examples, is also fetched directly from its official GitHub repository.
 
 ### Using ZIP (alternate way)
 
