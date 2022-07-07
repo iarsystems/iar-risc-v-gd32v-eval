@@ -10,27 +10,21 @@ By running the code on a target, a __CoreMark score__ is obtained. The better a 
 
 ## Building and Running
 	
-To build and run the benchmark, select 
+To build and run the benchmark, select `Project → Make` (or <kbd>F7</kbd>)
 
-`Project → Make` (or <kbd>F7</kbd>)
-
-Once the build is complete, connect your evaluation board debugger 20-pin header to the I-jet debugging probe and then select
-
-`Project → Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>)
+Once the build is complete, connect your evaluation board debugger 20-pin header to the I-jet debugging probe and then select `Project → Download and Debug` (or <kbd>CTRL</kbd> + <kbd>D</kbd>)
 
 The IDE will slightly change its initial appearance and new menu options will become available as it enters in debug mode.
 This project uses the integrated IAR Embedded Workbench virtual terminal to output the benchmark results.
 
-In order to see the results, select
-`View → Terminal I/O`
+In order to see the results, select `View → Terminal I/O`
 
 A new window named __Terminal I/O__ will show up without any output so far.
-Next, execute the program by selecting
-`Debug → Go` (or <kbd>F5</kbd>)
+Next, execute the program by selecting `Debug → Go` (or <kbd>F5</kbd>)
 
 The program will execute for about 10 seconds and once it finishes, it will print out the __Coremark score__ for your evaluation board.
 
-> Notes
+> __Note__
 > * According to the CoreMark [rules](#run-rules), the source files named core* cannot be touched. The only exception to that rule are the __core_portme__ files.
 > * A typical way to compare the scores from different cores/compilers combinations is to rate them by __CoreMark/MHz__.
 > * If you wish to know how many CoreMark/MHz your board got, do the math! It is as easy as taking the *CoreMark score* and dividing it by 108 MHz.
@@ -97,11 +91,11 @@ The output has the following format
 ~~~
 2K performance run parameters for coremark.                                      (Run type)
 CoreMark Size    : 666                                                           (Buffer size)
-Total ticks      : 1213210270                                                    (platform dependent value)
-Total time (secs): 11.233428                                                     (actual time in seconds)
-Iterations/Sec   : 364.625993                                                    (Performance value to report)
+Total ticks      : 1184262414                                                    (platform dependent value)
+Total time (secs): 10.965393                                                     (actual time in seconds)
+Iterations/Sec   : 373.538833                                                    (Performance value to report)
 Iterations       : 4096                                                          (number of iterations used)
-Compiler version : IAR C/C++ Compiler V1.30.1.0 for RISC-V                       (Compiler and version)	
+Compiler version : IAR C/C++ Compiler V3.10.1.1873/W64 for RISC-V                (Compiler and version)	
 Compiler flags   : -Ohs --no_size_constraints --no_cross_call --core=RV32IMAC    (Compiler and linker flags)
 Memory location  : Code in flash, data on chip RAM                           
 seedcrc          : 0xe9f5                                                        (identifier for the input seeds)
@@ -110,7 +104,7 @@ seedcrc          : 0xe9f5                                                       
 [0]crcstate      : 0x8e3a                                                        (validation for state part)
 [0]crcfinal      : 0x7b65                                                        (iteration dependent output)
 Correct operation validated. See README.md for run and reporting rules.          (*Only when run is successful*)
-CoreMark 1.0 : 364.625993 / IAR C/C++ Compiler V1.30.1.0 for RISC-V ...          (*Only on a successful performance run*)
+CoreMark 1.0 : 373.538833 / IAR C/C++ Compiler V3.10.1.1873/W64 for RISC-V...    (*Only on a successful performance run*)
 ~~~
 
 # Theory of Operation

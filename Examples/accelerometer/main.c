@@ -2,11 +2,11 @@
     \file  main.c
     \brief Accelerometer example for the IAR RISC-V GD32V Eval board
 
-    \version 20201208
+    \version 20220707
 */
 
 /*
-Copyright (c) 2020, IAR Systems AB.
+Copyright (c) 2020-2022, IAR Systems AB.
 
 See LICENSE.md for detailed license information.
 */
@@ -19,7 +19,7 @@ See LICENSE.md for detailed license information.
 #include "MMA8652.h"
 
 /* tilt threshold in G's */
-#define TILT_THRESHOLD (0.1500f)
+#define TILT_THRESHOLD (0.110000f)
 
 typedef enum {
     LEFT,
@@ -77,7 +77,7 @@ void main(void)
         mma8652_getxyz(&x, &y, &z);
 
         /* print the X-,Y-,Z-axis acceleration (in g's) to the (View -> Terminal I/O) */
-        printf ("%2.3f  %2.3f  %2.3f\n", x, y, z);
+        printf ("%+.3f  %+.3f  %+.3f\n", x, y, z);
 
         /* check the tilt threshold */
         if (x < -TILT_THRESHOLD)

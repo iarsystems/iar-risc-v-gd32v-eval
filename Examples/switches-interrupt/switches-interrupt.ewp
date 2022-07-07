@@ -9,11 +9,15 @@
         <debug>1</debug>
         <settings>
             <name>General</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>5</archiveVersion>
             <data>
-                <version>1</version>
+                <version>7</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
+                <option>
+                    <name>BrowseInfoPath</name>
+                    <state>Debug\BrowseInfo</state>
+                </option>
                 <option>
                     <name>GDeviceSelect</name>
                     <state>GD32VF103RBT6	GigaDevice GD32VF103RBT6</state>
@@ -36,12 +40,12 @@
                 </option>
                 <option>
                     <name>GRuntimeLibSelect</name>
-                    <version>0</version>
+                    <version>1</version>
                     <state>1</state>
                 </option>
                 <option>
                     <name>GRTDescription</name>
-                    <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+                    <state>A compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>GRTConfigPath</name>
@@ -49,7 +53,7 @@
                 </option>
                 <option>
                     <name>GRuntimeLibSelectSlave</name>
-                    <version>0</version>
+                    <version>1</version>
                     <state>1</state>
                 </option>
                 <option>
@@ -80,28 +84,6 @@
                 <option>
                     <name>GHeapSize</name>
                     <state>0x1000</state>
-                </option>
-                <option>
-                    <name>GeneralEnableMisra</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraVerbose</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraVer</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraRules04</name>
-                    <version>0</version>
-                    <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
-                </option>
-                <option>
-                    <name>GeneralMisraRules98</name>
-                    <version>0</version>
-                    <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
                 </option>
                 <option>
                     <name>GNumCores</name>
@@ -149,13 +131,90 @@
                     <name>GGeneralAutoVectorSetup</name>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>GDeviceCoreIBASRadioSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceMultSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceAtomicSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceCompactSlave</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceFloatSelectSlave</name>
+                    <version>0</version>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceXandesdspSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GCoreDevice</name>
+                    <state>RV32IMAC</state>
+                </option>
+                <option>
+                    <name>RadioStdOutErr</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>RadioLibLowLev</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>OGBufferedTerminalOutput</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>GDeviceUserLvlIntSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceBitmanipASlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceBitmanipBSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceBitmanipCSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceXandesperfSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GDeviceBitmanipSSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>BuildFilesPath</name>
+                    <state>Debug</state>
+                </option>
+                <option>
+                    <name>GDeviceBitmanipCountZeroesSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>GCodeModelSlave</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCRISCV</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>5</archiveVersion>
             <data>
-                <version>6</version>
+                <version>8</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -231,20 +290,6 @@
                 <option>
                     <name>CCDebugInfo</name>
                     <state>1</state>
-                </option>
-                <option>
-                    <name>CompilerMisraOverride</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>CompilerMisraRules04</name>
-                    <version>0</version>
-                    <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
-                </option>
-                <option>
-                    <name>CompilerMisraRules98</name>
-                    <version>0</version>
-                    <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
                 </option>
                 <option>
                     <name>CCExtraOptionsCheck</name>
@@ -364,13 +409,17 @@
                     <name>CCGuardCalls</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>ICodeModel</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IASMRISCV</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>5</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -502,11 +551,15 @@
                     <name>AsmExtraOptions</name>
                     <state></state>
                 </option>
+                <option>
+                    <name>ACodeModel</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>OBJCOPY</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>5</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -541,12 +594,8 @@
                 <extensions></extensions>
                 <cmdline></cmdline>
                 <hasPrio>0</hasPrio>
+                <buildSequence>inputOutputBased</buildSequence>
             </data>
-        </settings>
-        <settings>
-            <name>BICOMP</name>
-            <archiveVersion>0</archiveVersion>
-            <data />
         </settings>
         <settings>
             <name>BUILDACTION</name>
@@ -558,18 +607,14 @@
         </settings>
         <settings>
             <name>ILINK</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>5</archiveVersion>
             <data>
-                <version>2</version>
+                <version>8</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
                     <name>IlinkLibIOConfig</name>
                     <state>1</state>
-                </option>
-                <option>
-                    <name>XLinkMisraHandler</name>
-                    <state>0</state>
                 </option>
                 <option>
                     <name>IlinkStackSize</name>
@@ -759,14 +804,6 @@
                     <state>0</state>
                 </option>
                 <option>
-                    <name>IlinkCspyDebugSupportEnable</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>IlinkCspyBufferedWrite</name>
-                    <state>0</state>
-                </option>
-                <option>
                     <name>IlinkLogAutoLibSelect</name>
                     <state>0</state>
                 </option>
@@ -872,11 +909,55 @@
                     <name>IlinkAutoVectorSetupSlave</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>ILINKStdOutErr</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkLogCrtRoutineSelection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogFragmentInfo</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogInlining</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogMerging</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkDemangle</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkBufferedTerminalOutput</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkCspyDebugSupportEnable2</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkWrapperFileEnable</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkWrapperFile</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>ILinkCodeModel</name>
+                    <state>1</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>5</archiveVersion>
             <data>
                 <version>0</version>
                 <wantNonLocal>1</wantNonLocal>
@@ -894,11 +975,6 @@
                     <state>###Uninitialized###</state>
                 </option>
             </data>
-        </settings>
-        <settings>
-            <name>BILINK</name>
-            <archiveVersion>0</archiveVersion>
-            <data />
         </settings>
     </configuration>
     <group>
