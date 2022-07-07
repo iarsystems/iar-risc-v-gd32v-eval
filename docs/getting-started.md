@@ -109,9 +109,11 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 4. Extract the `.zip` archive to the `riscv` folder created on _step 1_.
 
-5. Download the [__GD32VF103 Firmware Library v1.1.0__](https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library/archive/refs/tags/V1.1.0.zip).
+5. Download the [__GD32VF103 Firmware Library v1.1.0__](https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library/archive/refs/tags/V1.1.0.zip) available from the [GigaDevice](https://github.com/GigaDevice-Semiconductor) GitHub page.
 
-6. Open `GD32VF103_Firmware_Library-1.1.0.zip` and extract the `Firmware` folder to the corresponding `riscv\iar-risc-v-gd32v-eval-<tag>\GD32VF103_Firmware_Library`.
+6. Extract the __Firmware__ folder from the `GD32VF103_Firmware_Library-1.1.0.zip` archive to the `%PROGRAMDATA%\...\riscv\iar-risc-v-gd32v-eval-<tag>\GD32VF103_Firmware_Library` folder.
+
+> __Note__ Replace `<tag>` by the chosen version on _step 3_.
 
 ## Build and Debug the example projects
 
