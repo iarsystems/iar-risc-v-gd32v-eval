@@ -76,16 +76,23 @@ Cloning the repository must be performed only once until decided to upgrade to t
 
 ### Using Git (preferred way)
 
-1. Using a Git client (such as [Git for Windows](https://git-scm.com/download/win)), launch __Git CMD__ and then perform the following commands to clone this repository.
+1. Using a Git client (such as [Git for Windows](https://git-scm.com/download/win)), launch __Git CMD__.
+
+2. Perform the following command to clone this repository with the __GD32VF103 Firmware Library__ submodule.
 ```
-md %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv
-
-cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv
-
-git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-submodules
+git clone --recurse-submodules https://github.com/IARSystems/iar-risc-v-gd32v-eval.git %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32v-eval
 ```
 
-> __Note__ By cloning with `--recurse-submodules` the __GD32VF103 Firmware Library v1.1.0__, used by the examples, is also fetched directly from its official GitHub repository.
+>__Note__ The projects in the master branch of this repository work with EWRISCV 3.10.1 (or later).
+><details><summary>For using with earlier versions, perform the following (click to unfold)</summary>
+>
+>```
+>cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32v-eval
+>
+>git checkout tags/1.30.1
+>```
+>
+></details>
 
 ### Using ZIP (alternate way)
 
@@ -97,9 +104,9 @@ git clone https://github.com/IARSystems/iar-risc-v-gd32v-eval.git --recurse-subm
 
 4. Extract the `.zip` archive to the `riscv` folder created on _step 1_.
 
-5. Download the [__GD32VF103 Firmware Library v1.1.0__](https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library/archive/refs/tags/V1.1.0.zip) available from the [GigaDevice](https://github.com/GigaDevice-Semiconductor) GitHub page.
+5. Download the [__GD32VF103 Firmware Library v1.1.1__](https://github.com/GigaDevice-Semiconductor/GD32VF103_Firmware_Library/archive/refs/tags/V1.1.1.zip) available from the [GigaDevice](https://github.com/GigaDevice-Semiconductor) GitHub page.
 
-6. Extract the __Firmware__ folder from the `GD32VF103_Firmware_Library-1.1.0.zip` archive to the `%PROGRAMDATA%\...\riscv\iar-risc-v-gd32v-eval-<tag>\GD32VF103_Firmware_Library` folder.
+6. Extract the __Firmware__ folder from the `GD32VF103_Firmware_Library-1.1.1.zip` archive to the `%PROGRAMDATA%\...\riscv\iar-risc-v-gd32v-eval-<tag>\GD32VF103_Firmware_Library` folder.
 
 > __Note__ Replace `<tag>` by the chosen version on _step 3_.
 
