@@ -9,16 +9,20 @@ The [examples projects](Examples) in this repository are designed for the __IAR 
 ## Contributing
 For learning how you can contribute with new projects to this repository, follow this [link](contributions).
 
-## Issues
-Found an issue or have a suggestion related to [__this__][url-repo] repository? Feel free to use the public issue tracker.
-- Do not forget to take a look at [earlier issues][url-repo-issue-old].
-- If creating a [new][url-repo-issue-new] issue, please describe it in detail.
-
 ## Additional resources
 Follow this [link](docs/safertos.md), if you want learn more about [SAFE**RTOS**®](docs/safertos.md) on the IAR RISC-V GD32V board.
 
+## Issues
+For technical support contact [IAR Customer Support][url-iar-customer-support].
+
+For questions or suggestions related to this tutorial: try the [wiki][url-repo-wiki] or check [earlier issues][url-repo-issue-old]. If those don't help, create a [new issue][url-repo-issue-new] with detailed information.
+
+
 <!-- links -->
-[ewriscv-url]:        https://iar.com/riscv
-[url-repo]:           https://github.com/iarsystems/iar-risc-v-gd32v-eval
-[url-repo-issue-new]: https://github.com/iarsystems/iar-risc-v-gd32v-eval/issues/new
-[url-repo-issue-old]: https://github.com/iarsystems/iar-risc-v-gd32v-eval/issues?q=is%3Aissue+is%3Aopen%7Cclosed
+[url-iar-customer-support]: https://iar.my.site.com/mypages/s/contactsupport
+
+[ewriscv-url]:         https://iar.com/riscv
+[url-repo]:            https://github.com/iarsystems/iar-risc-v-gd32v-eval
+[url-repo-issue-wiki]: https://github.com/iarsystems/iar-risc-v-gd32v-eval/wiki
+[url-repo-issue-new]:  https://github.com/iarsystems/iar-risc-v-gd32v-eval/issues/new
+[url-repo-issue-old]:  https://github.com/iarsystems/iar-risc-v-gd32v-eval/issues?q=is%3Aissue+is%3Aopen%7Cclosed
