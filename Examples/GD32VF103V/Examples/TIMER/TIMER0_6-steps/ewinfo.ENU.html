@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" xml:lang="en">
+<head>
+  <title>Information Center for RISC-V</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <link type="text/css" rel="stylesheet" media="all" href="file://$TOOLKIT_DIR$/doc/infocenter/style/ewic.css" />
+</head>
+<body>
+<div id="titlebanner">
+<div>
+<h1>IAR Information Center for RISC-V</h1>
+<p class="subtitle"></p>
+</div>
+</div>
+  <div class="breadcrumb">
+    <a href="$TOOLKIT_DIR$/doc/infocenter/index.ENU.html">Information Center for RISC-V</a>
+    | EXAMPLES</div>
+  <div class="mainblock">
+    <p>This demo is based on the GD32VF103V-EVAL-V1.0 board, it shows how to configure the 
+TIMER0 peripheral to generate three complementary TIMER0 signals(for BLDC) with dead 
+time.</p>
+
+  <p>TIMER0CLK is fixed to systemcoreclock, the TIMER0 prescaler is equal to 108 so the 
+TIMER0 counter clock used is 1MHz.</p>
+
+  <table>
+
+<tr><td>    Channel change sequence:                          </td></tr>
+<tr><td>    AB`->AC`->BC`->BA`->CA`->CB`                      </td></tr>
+<tr><td>  step1: 1-0  0-1  0-0 (CH0-CH0N  CH1-CH1N  CH2-CH2N) </td></tr>
+<tr><td>  step2: 1-0  0-0  0-1 (CH0-CH0N  CH1-CH1N  CH2-CH2N) </td></tr>
+<tr><td>  step3: 0-0  1-0  0-1 (CH0-CH0N  CH1-CH1N  CH2-CH2N) </td></tr>
+<tr><td>  step4: 0-1  1-0  0-0 (CH0-CH0N  CH1-CH1N  CH2-CH2N) </td></tr>
+<tr><td>  step5: 0-1  0-0  1-0 (CH0-CH0N  CH1-CH1N  CH2-CH2N) </td></tr>
+<tr><td>  step6: 0-0  0-1  1-0 (CH0-CH0N  CH1-CH1N  CH2-CH2N) </td></tr>
+</table>
+<br/><br/>
+  <table>
+<tr><td>  Connect the TIMER0 pins to an oscilloscope to monitor the different waveforms: </td></tr>
+<tr><td>  - TIMER0_CH0  pin(PA8)                                                         </td></tr>
+<tr><td>  - TIMER0_CH0N pin(PB13)                                                        </td></tr>
+<tr><td>  - TIMER0_CH1  pin(PA9)                                                         </td></tr>
+<tr><td>  - TIMER0_CH1N pin(PB14)                                                        </td></tr>
+<tr><td>  - TIMER0_CH2  pin(PA10)                                                        </td></tr>
+<tr><td>  - TIMER0_CH2N pin(PB15)                                                        </td></tr>
+</table>
+  </div>
+</body>
+</html>

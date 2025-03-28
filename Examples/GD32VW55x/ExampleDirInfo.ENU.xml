@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<infocenter_data version="1.0">
+  <iar_template_variant>A</iar_template_variant>
+  <iar_name>GigaDevice GD32VW553H-EVAL</iar_name> 
+  <iar_title>GigaDevice GD32VW553H-EVAL</iar_title>
+  <iar_description>This example is based on the GD32VW553H-EVAL-V1.0 board, it provides a description of SysTick configuration, use of EVAL_COM and key. See https://gd32mcu.com/en/download/7?kw=GD32VW5 For more information </iar_description>
+</infocenter_data>

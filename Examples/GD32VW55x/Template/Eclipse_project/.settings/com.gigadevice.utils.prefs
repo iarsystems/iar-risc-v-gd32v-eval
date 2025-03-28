@@ -1,0 +1,8 @@
+buildtools.path=.\\Tools\\Build Tools\\2.10-20180103-1919\\bin
+eclipse.preferences.version=1
+ldfile.flash.size.in.flash=4096
+ldfile.ram.size.in.flash=288
+mcu.target=GD32VW553HMQ7
+toolchain.name=GNU MCU RISC-V GCC
+toolchain.path.512258282=.\\Tools\\RISC-V Embedded GCC\\8.2.0-2.2-20190521-0004\\bin
+toolchain.prefix=riscv-none-embed-

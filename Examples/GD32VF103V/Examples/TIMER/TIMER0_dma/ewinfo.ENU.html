@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemalocation="http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd" xml:lang="en">
+<head>
+  <title>Information Center for RISC-V</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <link type="text/css" rel="stylesheet" media="all" href="file://$TOOLKIT_DIR$/doc/infocenter/style/ewic.css" />
+</head>
+<body>
+<div id="titlebanner">
+<div>
+<h1>IAR Information Center for RISC-V</h1>
+<p class="subtitle"></p>
+</div>
+</div>
+  <div class="breadcrumb">
+    <a href="$TOOLKIT_DIR$/doc/infocenter/index.ENU.html">Information Center for RISC-V</a>
+    | EXAMPLES</div>
+  <div class="mainblock">
+    <p>
+  This demo is based on the GD32VF103V-EVAL-V1.0 board, it shows how to
+use DMA with TIMER0 update request to transfer data from memory 
+to TIMER0 capture compare register 0.</p>
+
+  <p>TIMER0CLK is fixed to systemcoreclock, the TIMER0 prescaler is equal to 108 so the 
+TIMER0 counter clock used is 1MHz.</p>
+
+  <p>The objective is to configure TIMER0 channel 0(PA8) to generate PWM signal with
+a frequency equal to 1KHz and a variable duty cycle(25%,50%,75%) that is changed
+by the DMA after a specific number of Update DMA request.</p>
+  
+  <p>The number of this repetitive requests is defined by the TIMER0 repetition counter,
+each 2 update requests, the TIMER0 Channel 0 duty cycle changes to the next new 
+value defined by the buffer.</p>
+
+  
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+8"?>
+
+<infocenter_data version="1.0">
+  <iar_name>USART DMA transmitter & receiver interrupt</iar_name>
+  <iar_description>USART DMA transmitter & receiver interrupt example project</iar_description>
+
+  <iar_curdir>$CUR_DIR$</iar_curdir>
+  <iar_info_path>$TOOLKIT_DIR$/examples/GD/GD32VF103/Examples/USART/DMA_transmitter_receiver_interrupt/ewinfo.ENU.html</iar_info_path>
+</infocenter_data>

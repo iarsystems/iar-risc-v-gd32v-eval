@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<infocenter_data version="1.0">
+  <iar_name>CRC Calculation example</iar_name>
+  <iar_description>CRC Calculation example project</iar_description>
+
+  <iar_curdir>$CUR_DIR$</iar_curdir>
+  <iar_info_path>$TOOLKIT_DIR$/examples/GD/GD32VF103/Examples/CRC/CRC_calculate/ewinfo.ENU.html</iar_info_path>
+</infocenter_data>
