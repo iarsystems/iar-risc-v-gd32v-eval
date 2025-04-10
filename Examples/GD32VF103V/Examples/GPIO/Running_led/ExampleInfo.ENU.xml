@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<infocenter_data version="1.0">
+  <iar_name>GPIO blinking LED</iar_name>
+  <iar_description>GPIO blinking LED example project</iar_description>
+
+  <iar_curdir>$CUR_DIR$</iar_curdir>
+  <iar_info_path>$TOOLKIT_DIR$/examples/GD/GD32VF103/Examples/GPIO/Running_led/ewinfo.ENU.html</iar_info_path>
+</infocenter_data>

@@ -1,0 +1,124 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Project" target="20" version="2">
+  <configuration
+    LIBRARY_IO_TYPE="None"
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 2"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 2 balanced"
+    target_reset_script="Reset()"
+    target_script_file="..\..\Firmware/RISCV/env_SES/GD32VW55x_Target.js" />
+  <project Name="GD32VW55x">
+    <configuration
+      LIBRARY_IO_TYPE="SEMIHOST (host-formatted)"
+      Name="Common"
+      Target="GD32VW553HMQ7"
+      arm_compiler_variant="SEGGER"
+      arm_linker_variant="SEGGER"
+      debug_register_definition_file="$(PackagesDir)/GD32VW55x/XML/GD32VW553x_Registers.xml"
+      debug_stack_pointer_start="__stack_end__"
+      debug_start_from_entry_point_symbol="Yes"
+      debug_target_connection="J-Link"
+      gcc_entry_point="Reset_Handler"
+      heap_size="1024"
+      link_linker_script_file="$(PackagesDir)/GD32VW55x/Scripts/GD32VW55x_Flash.icf"
+      linker_memory_map_file="$(PackagesDir)/GD32VW55x/XML/GD32VW553HMQ7_MemoryMap.xml"
+      macros="DeviceHeaderFile=$(PackagesDir)/GD32VW55x/Device/Include/gd32vw55x.h;DeviceSystemFile=$(PackagesDir)/GD32VW55x/Device/Source/system_gd32vw55x.c;DeviceFamily=GD32VW55x;DeviceSubFamily=GD32VW553"
+      project_directory=""
+      project_type="Executable"
+      property_groups_file_path="$(PackagesDir)/GD32VW55x/XML/property_groups.xml"
+      rv_abi="ilp32d"
+      rv_architecture="rv32gc"
+      rv_debug_extensions="None"
+      stack_size="2048"
+      target_device_name="GD32VW553HMQ7"
+      target_interface_type="JTAG"
+      target_reset_script="Reset();"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration
+      LIBRARY_IO_TYPE="None"
+      Name="Release"
+      c_user_include_directories=".;..\\;..\\..\\Utilities;..\\..\\Firmware\\GD32VW55x_standard_peripheral;..\\..\\Firmware\\GD32VW55x_standard_peripheral\\Include;..\\..\\Firmware\\RISCV\\drivers"
+      debug_target_connection="J-Link"
+      gcc_optimization_level="None"
+      linker_printf_fp_enabled="Float"
+      linker_printf_wchar_enabled="Yes"
+      linker_printf_width_precision_supported="Yes"
+      target_reset_script="Reset()"
+      target_script_file="..\..\Firmware\RISCV\env_SES\GD32VW55x_Target.js" />
+    <folder Name="Application">
+      <file file_name="../gd32vw55x_it.c" />
+      <file file_name="../main.c" />
+      <file file_name="../systick.c" />
+    </folder>
+    <folder Name="Doc">
+      <file file_name="../readme.txt" />
+    </folder>
+    <folder Name="Peripheral">
+      <folder Name="Source">
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_adc.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_cau.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_cau_aes.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_cau_des.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_cau_tdes.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_crc.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_dbg.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_dma.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_eclic.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_efuse.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_exti.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_fmc.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_fwdgt.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_gpio.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_hau.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_hau_sha_md5.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_i2c.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_pkcau.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_pmu.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_qspi.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_rcu.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_rtc.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_spi.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_syscfg.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_timer.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_trng.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_usart.c" />
+        <file file_name="../../Firmware/GD32VW55x_standard_peripheral/Source/gd32vw55x_wwdgt.c" />
+      </folder>
+      <file file_name="../../Firmware/GD32VW55x_standard_peripheral/system_gd32vw55x.c" />
+    </folder>
+    <folder Name="RISCV">
+      <folder Name="drivers">
+        <file file_name="../../Firmware/RISCV/drivers/core_compatiable.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_base.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_cache.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_dsp.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_eclic.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_fpu.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_pmp.h" />
+        <file file_name="../../Firmware/RISCV/drivers/core_feature_timer.h" />
+        <file file_name="../../Firmware/RISCV/drivers/nmsis_compiler.h" />
+        <file file_name="../../Firmware/RISCV/drivers/nmsis_core.h" />
+        <file file_name="../../Firmware/RISCV/drivers/nmsis_gcc.h" />
+        <file file_name="../../Firmware/RISCV/drivers/nmsis_version.h" />
+        <file file_name="../../Firmware/RISCV/drivers/riscv_bits.h" />
+        <file file_name="../../Firmware/RISCV/drivers/riscv_encoding.h" />
+      </folder>
+      <folder Name="env_SES">
+        <file file_name="../../Firmware/RISCV/env_SES/entry.s" />
+        <file file_name="../../Firmware/RISCV/env_SES/GD32VW55x_Startup.s" />
+        <file file_name="../../Firmware/RISCV/env_SES/handlers.c" />
+        <file file_name="../../Firmware/RISCV/env_SES/init.c" />
+        <file file_name="../../Firmware/RISCV/env_SES/SEGGER_RTL_PRINOPS_UART_Unbuffered.c" />
+        <file file_name="../../Firmware/RISCV/env_SES/SEGGER_RV32_Startup.s" />
+      </folder>
+    </folder>
+    <folder Name="Script Files">
+      <file file_name="../../Firmware/RISCV/env_SES/GD32VW55x_Target.js" />
+    </folder>
+    <folder Name="Utilities">
+      <file file_name="../../Utilities/gd32vw553h_eval.c" />
+    </folder>
+  </project>
+</solution>

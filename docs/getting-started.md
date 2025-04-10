@@ -1,6 +1,6 @@
 # Getting started with the IAR RISC-V GD32V Eval board
 
-This guide briefly describes how to get started using the __IAR RISC-V GD32V Eval board__  with the __I-jet Lite__ debug probe and how to run its example projects on the __[IAR Embedded Workbench for RISC-V](https://www.iar.com/riscv)__.
+This guide briefly describes how to get started using the __IAR RISC-V GD32V Eval board__  with the __I-jet Lite__ debug probe and how to run its example projects on the __[IAR Embedded Workbench for RISC-V](https://iar.com/mcu-architectures/risc-v)__.
 
 ## Getting Started
 
@@ -16,16 +16,16 @@ This guide briefly describes how to get started using the __IAR RISC-V GD32V Eva
 <img align="right" src="images/00-board.png" width=400px />
 
 * GD32VF103RBT6 RISC-V GigaDevice MCU
-* User [LEDs](../Examples/leds)
-* [RGB LED](../Examples/rgb-led)
-* User [switches](../Examples/switches)
-* [Potentiometer](../Examples/potentiometer)
-* I²C 3-axis [accelerometer](../Examples/accelerometer)
-* I²C [temperature-humidity](../Examples/temperature-humidity) sensors
+* User LEDs
+* RGB LED
+* User switches
+* Potentiometer
+* I²C 3-axis accelerometer
+* I²C temperature-humidity sensors
 * Light sensor
 * On-board microphone
 * iPhone compatible earbud jack
-* [SPI flash](../Examples/spi-flash) memory
+* SPI flash memory
 * Reset button 
 * JTAG connector 20-pin 0.05” 
 * USB micro-B connector for USB/Serial converter 
@@ -83,8 +83,14 @@ Cloning the repository must be performed only once until decided to upgrade to t
 git clone --recurse-submodules https://github.com/IARSystems/iar-risc-v-gd32v-eval.git %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32v-eval
 ```
 
->__Note__ The projects in the master branch of this repository work with EWRISCV 3.10.1 (or later).
-><details><summary>For using with earlier versions, perform the following (click to unfold)</summary>
+>__Note__ The projects in the master branch of this repository work with EWRISCV 3.40.1 (or later).
+><details><summary>For using with earlier versions, perform one of the following (click to unfold)</summary>
+>
+>```
+>cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32v-eval
+>
+>git checkout tags/3.10.1
+>```
 >
 >```
 >cd %PROGRAMDATA%\IARSystems\EmbeddedWorkbench\DownloadedExamples\riscv\iar-risc-v-gd32v-eval

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<infocenter_data version="1.0">
+  <iar_name>USART printf()</iar_name>
+  <iar_description>USART printf() example project</iar_description>
+
+  <iar_curdir>$CUR_DIR$</iar_curdir>
+  <iar_info_path>$TOOLKIT_DIR$/examples/GD/GD32VF103/Examples/USART/Printf/ewinfo.ENU.html</iar_info_path>
+</infocenter_data>
